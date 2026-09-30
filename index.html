@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Medical Physics LLC | Clinical & Diagnostic Physics Expertise</title>
+    <title>Global Medical Physics LLC | Clinical Medical Physics & Radiation Safety</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,17 +11,16 @@
             theme: {
                 extend: {
                     colors: {
-                        medical: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
+                        phyNavy: {
+                            800: '#0a192f',
+                            900: '#030d1d',
+                            950: '#020712'
                         },
-                        clinical: {
-                            50: '#f8fafc',
-                            900: '#0f172a',
+                        phyTeal: {
+                            50: '#f0fdfa',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
                         }
                     }
                 }
@@ -31,261 +30,461 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-medical-100 selection:text-medical-800">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-phyTeal-500 selection:text-white">
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <!-- Top Notice Bar -->
+    <div class="bg-phyNavy-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span class="flex items-center gap-2 font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Board Certified Consulting · Radiation Oncology & Diagnostic Imaging Solutions
+            </span>
+            <div class="flex items-center gap-4 text-slate-400">
+                <span>AAPM · ACR · NCRP · IAEA Standards</span>
+                <span class="hidden md:inline">|</span>
+                <a href="#contact" class="hover:text-emerald-400 transition">Global Remote Support Available</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand -->
             <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-xl shadow-md">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-phyNavy-800 to-slate-900 text-phyTeal-500 flex items-center justify-center font-bold text-2xl border border-slate-700 shadow-inner">
                     Ω
                 </div>
                 <div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-tight">Global Medical Physics</span>
-                    <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">LLC · Clinical Consulting</span>
+                    <span class="text-xl font-black tracking-tight text-slate-900 block leading-tight">Global Medical Physics</span>
+                    <span class="text-[11px] font-bold text-phyTeal-700 tracking-wider uppercase">LLC · Clinical Consulting</span>
                 </div>
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
-                <a href="#services" class="hover:text-medical-700 transition">Clinical Services</a>
-                <a href="#tools" class="hover:text-medical-700 transition">Physics Calculators</a>
-                <a href="#about" class="hover:text-medical-700 transition">Expertise & Standards</a>
-                <a href="#contact" class="px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">Request Consultation</a>
+            <!-- Desktop Nav Menu with Dropdowns -->
+            <nav class="hidden lg:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <a href="#hero" class="hover:text-phyTeal-700 transition">Home</a>
+                
+                <!-- Services Dropdown -->
+                <div class="relative group py-6">
+                    <button class="flex items-center gap-1 hover:text-phyTeal-700 transition py-2">
+                        <span>Clinical Services</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute left-0 top-full hidden group-hover:block w-72 bg-white rounded-2xl shadow-xl border border-slate-100 p-3 space-y-1 transition-all">
+                        <a href="#services" class="block p-3 rounded-xl hover:bg-slate-50 transition">
+                            <div class="font-bold text-slate-900 text-sm">Linac Commissioning & QA</div>
+                            <div class="text-xs text-slate-500">Annuals, TG-51 dosimetry, IMRT/VMAT</div>
+                        </a>
+                        <a href="#services" class="block p-3 rounded-xl hover:bg-slate-50 transition">
+                            <div class="font-bold text-slate-900 text-sm">Diagnostic Physics</div>
+                            <div class="text-xs text-slate-500">CT, MRI, Mammography (MQSA), Nuclear Med</div>
+                        </a>
+                        <a href="#services" class="block p-3 rounded-xl hover:bg-slate-50 transition">
+                            <div class="font-bold text-slate-900 text-sm">Shielding Design</div>
+                            <div class="text-xs text-slate-500">Vault & room design per NCRP 147/151</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Standards Dropdown -->
+                <div class="relative group py-6">
+                    <button class="flex items-center gap-1 hover:text-phyTeal-700 transition py-2">
+                        <span>Protocols & TG</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute left-0 top-full hidden group-hover:block w-72 bg-white rounded-2xl shadow-xl border border-slate-100 p-3 space-y-1 transition-all">
+                        <a href="#standards" class="block p-3 rounded-xl hover:bg-slate-50 transition">
+                            <div class="font-bold text-slate-900 text-sm">Dosimetry Standards</div>
+                            <div class="text-xs text-slate-500">AAPM TG-51, TRS-398 calibrations</div>
+                        </a>
+                        <a href="#standards" class="block p-3 rounded-xl hover:bg-slate-50 transition">
+                            <div class="font-bold text-slate-900 text-sm">Machine QA Guidance</div>
+                            <div class="text-xs text-slate-500">TG-142 machine QA, TG-218 PSQA</div>
+                        </a>
+                        <a href="#standards" class="block p-3 rounded-xl hover:bg-slate-50 transition">
+                            <div class="font-bold text-slate-900 text-sm">Radiation Protection</div>
+                            <div class="text-xs text-slate-500">NCRP 151, NCRP 147 radiation barriers</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tools Nav -->
+                <a href="#tools" class="hover:text-phyTeal-700 transition flex items-center gap-1">
+                    <span>Physics Calculators</span>
+                    <span class="px-1.5 py-0.5 text-[10px] bg-emerald-100 text-emerald-800 rounded font-bold">Tools</span>
+                </a>
+
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition shadow-sm hover:shadow">
+                    Consultation Request
+                </a>
             </nav>
 
-            <!-- Mobile menu button -->
-            <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900">
+            <!-- Mobile menu trigger -->
+            <button id="menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#services" class="block py-2 text-slate-600 hover:text-medical-700 font-medium">Clinical Services</a>
-            <a href="#tools" class="block py-2 text-slate-600 hover:text-medical-700 font-medium">Physics Calculators</a>
-            <a href="#about" class="block py-2 text-slate-600 hover:text-medical-700 font-medium">Expertise & Standards</a>
-            <a href="#contact" class="block text-center w-full py-2.5 rounded-lg bg-slate-900 text-white font-medium">Request Consultation</a>
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4">
+            <a href="#services" class="block font-semibold text-slate-800 hover:text-phyTeal-700">Clinical Services</a>
+            <a href="#standards" class="block font-semibold text-slate-800 hover:text-phyTeal-700">Standards & TG Guidelines</a>
+            <a href="#tools" class="block font-semibold text-slate-800 hover:text-phyTeal-700">Physics Tools & Calculators</a>
+            <a href="#contact" class="block text-center w-full py-3 rounded-xl bg-slate-900 text-white font-semibold shadow">
+                Consultation Request
+            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative py-20 lg:py-32 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#16a34a_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-medical-800 text-medical-100 mb-6 uppercase tracking-wider">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> AAPM & ACR Compliant Standards
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                Precision Physics for Advanced Patient Care
+    <section id="hero" class="relative py-20 lg:py-28 bg-gradient-to-b from-phyNavy-900 via-phyNavy-800 to-slate-900 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-phyTeal-950/80 border border-phyTeal-500/30 text-phyTeal-200 mb-8">
+                <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-400"></i> Quality Assurance · Regulatory Safety · Advanced Dosimetry
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
+                Global Clinical Medical Physics Consulting
             </h1>
-            <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed">
-                Independent clinical medical physics consulting supporting radiation oncology, diagnostic imaging, shielding design, and regulatory compliance worldwide.
+            <p class="text-base sm:text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Empowering healthcare systems, academic centers, and outpatient clinics with independent calibration, radiation shielding design, machine commissioning, and clinical physics oversight.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-medical-600 text-white font-semibold hover:bg-medical-700 transition shadow-lg shadow-medical-900/50">
-                    Schedule Consultation
+                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-2">
+                    <i data-lucide="clipboard-check" class="w-4 h-4"></i> Request Clinical Quote
                 </a>
-                <a href="#services" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 font-semibold hover:bg-slate-700 transition">
-                    Explore Capabilities
+                <a href="#tools" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 text-slate-200 font-semibold transition flex items-center justify-center gap-2">
+                    <i data-lucide="calculator" class="w-4 h-4"></i> Launch Physicist Tools
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Services Section -->
     <section id="services" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-xs font-bold text-medical-700 tracking-widest uppercase mb-3">Core Competencies</h2>
-            <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Comprehensive Clinical Services</h3>
-            <p class="text-slate-600 mt-2">Rigorous quality assurance, acceptance testing, and regulatory documentation adhering to international task groups.</p>
+            <span class="text-xs font-bold text-phyTeal-700 tracking-widest uppercase bg-phyTeal-50 px-3 py-1 rounded-full border border-phyTeal-200">Capabilities</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-4">Core Clinical Services</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">Comprehensive technical services delivered by qualified medical physicists.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Service 1 -->
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition group">
-                <div class="w-12 h-12 rounded-xl bg-medical-50 text-medical-700 flex items-center justify-center mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-phyTeal-600/30 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-6">
                     <i data-lucide="activity" class="w-6 h-6"></i>
                 </div>
-                <h4 class="text-xl font-bold text-slate-900 mb-3">Radiation Therapy Physics</h4>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Radiation Oncology Physics</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                    Linac commissioning, annual calibrations (TG-51 / TRS-398), SRS/SBRT end-to-end testing, VMAT/IMRT QA, and chart audits.
+                    Full lifecycle linear accelerator support: beam data commissioning, annual calibration (TG-51), SRS/SBRT end-to-end audit, and treatment planning verification.
                 </p>
-                <ul class="space-y-2 text-xs font-medium text-slate-500">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-medical-600"></i> TG-51 Absolute Dosimetry</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-medical-600"></i> Stereotactic Radiosurgery QA</li>
-                </ul>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs font-medium text-slate-500">
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Beam Data Commissioning</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> TG-142 Daily, Monthly, Annual QA</div>
+                </div>
             </div>
 
-            <!-- Service 2 -->
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition group">
-                <div class="w-12 h-12 rounded-xl bg-medical-50 text-medical-700 flex items-center justify-center mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-phyTeal-600/30 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-6">
                     <i data-lucide="scan" class="w-6 h-6"></i>
                 </div>
-                <h4 class="text-xl font-bold text-slate-900 mb-3">Diagnostic Imaging QA</h4>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Diagnostic Imaging & MQSA</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                    Comprehensive performance evaluations for CT, MRI, Mammography (MQSA), X-Ray, Fluoroscopy, and Ultrasound systems.
+                    Physics surveys for CT, MRI, Mammography (MQSA certified), Fluoroscopy, General Radiography, and Ultrasound ensuring ACR accreditation.
                 </p>
-                <ul class="space-y-2 text-xs font-medium text-slate-500">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-medical-600"></i> ACR & TJC Compliance</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-medical-600"></i> CTDI & Patient Dose Optimization</li>
-                </ul>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs font-medium text-slate-500">
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> ACR Accreditation Physics Testing</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> CTDI & Dose Protocol Optimization</div>
+                </div>
             </div>
 
-            <!-- Service 3 -->
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition group">
-                <div class="w-12 h-12 rounded-xl bg-medical-50 text-medical-700 flex items-center justify-center mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
-                    <i data-lucide="box" class="w-6 h-6"></i>
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-phyTeal-600/30 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center mb-6">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
                 </div>
-                <h4 class="text-xl font-bold text-slate-900 mb-3">Shielding & Structural Design</h4>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Radiation Shielding Design</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                    Radiation vault shielding calculations and structural design reports following NCRP 147 and NCRP 151 guidelines.
+                    Comprehensive shielding calculations for Linac vaults, HDR suites, CT rooms, and PET/CT facilities based on NCRP 147 and 151 protocols.
                 </p>
-                <ul class="space-y-2 text-xs font-medium text-slate-500">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-medical-600"></i> NCRP 151 / 147 Reports</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-medical-600"></i> Radiation Safety Surveys</li>
-                </ul>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs font-medium text-slate-500">
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-600"></i> Primary & Secondary Barrier Calculation</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-600"></i> Post-Installation Radiation Survey</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Clinical Tools / Calculator Section -->
-    <section id="tools" class="py-24 bg-slate-100 border-y border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-xs font-bold text-medical-700 tracking-widest uppercase mb-3">Quick Reference Tool</h2>
-                <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Inverse Square Law & Dose Calculator</h3>
-                <p class="text-slate-600 mt-2">Instant preliminary point-source calculation tool for clinical physics estimates.</p>
+    <!-- Standards & Protocols Matrix -->
+    <section id="standards" class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold text-slate-500 tracking-widest uppercase">Framework</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-2">Clinical Standards Reference Matrix</h2>
+                <p class="text-slate-600 text-sm mt-2">Our clinical practice strictly complies with current international task group standards.</p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 sm:p-10">
-                <div class="grid sm:grid-cols-2 gap-6 mb-8">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Initial Dose Rate ($I_1$)</label>
-                        <input type="number" id="i1" value="100" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-600">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Dosimetry</span>
+                    <h4 class="font-bold text-slate-900 mt-3 text-lg">AAPM TG-51 / TRS-398</h4>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Reference protocol for clinical reference dosimetry of high-energy photon and electron beams.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">Quality Control</span>
+                    <h4 class="font-bold text-slate-900 mt-3 text-lg">AAPM TG-142 & TG-198</h4>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Comprehensive quality assurance and tolerances for medical linear accelerators and IGRT systems.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded">Safety & Shielding</span>
+                    <h4 class="font-bold text-slate-900 mt-3 text-lg">NCRP 147 & 151</h4>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Structural shielding design and evaluation for medical X-ray and megavoltage radiotherapy facilities.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">Patient QA</span>
+                    <h4 class="font-bold text-slate-900 mt-3 text-lg">AAPM TG-218 & TG-100</h4>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Standardized tolerance limits and gamma evaluation metrics for IMRT/VMAT patient-specific QA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Clinical Tools Section (Inspired by Zhusu Tools) -->
+    <section id="tools" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-bold text-emerald-700 tracking-widest uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Physicist Toolbox</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-4">Interactive Clinical Calculators</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">Real-time point calculators for routine clinical medical physics estimations.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Tool 1: Inverse Square Law -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                            $1/r^2$
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg">Inverse Square Law Dose Rate</h3>
+                            <p class="text-xs text-slate-500">Calculate point source dose variations with distance</p>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Initial Distance ($d_1$ in cm)</label>
-                        <input type="number" id="d1" value="100" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-600">
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">New Distance ($d_2$ in cm)</label>
-                        <input type="number" id="d2" value="200" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-600">
+
+                    <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Initial Dose Rate ($I_1$)</label>
+                            <input type="number" id="i1" value="100" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Initial Distance ($d_1$ cm)</label>
+                            <input type="number" id="d1" value="100" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Target Distance ($d_2$ cm)</label>
+                            <input type="number" id="d2" value="200" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                        </div>
                     </div>
                 </div>
 
-                <div class="p-6 rounded-xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="bg-slate-900 text-white rounded-xl p-5 flex items-center justify-between">
                     <div>
-                        <span class="text-xs uppercase tracking-wider text-slate-400 block font-medium">Calculated New Dose Rate ($I_2$)</span>
-                        <span id="result" class="text-3xl font-extrabold text-medical-400">25.00</span> <span class="text-slate-400 text-sm">units/min</span>
+                        <div class="text-[11px] text-slate-400 uppercase font-semibold">Resulting Dose Rate ($I_2$)</div>
+                        <div class="text-2xl font-black text-emerald-400 mt-1"><span id="res-inv">25.00</span> <span class="text-xs text-slate-400 font-normal">units/hr</span></div>
                     </div>
-                    <button onclick="calculateInverseSquare()" class="px-6 py-3 rounded-lg bg-medical-600 hover:bg-medical-700 text-white font-semibold transition text-sm shadow-md">
-                        Calculate Dose
+                    <button onclick="calcInverse()" class="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-wider uppercase transition">
+                        Calculate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool 2: Radioactive Decay Calculator -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
+                            $\lambda$
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg">Radionuclide Decay Calculator</h3>
+                            <p class="text-xs text-slate-500">Calculate remaining activity using $A(t) = A_0 e^{-\lambda t}$</p>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Select Isotope</label>
+                            <select id="isotope" onchange="setHalfLife()" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="73.83">Ir-192 (73.83 days)</option>
+                                <option value="1925.28">Co-60 (5.27 years)</option>
+                                <option value="8.02">I-131 (8.02 days)</option>
+                                <option value="0.25">Tc-99m (6 hours)</option>
+                                <option value="59.4">I-125 (59.4 days)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Initial Activity ($A_0$ mCi/GBq)</label>
+                            <input type="number" id="a0" value="10" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Elapsed Time (Days)</label>
+                            <input type="number" id="elapsed" value="30" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white rounded-xl p-5 flex items-center justify-between">
+                    <div>
+                        <div class="text-[11px] text-slate-400 uppercase font-semibold">Remaining Activity ($A$)</div>
+                        <div class="text-2xl font-black text-blue-400 mt-1"><span id="res-decay">7.55</span> <span class="text-xs text-slate-400 font-normal">units</span></div>
+                    </div>
+                    <button onclick="calcDecay()" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs tracking-wider uppercase transition">
+                        Calculate
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-24 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-xs font-bold text-medical-700 tracking-widest uppercase mb-3">Get in Touch</h2>
-            <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Request a Clinical Consultation</h3>
-            <p class="text-slate-600 mt-2">Connect with our team for contract physics support, commissioning, or shielding evaluations.</p>
-        </div>
+    <!-- Consultation Request Form -->
+    <section id="contact" class="py-24 bg-slate-900 text-white relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-emerald-400 tracking-widest uppercase">Contact</span>
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2">Initiate a Clinical Consultation</h2>
+                <p class="text-slate-400 text-sm mt-2">Inquiries are reviewed by a board-certified clinical physicist within 24 hours.</p>
+            </div>
 
-        <form id="consultation-form" onsubmit="handleSubmit(event)" class="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-6">
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Institution / Facility</label>
-                    <input type="text" required placeholder="Hospital or Clinic Name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-600">
+            <!-- Form: Direct email forwarding via Web3Forms or Formspree -->
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="bg-slate-800/80 p-8 sm:p-10 rounded-2xl border border-slate-700 space-y-6 shadow-2xl backdrop-blur">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Hospital / Clinic</label>
+                        <input type="text" id="facility" required placeholder="Cancer Center or Clinic" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Your Name & Title</label>
+                        <input type="text" id="name" required placeholder="Dr. Jane Doe, DABR" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Contact Name</label>
-                    <input type="text" required placeholder="Dr. / Name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-600">
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Official Email</label>
+                        <input type="email" id="email" required placeholder="name@hospital.org" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Service Required</label>
+                        <select id="service" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                            <option>Linac Commissioning / Beam Data</option>
+                            <option>Annual Quality Assurance (TG-51 / TG-142)</option>
+                            <option>Diagnostic Survey (CT, MRI, Mammography)</option>
+                            <option>Radiation Shielding Design (NCRP 147/151)</option>
+                            <option>Remote Treatment Planning & Chart Review</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Professional Email</label>
-                <input type="email" required placeholder="name@hospital.org" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-600">
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Service Required</label>
-                <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-medical-600">
-                    <option>Radiation Therapy / Linac Commissioning</option>
-                    <option>Diagnostic Imaging QA (CT, MRI, X-Ray)</option>
-                    <option>Shielding Design & Radiation Safety Survey</option>
-                    <option>General Clinical Consulting</option>
-                </select>
-            </div>
-            <button type="submit" class="w-full py-4 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition shadow-md">
-                Submit Request
-            </button>
-        </form>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Project Details & Scope</label>
+                    <textarea id="details" rows="4" placeholder="Briefly describe your equipment models, target dates, or survey requirements..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition shadow-lg text-sm tracking-wide uppercase">
+                    Submit Request
+                </button>
+            </form>
+        </div>
     </section>
 
-    <!-- Success Modal -->
-    <div id="success-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <!-- Confirmation Modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-2xl">
-            <div class="w-16 h-16 bg-medical-50 text-medical-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="check-circle" class="w-8 h-8"></i>
+            <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check" class="w-8 h-8"></i>
             </div>
-            <h4 class="text-2xl font-bold text-slate-900 mb-2">Request Received</h4>
-            <p class="text-slate-600 text-sm mb-6">Thank you for reaching out. A certified medical physicist from our team will contact you shortly.</p>
-            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
+            <h4 class="text-2xl font-bold text-slate-900 mb-2">Consultation Sent</h4>
+            <p class="text-slate-600 text-sm mb-6">Thank you for contacting Global Medical Physics LLC. We will review your clinical requirements and reply shortly.</p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition">
                 Close
             </button>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer class="bg-phyNavy-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-medical-600 text-white flex items-center justify-center font-bold">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
                     Ω
                 </div>
-                <span class="text-white font-bold tracking-tight">Global Medical Physics LLC</span>
+                <div>
+                    <span class="text-white font-bold tracking-tight block">Global Medical Physics LLC</span>
+                    <span class="text-xs text-slate-500">Board Certified Clinical Physics Consulting</span>
+                </div>
             </div>
-            <p class="text-xs text-slate-500">© 2026 Global Medical Physics LLC. All rights reserved.</p>
+            <p class="text-xs text-slate-500 text-center md:text-right">
+                &copy; 2026 Global Medical Physics LLC. All rights reserved.<br>
+                Compliance: AAPM · ACR · NCRP · IAEA Standards
+            </p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-        // Initialize Lucide Icons
+        // Init Lucide Icons
         lucide.createIcons();
 
-        // Mobile Menu Toggle
+        // Mobile drawer toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Inverse Square Law Calculation
-        function calculateInverseSquare() {
+        // Inverse Square Calculator
+        function calcInverse() {
             const I1 = parseFloat(document.getElementById('i1').value);
             const d1 = parseFloat(document.getElementById('d1').value);
             const d2 = parseFloat(document.getElementById('d2').value);
 
             if (d2 > 0 && !isNaN(I1) && !isNaN(d1) && !isNaN(d2)) {
                 const I2 = I1 * Math.pow(d1 / d2, 2);
-                document.getElementById('result').innerText = I2.toFixed(2);
-            } else {
-                document.getElementById('result').innerText = "Invalid";
+                document.getElementById('res-inv').innerText = I2.toFixed(2);
             }
         }
 
-        // Form Submit Modal Handler
-        function handleSubmit(e) {
+        // Radionuclide Decay Calculator
+        let halfLife = 73.83; // default Ir-192 in days
+        function setHalfLife() {
+            halfLife = parseFloat(document.getElementById('isotope').value);
+        }
+
+        function calcDecay() {
+            const a0 = parseFloat(document.getElementById('a0').value);
+            const t = parseFloat(document.getElementById('elapsed').value);
+
+            if (!isNaN(a0) && !isNaN(t) && halfLife > 0) {
+                const lambda = Math.LN2 / halfLife;
+                const a = a0 * Math.exp(-lambda * t);
+                document.getElementById('res-decay').innerText = a.toFixed(3);
+            }
+        }
+
+        // Form Submit
+        function handleFormSubmit(e) {
             e.preventDefault();
-            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('modal').classList.remove('hidden');
         }
 
         function closeModal() {
-            document.getElementById('success-modal').classList.add('hidden');
-            document.getElementById('consultation-form').reset();
+            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('contact-form').reset();
         }
     </script>
 </body>
