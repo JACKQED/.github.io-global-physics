@@ -1,11 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#07172b">
-<title>Global Medical Physics LLC | Clinical Physics Consulting</title>
-<meta name="description" content="Independent therapeutic medical physics consulting, linac QA, SRS/SBRT, reference dosimetry and clinical physics resources.">
+<title>Global Medical Physics LLC | Radiation Oncology Physics Consulting</title>
+<meta name="description" content="Global Medical Physics LLC provides independent therapeutic medical physics consulting for hospitals and cancer centers: linac QA, TG-51 dosimetry, SRS/SBRT, treatment planning and remote chart review.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://jackqed.github.io/.github.io-global-physics/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Global Medical Physics LLC">
+<meta property="og:title" content="Global Medical Physics LLC | Radiation Oncology Physics Consulting">
+<meta property="og:description" content="Independent clinical medical physics support for hospitals, cancer centers and radiation oncology departments. Linac QA, TG-51, SRS/SBRT and treatment planning.">
+<meta property="og:url" content="https://jackqed.github.io/.github.io-global-physics/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Global Medical Physics LLC | Clinical Physics Consulting">
+<meta name="twitter:description" content="Therapeutic medical physics consulting, linac QA, SRS/SBRT and TG-51 reference dosimetry.">
+<meta name="color-scheme" content="light">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "@id":"https://jackqed.github.io/.github.io-global-physics/#organization",
+  "name":"Global Medical Physics LLC",
+  "url":"https://jackqed.github.io/.github.io-global-physics/",
+  "description":"Independent therapeutic medical physics consulting for radiation oncology facilities, hospitals and cancer centers.",
+  "email":"gmedphys@gmail.com",
+  "serviceType":["Therapeutic Medical Physics Consulting","Linear Accelerator Quality Assurance","SRS and SBRT Physics","TG-51 Reference Dosimetry","Treatment Planning Review","Radiation Safety Consulting"],
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Medical Physics Consulting Services","itemListElement":[
+    {"@type":"OfferCatalog","name":"Linac Quality Assurance"},
+    {"@type":"OfferCatalog","name":"SRS / SBRT Physics"},
+    {"@type":"OfferCatalog","name":"Remote Chart Review"},
+    {"@type":"OfferCatalog","name":"Treatment Planning and Commissioning"}
+  ]}
+}
+</script>
 <style>
 :root{
   --navy:#07172b;
@@ -15,11 +45,22 @@
   --muted:#64748b;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:86px}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
 body{margin:0;color:#0f172a;font:15px Arial,Helvetica,sans-serif}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 a{text-decoration:none;color:inherit}
+:focus-visible{outline:3px solid #0d9488;outline-offset:3px}
+.skip-link{position:absolute;top:-60px;left:12px;background:#fff;color:#07172b;padding:12px 16px;z-index:100;border:2px solid #0d9488;border-radius:8px}
+.skip-link:focus{top:12px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cta-strip{background:#e8f7f5;border-top:1px solid #c6eee9;border-bottom:1px solid #c6eee9;padding:22px 0}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cta-inner p{margin:5px 0;color:#475569}
+.faq-item{padding:22px 0;border-bottom:1px solid var(--line)}
+.faq-item h3{margin:0 0 8px;font-size:19px}
+.faq-item p{margin:0;color:#475569;line-height:1.7}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .container{max-width:1250px;margin:auto;padding:0 24px}
 .section{padding:72px 0}
 .alt{background:#f1f5f9}
@@ -124,6 +165,7 @@ header{
 .hero h1{
   font-size:clamp(38px,5vw,62px);line-height:1.08;margin:23px 0
 }
+
 .hero p{color:#cbd5e1;line-height:1.8;font-size:17px}
 .hero-panel{
   background:#202c40;border:1px solid #334155;
@@ -209,6 +251,12 @@ footer{background:var(--navy);color:#cbd5e1;padding:35px 0}
   .container{padding:0 17px}
   .card,.dark{padding:20px}
   .brand strong{font-size:15px}
+  .hero h1{font-size:clamp(34px,9vw,48px);overflow-wrap:break-word}
+  .hero-panel{padding:20px}
+  .stats{gap:16px}
+  .btn,.outline{min-height:44px}
+  .nav{min-height:68px}
+  .section{padding:42px 0}
 }
 @media print{
   body.printing-report>*:not(#reportPrint){display:none!important}
@@ -232,6 +280,7 @@ footer{background:var(--navy);color:#cbd5e1;padding:35px 0}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
 
 <header>
 <div class="container nav">
@@ -254,7 +303,7 @@ footer{background:var(--navy);color:#cbd5e1;padding:35px 0}
   <a href="#credentials">Credentials</a>
   <a href="#contact" class="btn">Contact</a>
 </nav>
-<button id="menuButton" type="button" aria-label="Toggle menu">☰</button>
+<button id="menuButton" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
 </div>
 <nav id="mobileMenu" class="mobile">
   <a href="#home">Home</a>
@@ -270,6 +319,7 @@ footer{background:var(--navy);color:#cbd5e1;padding:35px 0}
 </nav>
 </header>
 
+<main id="mainContent">
 <section id="home" class="hero">
 <div class="container">
 <div class="grid2" style="align-items:center">
@@ -599,6 +649,7 @@ biological clearance, administered activity or release eligibility.
 <h2 class="title">Clinical QA Checklists</h2>
 <p class="sub">Interactive planning checklists for stereotactic
 radiotherapy and linear accelerator QA.</p>
+
 </div>
 <div class="grid2" style="margin-top:35px">
 <div class="card">
@@ -638,7 +689,7 @@ testing protocols or auditable clinical QA records.
 <section id="tg51" class="section">
 <div class="container">
 <div class="center">
-<span class="tag">Phase 7.1 · Professional Report</span>
+<span class="tag">Reference Dosimetry · Professional Report</span>
 <h2 class="title">TG-51 Reference Dosimetry Calculator</h2>
 <p class="sub">
 Corrected chamber reading, absorbed dose to water,
@@ -715,7 +766,7 @@ Dw,Q = M × ND,w × kQ</p>
 </div>
 
 <div class="center" style="margin:55px 0 30px">
-<span class="tag">Phase 6 · Integrated</span>
+<span class="tag">Integrated Correction Calculators</span>
 <h2 class="title" style="font-size:30px">
 Ion Recombination & Polarity Corrections
 </h2>
@@ -812,7 +863,7 @@ Verify measurement conditions, polarity conventions and leakage.
 </div>
 
 <div class="center" style="margin:55px 0 30px">
-<span class="tag">Phase 7.1 · One-Page Report</span>
+<span class="tag">Professional Calculation Worksheet</span>
 <h2 class="title" style="font-size:30px">TG-51 Calculation Report</h2>
 <p class="sub">
 Complete the report fields and print a compact Letter-size worksheet.
@@ -890,7 +941,6 @@ placeholder="TG-51 / applicable addendum">
 <label class="label">Notes / Independent Checks</label>
 <textarea id="repNotes" class="field" rows="3" maxlength="1200"
 placeholder="Reference conditions, beam quality, checks and limitations"></textarea>
-
 <button class="btn" style="width:100%;margin-top:18px"
 onclick="printTG51Report()">
 Generate / Print TG-51 Report
@@ -932,6 +982,69 @@ Do not enter patient-identifying information.
 </div>
 </section>
 
+<section class="cta-strip" aria-label="Consultation call to action">
+<div class="container cta-inner">
+<div>
+<strong style="font-size:20px">
+Need experienced radiation oncology physics support?
+</strong>
+<p>Discuss your linac QA, SRS/SBRT, TG-51 or remote chart review needs.</p>
+</div>
+<a class="btn" href="#contact">Request a Consultation</a>
+</div>
+</section>
+
+<section id="faq" class="section alt">
+<div class="container" style="max-width:950px">
+<div class="center">
+<span class="tag">Frequently Asked Questions</span>
+<h2 class="title">Medical Physics Consulting FAQs</h2>
+<p class="sub">
+A quick overview for radiation oncology departments and cancer centers.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>What medical physics services are available?</h3>
+<p>
+Services include linear accelerator QA, reference dosimetry,
+SRS/SBRT physics, treatment planning review, commissioning
+assistance, radiation safety and clinical workflow consultation.
+Scope and availability are confirmed for each project.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Can a cancer center request remote medical physics support?</h3>
+<p>
+Remote chart review and consultation may be available when
+appropriate access, privacy safeguards and institution-approved
+workflows are in place. Some measurements and regulatory
+responsibilities require on-site coverage.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Does this website provide clinically validated TG-51 calculations?</h3>
+<p>
+No. The TG-51 and related calculators are educational worksheets
+only. Clinical reference dosimetry requires validated methods,
+appropriate correction factors, protocol compliance and
+independent review.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>How can our department request a proposal?</h3>
+<p>
+Use the consultation form below or email gmedphys@gmail.com
+with your facility, equipment, project scope and timeline.
+Do not include patient-identifying information.
+</p>
+</div>
+</div>
+</section>
+
 <section id="credentials" class="section"
 style="background:#07172b;color:white">
 <div class="container">
@@ -940,6 +1053,7 @@ style="background:#07172b;color:white">
 <h2 class="title">Credentials & Technical Expertise</h2>
 </div>
 <div class="grid3" style="margin-top:35px">
+
 <div class="dark" style="background:#202c40">
 <h3>Qualifications</h3>
 <p>ABR Therapeutic Medical Physics</p>
@@ -947,6 +1061,7 @@ style="background:#07172b;color:white">
 <p>Radiation Safety Officer Experience</p>
 <p>Clinical Quality Assurance</p>
 </div>
+
 <div class="dark" style="background:#202c40">
 <h3>Clinical Systems</h3>
 <p>Varian TrueBeam</p>
@@ -955,6 +1070,7 @@ style="background:#07172b;color:white">
 <p>VMAT / SRS / SBRT</p>
 <p>HDR / LDR Brachytherapy Experience</p>
 </div>
+
 <div class="dark" style="background:#202c40">
 <h3>Physics QA Tools</h3>
 <p>Ionization Chambers & Electrometers</p>
@@ -980,30 +1096,37 @@ Email:
 style="color:#0d9488;font-weight:bold">gmedphys@gmail.com</a>
 </p>
 </div>
+
 <form id="contactForm"
 action="https://formsubmit.co/ajax/gmedphys@gmail.com"
 method="POST" class="card"
 style="background:#f8fafc;margin-top:30px">
+
 <input type="hidden" name="_subject"
 value="New Medical Physics Consultation Request">
 <input type="hidden" name="_template" value="table">
+
 <div style="position:absolute;left:-9999px" aria-hidden="true">
 <input name="_honey" tabindex="-1" autocomplete="off">
 </div>
+
 <div class="inputs">
 <div>
 <label class="label" for="facility">Facility / Organization</label>
 <input id="facility" name="facility" class="field" required maxlength="150">
 </div>
+
 <div>
 <label class="label" for="contactName">Your Name</label>
 <input id="contactName" name="name" class="field" required maxlength="100">
 </div>
+
 <div>
 <label class="label" for="contactEmail">Email</label>
 <input id="contactEmail" name="email" type="email"
 class="field" required maxlength="200">
 </div>
+
 <div>
 <label class="label" for="contactService">Service Needed</label>
 <select id="contactService" name="service" class="field">
@@ -1018,14 +1141,17 @@ class="field" required maxlength="200">
 </select>
 </div>
 </div>
+
 <label class="label" for="contactDetails">Project Details</label>
 <textarea id="contactDetails" name="message" class="field"
 rows="5" required maxlength="5000"
 placeholder="Describe the project. Do not include patient information."></textarea>
+
 <button id="contactSubmitButton" type="submit"
 class="btn" style="width:100%;margin-top:20px">
 Send Consultation Request
 </button>
+
 <p id="formStatus" role="status" aria-live="polite" class="status"></p>
 <p class="small">
 This form uses a third-party submission service.
@@ -1034,6 +1160,8 @@ Do not submit patient-identifying information or PHI.
 </form>
 </div>
 </section>
+
+</main>
 
 <footer>
 <div class="container"
@@ -1050,90 +1178,130 @@ style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
 
 <script>
 "use strict";
+
 const $=id=>document.getElementById(id);
 
 function num(id){
   const s=$(id).value.trim();
   return s===""?NaN:Number(s);
 }
+
 function positive(...a){
   return a.every(x=>Number.isFinite(x)&&x>0);
 }
+
 function fmt(x,d=8){
-  return Number.isFinite(x)?Number(x.toPrecision(d)).toString():"Invalid";
+  return Number.isFinite(x)?
+    Number(x.toPrecision(d)).toString():"Invalid";
 }
 
 $("menuButton").onclick=()=>{
-  $("mobileMenu").classList.toggle("open");
+  const open=$("mobileMenu").classList.toggle("open");
+  $("menuButton").setAttribute("aria-expanded",String(open));
 };
+
 document.querySelectorAll("#mobileMenu a").forEach(a=>{
-  a.onclick=()=>$("mobileMenu").classList.remove("open");
+  a.onclick=()=>{
+    $("mobileMenu").classList.remove("open");
+    $("menuButton").setAttribute("aria-expanded","false");
+  };
 });
 
-// TASK GROUP REFERENCE CARDS
+/* ==========================================
+   TASK GROUP REFERENCE CARDS
+========================================== */
+
 const groups=[
-["AAPM TG-51","therapy","Reference Dosimetry",
-"Reference dosimetry for high-energy photon and electron beams.",
-"https://www.aapm.org/pubs/reports/RPT_51.pdf"],
-["AAPM TG-142","therapy","Linac Quality Assurance",
-"Quality assurance recommendations for medical linear accelerators.",
-"https://www.aapm.org/pubs/reports/RPT_142.pdf"],
-["AAPM TG-218","therapy","IMRT Patient-Specific QA",
-"Measurement-based IMRT QA recommendations.",
-"https://doi.org/10.1002/mp.12810"],
-["AAPM TG-101","therapy","Stereotactic Body Radiation Therapy",
-"Physics practice guidance for SBRT.",
-"https://www.aapm.org/pubs/reports/RPT_101.pdf"],
-["AAPM TG-100","therapy","Risk-Based Quality Management",
-"Risk analysis for radiation therapy quality management.",
-"https://doi.org/10.1118/1.4947547"],
-["AAPM TG-76","therapy","Respiratory Motion Management",
-"Management of respiratory motion in radiation oncology.",
-"https://www.aapm.org/pubs/reports/RPT_76.pdf"],
-["AAPM TG-150","diagnostic","Digital Radiography QC",
-"Quality control guidance for digital radiography.",
-"https://www.aapm.org/pubs/reports/"],
-["NCRP Report 147","safety","Medical X-Ray Shielding",
-"Structural shielding for medical X-ray imaging facilities.",
-"https://ncrponline.org/publications/reports/"],
-["NCRP Report 151","safety","Megavoltage Radiotherapy Shielding",
-"Structural shielding for megavoltage radiotherapy facilities.",
-"https://ncrponline.org/publications/reports/"]
+  ["AAPM TG-51","therapy","Reference Dosimetry",
+  "Reference dosimetry for high-energy photon and electron beams.",
+  "https://www.aapm.org/pubs/reports/RPT_51.pdf"],
+
+  ["AAPM TG-142","therapy","Linac Quality Assurance",
+  "Quality assurance recommendations for medical linear accelerators.",
+  "https://www.aapm.org/pubs/reports/RPT_142.pdf"],
+
+  ["AAPM TG-218","therapy","IMRT Patient-Specific QA",
+  "Measurement-based IMRT QA recommendations.",
+  "https://doi.org/10.1002/mp.12810"],
+
+  ["AAPM TG-101","therapy","Stereotactic Body Radiation Therapy",
+  "Physics practice guidance for SBRT.",
+  "https://www.aapm.org/pubs/reports/RPT_101.pdf"],
+
+  ["AAPM TG-100","therapy","Risk-Based Quality Management",
+  "Risk analysis for radiation therapy quality management.",
+  "https://doi.org/10.1118/1.4947547"],
+
+  ["AAPM TG-76","therapy","Respiratory Motion Management",
+  "Management of respiratory motion in radiation oncology.",
+  "https://www.aapm.org/pubs/reports/RPT_76.pdf"],
+
+  ["AAPM TG-150","diagnostic","Digital Radiography QC",
+  "Quality control guidance for digital radiography.",
+  "https://www.aapm.org/pubs/reports/"],
+
+  ["NCRP Report 147","safety","Medical X-Ray Shielding",
+  "Structural shielding for medical X-ray imaging facilities.",
+  "https://ncrponline.org/publications/reports/"],
+
+  ["NCRP Report 151","safety","Megavoltage Radiotherapy Shielding",
+  "Structural shielding for megavoltage radiotherapy facilities.",
+  "https://ncrponline.org/publications/reports/"]
 ];
 
 function renderGroups(){
   const q=$("tgSearch").value.toLowerCase().trim();
   const cat=$("tgCategory").value;
   const grid=$("tgGrid");
+
   grid.replaceChildren();
-  groups.filter(g=>
+
+  const matches=groups.filter(g=>
     (cat==="all"||g[1]===cat)&&
     g.join(" ").toLowerCase().includes(q)
-  ).forEach(g=>{
+  );
+
+  matches.forEach(g=>{
     const card=document.createElement("div");
     card.className="card";
+
     const tag=document.createElement("span");
     tag.className="tag";
     tag.textContent=g[0];
+
     const h=document.createElement("h3");
     h.style.marginTop="16px";
     h.textContent=g[2];
+
     const p=document.createElement("p");
     p.textContent=g[3];
+
     const a=document.createElement("a");
     a.href=g[4];
     a.target="_blank";
     a.rel="noopener noreferrer";
     a.style.color="#0d9488";
     a.textContent="View Reference →";
+
     card.append(tag,h,p,a);
     grid.append(card);
   });
+
+  if(matches.length===0){
+    const p=document.createElement("p");
+    p.textContent="No matching references found.";
+    grid.append(p);
+  }
 }
+
 $("tgSearch").oninput=renderGroups;
 $("tgCategory").onchange=renderGroups;
 
-// ESTIMATOR
+
+/* ==========================================
+   PROJECT SCOPE ESTIMATOR
+========================================== */
+
 function calculateScope(){
   const data=[
     ["estCommission","Linac commissioning",7],
@@ -1142,182 +1310,335 @@ function calculateScope(){
     ["estCT","CT survey",0.5],
     ["estShield","Shielding design",1.5]
   ];
+
   let total=0;
   const parts=[];
+
   for(const [id,name,days] of data){
     const n=num(id);
+
     if(!Number.isInteger(n)||n<0||n>100){
       $("scopeResult").textContent="Invalid input";
-      $("scopeDetails").textContent="Use nonnegative whole numbers.";
+      $("scopeDetails").textContent=
+        "Use nonnegative whole numbers (0–100).";
       return;
     }
+
     total+=n*days;
-    if(n)parts.push(n+" × "+name);
+
+    if(n){
+      parts.push(n+" × "+name);
+    }
   }
+
   $("scopeResult").textContent=fmt(total);
-  $("scopeDetails").textContent=parts.join(" · ")||"No services selected.";
+  $("scopeDetails").textContent=
+    parts.join(" · ")||"No services selected.";
 }
 
-// PHYSICS TOOLS
+
+/* ==========================================
+   PHYSICS CALCULATORS
+========================================== */
+
 function calculateInverse(){
-  const a=num("invI"),d1=num("invD1"),d2=num("invD2");
+  const a=num("invI");
+  const d1=num("invD1");
+  const d2=num("invD2");
+
   $("inverseResult").textContent=
     Number.isFinite(a)&&a>=0&&positive(d1,d2)?
-    fmt(a*(d1/d2)**2):"Invalid input";
+    fmt(a*(d1/d2)**2):
+    "Invalid input";
 }
+
 function calculateDecay(){
-  const h=num("isotope"),a=num("decayInitial"),t=num("decayDays");
+  const h=num("isotope");
+  const a=num("decayInitial");
+  const t=num("decayDays");
+
   $("decayResult").textContent=
-    positive(h)&&Number.isFinite(a)&&a>=0&&
+    positive(h)&&
+    Number.isFinite(a)&&a>=0&&
     Number.isFinite(t)&&t>=0?
-    fmt(a*2**(-t/h)):"Invalid input";
+    fmt(a*2**(-t/h)):
+    "Invalid input";
 }
+
 function calculateHVL(){
-  const a=num("hvlInitial"),b=num("hvlMeasured"),
-        x=num("hvlThickness");
+  const a=num("hvlInitial");
+  const b=num("hvlMeasured");
+  const x=num("hvlThickness");
+
   $("hvlResult").textContent=
     positive(a,b,x)&&b<a?
-    fmt(Math.log(2)*x/Math.log(a/b)):"Invalid input";
+    fmt(Math.log(2)*x/Math.log(a/b)):
+    "Invalid input";
 }
+
 function calculateConversion(){
   const factors={
     "gy-rad":[100,"rad"],
-    "rad-gy":[.01,"Gy"],
+    "rad-gy":[0.01,"Gy"],
     "sv-rem":[100,"rem"],
-    "rem-sv":[.01,"Sv"],
+    "rem-sv":[0.01,"Sv"],
     "ci-gbq":[37,"GBq"],
     "gbq-ci":[1/37,"Ci"],
     "mci-mbq":[37,"MBq"],
     "mbq-mci":[1/37,"mCi"]
   };
+
   const v=num("conversionInput");
   const [f,u]=factors[$("conversionType").value];
+
   $("conversionResult").textContent=
-    Number.isFinite(v)?fmt(v*f)+" "+u:"Invalid input";
+    Number.isFinite(v)?
+    fmt(v*f)+" "+u:
+    "Invalid input";
 }
 
-// LU-177
+
+/* ==========================================
+   LU-177 PHYSICAL DECAY
+========================================== */
+
 const LU_HALF=6.647;
+
 function calculateLuDecay(){
-  const a=num("luInitial"),h=num("luElapsed");
-  if(!Number.isFinite(a)||a<0||!Number.isFinite(h)||h<0){
+  const a=num("luInitial");
+  const h=num("luElapsed");
+
+  if(
+    !Number.isFinite(a)||a<0||
+    !Number.isFinite(h)||h<0
+  ){
     $("luRemaining").textContent="Invalid input";
     $("luPercent").textContent="";
     return;
   }
+
   const fraction=2**(-h/(24*LU_HALF));
-  $("luRemaining").textContent=fmt(a*fraction)+" GBq";
+
+  $("luRemaining").textContent=
+    fmt(a*fraction)+" GBq";
+
   $("luPercent").textContent=
-    fmt(100*fraction)+"% of initial activity remains";
+    fmt(100*fraction)+
+    "% of initial activity remains";
 }
+
 function calculateLuTime(){
-  const a=num("luStart"),target=num("luTarget");
+  const a=num("luStart");
+  const target=num("luTarget");
+
   if(!positive(a,target)||target>a){
     $("luTimeResult").textContent="Invalid input";
     $("luTimeDays").textContent="";
     return;
   }
+
   const days=LU_HALF*Math.log2(a/target);
-  $("luTimeResult").textContent=fmt(days*24)+" hours";
-  $("luTimeDays").textContent=fmt(days)+" days";
+
+  $("luTimeResult").textContent=
+    fmt(days*24)+" hours";
+
+  $("luTimeDays").textContent=
+    fmt(days)+" days";
 }
 
-// CHECKLISTS
+
+/* ==========================================
+   CLINICAL QA CHECKLIST DATA
+========================================== */
+
 const checklists={
-luChecklist:[
-"Confirm applicable radioactive materials license and authorization.",
-"Verify Authorized User qualifications and responsibilities.",
-"Review Radiation Safety Officer oversight.",
-"Establish handling, contamination control and waste procedures.",
-"Confirm activity measurement instrumentation and QC.",
-"Establish staff training and emergency procedures.",
-"Develop patient release assessment and documentation.",
-"Approve institution-specific therapy workflow and QA."
-],
-srsChecklist:[
-"Review approved SRS/SBRT commissioning and baseline documentation.",
-"Review mechanical isocenter and radiation isocenter verification.",
-"Review Winston-Lutz testing for applicable treatment configurations.",
-"Review image guidance and imaging-to-treatment coordinate agreement.",
-"Review couch positioning and rotational correction QA.",
-"Review small-field dosimetry and beam model validation.",
-"Review MLC positioning and delivery accuracy.",
-"Review end-to-end test coverage for clinical workflows.",
-"Review patient-specific plan QA and independent verification.",
-"Review treatment time-out, documentation and escalation procedures."
-],
-linacChecklist:[
-"Review reference output constancy measurements and trending.",
-"Review photon and electron beam quality and profile constancy.",
-"Review mechanical isocenter, gantry, collimator and couch tests.",
-"Review field size and light/radiation field alignment.",
-"Review laser alignment, ODI and setup accessories.",
-"Review MLC positioning, motion and delivery tests.",
-"Review kV and MV imaging geometry and image quality.",
-"Review CBCT geometry and image quality.",
-"Review treatment and imaging isocenter agreement.",
-"Review safety interlocks, door interlock and audiovisual systems.",
-"Review imaging, motion management and special procedure QA.",
-"Review QA records, trends, corrective actions and sign-off."
-]
+
+  luChecklist:[
+    "Confirm applicable radioactive materials license and authorization.",
+    "Verify Authorized User qualifications and responsibilities.",
+    "Review Radiation Safety Officer oversight.",
+    "Establish handling, contamination control and waste procedures.",
+    "Confirm activity measurement instrumentation and QC.",
+    "Establish staff training and emergency procedures.",
+    "Develop patient release assessment and documentation.",
+    "Approve institution-specific therapy workflow and QA."
+  ],
+
+  srsChecklist:[
+    "Review approved SRS/SBRT commissioning and baseline documentation.",
+    "Review mechanical isocenter and radiation isocenter verification.",
+    "Review Winston-Lutz testing for applicable treatment configurations.",
+    "Review image guidance and imaging-to-treatment coordinate agreement.",
+    "Review couch positioning and rotational correction QA.",
+    "Review small-field dosimetry and beam model validation.",
+    "Review MLC positioning and delivery accuracy.",
+    "Review end-to-end test coverage for clinical workflows.",
+    "Review patient-specific plan QA and independent verification.",
+    "Review treatment time-out, documentation and escalation procedures."
+  ],
+
+  linacChecklist:[
+    "Review reference output constancy measurements and trending.",
+    "Review photon and electron beam quality and profile constancy.",
+    "Review mechanical isocenter, gantry, collimator and couch tests.",
+    "Review field size and light/radiation field alignment.",
+    "Review laser alignment, ODI and setup accessories.",
+    "Review MLC positioning, motion and delivery tests.",
+    "Review kV and MV imaging geometry and image quality.",
+    "Review CBCT geometry and image quality.",
+    "Review treatment and imaging isocenter agreement.",
+    "Review safety interlocks, door interlock and audiovisual systems.",
+    "Review imaging, motion management and special procedure QA.",
+    "Review QA records, trends, corrective actions and sign-off."
+  ]
+
 };
 
+
+/* ==========================================
+   CHECKLIST RENDERING AND PROGRESS
+========================================== */
+
 function updateChecklist(id){
-  const boxes=[...$(id).querySelectorAll("input")];
+  const boxes=[
+    ...$(id).querySelectorAll('input[type="checkbox"]')
+  ];
+
   const n=boxes.filter(x=>x.checked).length;
+
   const progress={
     luChecklist:"luProgress",
     srsChecklist:"srsProgress",
     linacChecklist:"linacProgress"
   }[id];
-  $(progress).textContent=n+" / "+boxes.length+" reviewed";
+
+  $(progress).textContent=
+    n+" / "+boxes.length+" reviewed";
+
   const bar={
     srsChecklist:"srsBar",
     linacChecklist:"linacBar"
   }[id];
-  if(bar)$(bar).style.width=100*n/boxes.length+"%";
+
+  if(bar){
+    $(bar).style.width=
+      (boxes.length?100*n/boxes.length:0)+"%";
+  }
 }
+
 function renderChecklist(id){
   checklists[id].forEach(s=>{
     const label=document.createElement("label");
     label.className="checkrow";
+
     const input=document.createElement("input");
     input.type="checkbox";
     input.onchange=()=>updateChecklist(id);
+
     const span=document.createElement("span");
     span.textContent=s;
+
     label.append(input,span);
     $(id).append(label);
   });
+
   updateChecklist(id);
 }
+
 function resetChecklist(id){
-  $(id).querySelectorAll("input").forEach(x=>x.checked=false);
+  $(id).querySelectorAll('input[type="checkbox"]')
+    .forEach(x=>x.checked=false);
+
   updateChecklist(id);
 }
+
 function printChecklist(id,title){
-  const w=window.open("","_blank","width=850,height=750");
+  const w=window.open(
+    "",
+    "_blank",
+    "width=850,height=750"
+  );
+
   if(!w){
-    alert("Allow pop-ups to print.");
+    alert("Please allow pop-ups to print the checklist.");
     return;
   }
+
   w.document.title=title;
+
+  const style=w.document.createElement("style");
+  style.textContent=`
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      margin:35px;
+      color:#0f172a;
+    }
+    h1{
+      font-size:23px;
+      border-bottom:2px solid #0f172a;
+      padding-bottom:12px;
+    }
+    .item{
+      padding:9px 0;
+      border-bottom:1px solid #ddd;
+      font-size:13px;
+      line-height:1.5;
+    }
+    .note{
+      font-size:11px;
+      margin-top:25px;
+      color:#555;
+    }
+    @media print{
+      body{margin:12px}
+    }
+  `;
+
+  w.document.head.append(style);
+
   const h=w.document.createElement("h1");
   h.textContent=title;
-  const pre=w.document.createElement("pre");
-  pre.style.cssText="font:14px/1.8 Arial;white-space:pre-wrap";
-  const boxes=[...$(id).querySelectorAll("input")];
-  pre.textContent=checklists[id].map((s,i)=>
-    (boxes[i].checked?"[Reviewed] ":"[Not reviewed] ")+s
-  ).join("\n\n")+
-  "\n\nGeneral planning aid only. Not an official QA record.";
-  w.document.body.append(h,pre);
+  w.document.body.append(h);
+
+  const labels=[
+    ...$(id).querySelectorAll(".checkrow")
+  ];
+
+  labels.forEach(label=>{
+    const checked=
+      label.querySelector("input").checked;
+
+    const text=
+      label.querySelector("span").textContent;
+
+    const div=w.document.createElement("div");
+    div.className="item";
+
+    div.textContent=
+      (checked?"☑ ":"☐ ")+text;
+
+    w.document.body.append(div);
+  });
+
+  const note=w.document.createElement("p");
+  note.className="note";
+  note.textContent=
+    "Planning checklist only. Reviewed does not mean passed. "+
+    "Not a complete clinical QA record.";
+
+  w.document.body.append(note);
+
+  w.document.close();
   w.focus();
   w.print();
 }
 
-// TG-51 CALCULATION
+// ==========================================
+// TG-51 REFERENCE DOSIMETRY
+// ==========================================
+
 let tgValues=null;
+
 function calculateTG51(){
   const t=num("tgTemp"),p=num("tgPressure"),
         raw=num("tgMraw"),elec=num("tgPelec"),
@@ -1359,8 +1680,12 @@ function calculateTG51(){
   return true;
 }
 
-// PION
+// ==========================================
+// PION CORRECTION
+// ==========================================
+
 let currentPion=null;
+
 function invalidatePion(){
   currentPion=null;
   $("ionTransfer").disabled=true;
@@ -1368,55 +1693,74 @@ function invalidatePion(){
   $("ionDetails").textContent="";
   $("ionStatus").textContent="";
 }
+
 function calculatePion(){
   invalidatePion();
+
   const vh=num("ionVH"),vl=num("ionVL"),
         mh=num("ionMH"),ml=num("ionML");
+
   function error(message){
     $("ionResult").textContent="Invalid input";
     $("ionDetails").textContent=message;
   }
+
   if(!positive(vh,vl,mh,ml)){
     error("Enter positive voltage magnitudes and readings.");
     return;
   }
+
   const ratio=vh/vl;
+
   if(ratio<2){
     error("Use a high-to-low voltage ratio of at least 2 for this implementation.");
     return;
   }
+
   const readingRatio=mh/ml;
+
   if(readingRatio<=1||readingRatio>=ratio){
     error("MH/ML must be greater than 1 and less than VH/VL.");
     return;
   }
+
   const pion=(1-ratio)/(readingRatio-ratio);
+
   if(!Number.isFinite(pion)||pion<1){
     error("Calculated correction is inconsistent with this model.");
     return;
   }
+
   currentPion=pion;
   $("ionResult").textContent=fmt(pion);
   $("ionDetails").textContent=
     "Voltage ratio: "+fmt(ratio)+
     " | Reading ratio: "+fmt(readingRatio);
+
   $("ionTransfer").disabled=false;
   $("ionStatus").textContent=pion>1.05?
     "Review required: relatively large correction.":
     "Arithmetic completed. Independently verify before clinical use.";
 }
+
 function transferPion(){
   if(currentPion===null)return;
+
   $("tgPion").value=fmt(currentPion,12);
   calculateTG51();
   $("ionStatus").textContent="Pion transferred to TG-51.";
 }
+
 ["ionVH","ionVL","ionMH","ionML"].forEach(id=>{
   $(id).addEventListener("input",invalidatePion);
 });
 
-// PPOL
+// ==========================================
+// PPOL CORRECTION
+// ==========================================
+
 let currentPpol=null;
+
 function invalidatePpol(){
   currentPpol=null;
   $("polTransfer").disabled=true;
@@ -1424,43 +1768,57 @@ function invalidatePpol(){
   $("polDetails").textContent="";
   $("polStatus").textContent="";
 }
+
 function calculatePpol(){
   invalidatePpol();
+
   const plus=num("polPlus"),minus=num("polMinus");
   const ref=$("polReference").value;
+
   if(!Number.isFinite(plus)||!Number.isFinite(minus)||
      plus===0||minus===0){
     $("polResult").textContent="Invalid input";
     $("polDetails").textContent="Enter two nonzero readings.";
     return;
   }
+
   const reference=ref==="plus"?Math.abs(plus):Math.abs(minus);
   const ppol=(Math.abs(plus)+Math.abs(minus))/(2*reference);
+
   if(!positive(ppol)){
     $("polResult").textContent="Invalid input";
     return;
   }
+
   currentPpol=ppol;
   $("polResult").textContent=fmt(ppol);
   $("polDetails").textContent=
     "Reference polarity: "+(ref==="plus"?"positive":"negative")+
     " | Reference reading magnitude: "+fmt(reference)+" nC";
+
   $("polTransfer").disabled=false;
   $("polStatus").textContent=
     "Arithmetic completed. Independently verify before clinical use.";
 }
+
 function transferPpol(){
   if(currentPpol===null)return;
+
   $("tgPpol").value=fmt(currentPpol,12);
   calculateTG51();
   $("polStatus").textContent="Ppol transferred to TG-51.";
 }
+
 ["polPlus","polMinus"].forEach(id=>{
   $(id).addEventListener("input",invalidatePpol);
 });
+
 $("polReference").addEventListener("change",invalidatePpol);
 
-// PHASE 7.1 PRINT REPORT
+// ==========================================
+// TG-51 PRINTABLE REPORT
+// ==========================================
+
 const reportFields=[
   ["Facility / Institution","repFacility"],
   ["Measurement Date","repDate"],
@@ -1481,17 +1839,22 @@ function addReportTable(parent,heading,rows){
   const h=document.createElement("h2");
   h.textContent=heading;
   parent.append(h);
+
   const table=document.createElement("table");
   table.className="report-table";
+
   rows.forEach(([key,value])=>{
     const tr=document.createElement("tr");
     const th=document.createElement("th");
     const td=document.createElement("td");
+
     th.textContent=key;
     td.textContent=String(value);
+
     tr.append(th,td);
     table.append(tr);
   });
+
   parent.append(table);
 }
 
@@ -1512,14 +1875,17 @@ function printTG51Report(){
   const left=document.createElement("div");
   const company=document.createElement("h1");
   company.textContent="Global Medical Physics LLC";
+
   const subtitle=document.createElement("p");
   subtitle.className="report-subtitle";
   subtitle.textContent=
     "TG-51 Reference Dosimetry — Calculation Worksheet";
+
   left.append(company,subtitle);
 
   const right=document.createElement("div");
   right.className="report-id";
+
   const id=$("repID").value.trim()||"Not assigned";
   right.textContent="Report ID: "+id;
 
@@ -1530,6 +1896,7 @@ function printTG51Report(){
   warning.className="report-warning";
   warning.textContent=
     "UNVALIDATED CALCULATION WORKSHEET — NOT A CLINICAL CALIBRATION RECORD";
+
   root.append(warning);
 
   const info=document.createElement("div");
@@ -1543,10 +1910,20 @@ function printTG51Report(){
   const metadata=reportFields.map(([label,id])=>[
     label,$(id).value.trim()||"Not provided"
   ]);
+
   const midpoint=Math.ceil(metadata.length/2);
 
-  addReportTable(leftInfo,"Facility & Beam",metadata.slice(0,midpoint));
-  addReportTable(rightInfo,"Instrumentation & Setup",metadata.slice(midpoint));
+  addReportTable(
+    leftInfo,
+    "Facility & Beam",
+    metadata.slice(0,midpoint)
+  );
+
+  addReportTable(
+    rightInfo,
+    "Instrumentation & Setup",
+    metadata.slice(midpoint)
+  );
 
   const calculations=document.createElement("div");
   calculations.className="report-two";
@@ -1580,23 +1957,28 @@ function printTG51Report(){
 
   const formulaHeading=document.createElement("h2");
   formulaHeading.textContent="Calculation Formulas";
+
   const formula=document.createElement("p");
   formula.className="report-formula";
   formula.textContent=
     "PTP = [(273.15 + T)/295.15] × [101.33/P]; "+
     "M = Mraw × PTP × Pelec × Ppol × Pion; "+
     "Dw,Q = M × ND,w × kQ.";
+
   bottom.append(formulaHeading,formula);
 
   const notesHeading=document.createElement("h2");
   notesHeading.textContent="Notes / Independent Checks";
+
   const notes=document.createElement("p");
   notes.className="report-notes";
   notes.textContent=$("repNotes").value.trim()||"Not provided";
+
   bottom.append(notesHeading,notes);
 
   const signatures=document.createElement("div");
   signatures.className="report-signatures";
+
   for(const label of [
     "Physicist Review / Date",
     "Independent Verification / Date"
@@ -1606,6 +1988,7 @@ function printTG51Report(){
     line.textContent=label;
     signatures.append(line);
   }
+
   bottom.append(signatures);
 
   const disclaimer=document.createElement("p");
@@ -1616,6 +1999,7 @@ function printTG51Report(){
     "All correction factors, reference conditions, chamber calibration, "+
     "beam quality and dose normalization require independent verification. "+
     "No patient information should be entered.";
+
   bottom.append(disclaimer);
 
   $("reportStatus").textContent=
@@ -1629,13 +2013,17 @@ window.addEventListener("afterprint",()=>{
   document.body.classList.remove("printing-report");
 });
 
-// CONTACT FORM
+// ==========================================
+// CONTACT FORM — FORMSUBMIT
+// ==========================================
+
 const form=$("contactForm");
 const send=$("contactSubmitButton");
 const status=$("formStatus");
 
 form.addEventListener("submit",async e=>{
   e.preventDefault();
+
   if(!form.reportValidity())return;
 
   send.disabled=true;
@@ -1656,19 +2044,28 @@ form.addEventListener("submit",async e=>{
         signal:controller.signal
       }
     );
-    if(!response.ok)throw Error("HTTP "+response.status);
+
+    if(!response.ok){
+      throw Error("HTTP "+response.status);
+    }
+
     const data=await response.json();
+
     if(data.success===false||data.success==="false"){
       throw Error("Submission rejected");
     }
+
     status.style.color="#047857";
     status.textContent=
       "Your consultation request was accepted by the form service. Thank you!";
+
     form.reset();
+
   }catch(err){
     status.style.color="#b91c1c";
     status.textContent=
       "Unable to confirm submission. Please email gmedphys@gmail.com directly. Check before resending.";
+
   }finally{
     clearTimeout(timeout);
     send.disabled=false;
@@ -1676,7 +2073,10 @@ form.addEventListener("submit",async e=>{
   }
 });
 
-// INITIALIZE
+// ==========================================
+// INITIALIZE WEBSITE
+// ==========================================
+
 renderGroups();
 calculateScope();
 calculateInverse();
@@ -1685,10 +2085,13 @@ calculateHVL();
 calculateConversion();
 calculateLuDecay();
 calculateLuTime();
+
 Object.keys(checklists).forEach(renderChecklist);
+
 calculateTG51();
 calculatePion();
 calculatePpol();
+
 </script>
 </body>
 </html>
