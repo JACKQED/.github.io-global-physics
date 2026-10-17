@@ -2,869 +2,642 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Independent ABR-certified therapeutic medical physics consulting, linac QA, SRS/SBRT, treatment planning, radiation safety and clinical physics support.">
-<title>Global Medical Physics LLC | Clinical Physics Consulting</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Global Medical Physics LLC provides ABR-certified therapeutic medical physics consulting, linac QA, SRS/SBRT, treatment planning, commissioning and radiation safety support.">
+<meta name="theme-color" content="#07172b">
+<title>Global Medical Physics LLC | Radiation Oncology Physics Consulting</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        navy: "#07172b",
-        teal: "#0d9488"
-      }
-    }
-  }
-};
+tailwind.config={theme:{extend:{colors:{navy:"#07172b",teal:"#0d9488"}}}};
 </script>
 <style>
-html { scroll-behavior:smooth; scroll-padding-top:85px; }
-body { font-family:Arial,Helvetica,sans-serif; }
-.card { background:white; border:1px solid #e2e8f0; border-radius:18px; padding:24px; }
-.field { width:100%; padding:11px 12px; border:1px solid #cbd5e1; border-radius:9px; background:white; color:#0f172a; }
-.field:focus { outline:2px solid #0d9488; outline-offset:1px; }
-.btn { display:inline-block; padding:13px 22px; background:#0d9488; color:white; border-radius:10px; font-weight:bold; text-align:center; }
-.btn:hover { background:#0f766e; }
-.section-title { font-size:clamp(26px,4vw,38px); font-weight:800; color:#0f172a; }
-.small-label { display:block; font-size:12px; font-weight:bold; color:#475569; margin-bottom:6px; }
-.result { background:#07172b; color:white; padding:16px; border-radius:12px; margin-top:16px; }
-.tag { display:inline-block; background:#ccfbf1; color:#115e59; font-size:12px; font-weight:bold; padding:5px 10px; border-radius:20px; }
-.calc-card label { display:block; font-size:12px; font-weight:bold; color:#475569; margin:12px 0 5px; }
-.calc-card input,.calc-card select { width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:8px; }
-.calc-card button { margin-top:15px; padding:10px 18px; background:#0d9488; color:white; border-radius:8px; font-weight:bold; }
-.calc-card button:hover { background:#0f766e; }
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Arial,Helvetica,sans-serif}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px}
+.field{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;background:white;color:#0f172a}
+.field:focus{outline:2px solid #0d9488;outline-offset:1px}
+.btn{display:inline-block;padding:13px 22px;background:#0d9488;color:white;border-radius:10px;font-weight:700;text-align:center;cursor:pointer}
+.btn:hover{background:#0f766e}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.section-title{font-size:clamp(26px,4vw,38px);font-weight:800;color:#0f172a}
+.small-label{display:block;font-size:12px;font-weight:bold;color:#475569;margin-bottom:6px}
+.result{background:#07172b;color:white;padding:16px;border-radius:12px;margin-top:16px}
+.tag{display:inline-block;background:#ccfbf1;color:#115e59;font-size:12px;font-weight:bold;padding:5px 10px;border-radius:20px}
+.calc-card label{display:block;font-size:12px;font-weight:bold;color:#475569;margin:12px 0 5px}
+.calc-card input,.calc-card select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px}
+.calc-card button{margin-top:15px;padding:10px 18px;background:#0d9488;color:white;border-radius:8px;font-weight:bold}
+.calc-card button:hover{background:#0f766e}
 </style>
 </head>
-
 <body class="bg-slate-50 text-slate-800">
 
-<!-- HEADER -->
 <div class="bg-navy text-slate-300 text-xs px-5 py-3 text-center">
-  ABR-Certified Therapeutic Medical Physics |
-  Clinical Quality Assurance |
-  Radiation Safety
+ABR-Certified Therapeutic Medical Physics | Clinical Quality Assurance | Radiation Safety
 </div>
 
-<header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-  <div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
-    <a href="#home" class="flex items-center gap-3">
-      <div class="bg-navy text-teal-400 w-11 h-11 rounded-xl flex items-center justify-center text-2xl font-bold">Ω</div>
-      <div>
-        <div class="font-extrabold text-slate-900 text-lg leading-tight">Global Medical Physics</div>
-        <div class="text-xs text-teal font-bold">LLC · Clinical Consulting</div>
-      </div>
-    </a>
-
-    <nav class="hidden lg:flex gap-5 items-center text-sm font-semibold">
-      <a href="#home" class="hover:text-teal">Home</a>
-      <a href="#services" class="hover:text-teal">Services</a>
-      <a href="#references" class="hover:text-teal">Task Groups</a>
-      <a href="#estimator" class="hover:text-teal">Scope Estimator</a>
-      <a href="#tools" class="hover:text-teal">Physics Tools</a>
-      <a href="#credentials" class="hover:text-teal">Credentials</a>
-      <a href="#contact" class="btn">Contact</a>
-    </nav>
-
-    <button id="menuButton" aria-label="Toggle navigation" aria-expanded="false"
-      class="lg:hidden text-2xl px-3 py-2 border rounded-lg">☰</button>
-  </div>
-
-  <nav id="mobileMenu" class="hidden lg:hidden border-t bg-white px-6 py-4 space-y-4 font-semibold">
-    <a class="block" href="#home">Home</a>
-    <a class="block" href="#services">Services</a>
-    <a class="block" href="#references">Task Groups</a>
-    <a class="block" href="#estimator">Scope Estimator</a>
-    <a class="block" href="#tools">Physics Tools</a>
-    <a class="block" href="#credentials">Credentials</a>
-    <a class="block" href="#contact">Contact</a>
-  </nav>
+<header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+<div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+<a href="#home" class="flex items-center gap-3">
+<div class="bg-navy text-teal-400 w-11 h-11 rounded-xl flex items-center justify-center text-2xl font-bold">Ω</div>
+<div>
+<div class="font-extrabold text-slate-900 text-lg leading-tight">Global Medical Physics</div>
+<div class="text-xs text-teal font-bold">LLC · Clinical Consulting</div>
+</div>
+</a>
+<nav class="hidden lg:flex gap-5 items-center text-sm font-semibold">
+<a href="#home" class="hover:text-teal">Home</a>
+<a href="#services" class="hover:text-teal">Services</a>
+<a href="#references" class="hover:text-teal">Task Groups</a>
+<a href="#estimator" class="hover:text-teal">Scope Estimator</a>
+<a href="#tools" class="hover:text-teal">Physics Tools</a>
+<a href="#credentials" class="hover:text-teal">Credentials</a>
+<a href="#contact" class="btn">Contact</a>
+</nav>
+<button id="menuButton" type="button" aria-label="Toggle navigation" aria-expanded="false" class="lg:hidden text-2xl px-3 py-2 border rounded-lg">☰</button>
+</div>
+<nav id="mobileMenu" class="hidden lg:hidden border-t bg-white px-6 py-4 space-y-4 font-semibold">
+<a class="block" href="#home">Home</a>
+<a class="block" href="#services">Services</a>
+<a class="block" href="#references">Task Groups</a>
+<a class="block" href="#estimator">Scope Estimator</a>
+<a class="block" href="#tools">Physics Tools</a>
+<a class="block" href="#credentials">Credentials</a>
+<a class="block" href="#contact">Contact</a>
+</nav>
 </header>
 
-<!-- HERO -->
 <section id="home" class="bg-gradient-to-br from-navy via-slate-900 to-slate-800 text-white">
-  <div class="max-w-7xl mx-auto px-5 py-20 lg:py-28">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="inline-block border border-teal-500 text-teal-300 rounded-full px-4 py-2 text-xs font-bold mb-6">
-          Board-Certified Clinical Medical Physics
-        </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-          Precision Physics.<br>
-          <span class="text-teal-400">Safer Treatments.</span><br>
-          Better Clinical Support.
-        </h1>
-        <p class="text-slate-300 text-lg leading-relaxed mb-8">
-          Independent medical physics consulting for radiation oncology
-          facilities, hospitals, and cancer centers.
-          Specialized support for linear accelerator quality assurance,
-          SRS/SBRT, treatment planning, reference dosimetry,
-          and radiation safety.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="btn">Request Consultation</a>
-          <a href="#services" class="border border-slate-500 rounded-lg px-6 py-3 font-bold hover:bg-slate-700">
-            Explore Services
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 shadow-2xl">
-        <div class="text-teal-400 text-sm font-bold uppercase tracking-widest mb-5">
-          Clinical Expertise
-        </div>
-        <div class="space-y-5">
-          <div class="border-b border-slate-700 pb-4">
-            <h3 class="text-xl font-bold">Radiation Oncology Physics</h3>
-            <p class="text-slate-400 text-sm mt-1">Linac QA, TG-51, TG-142, commissioning support</p>
-          </div>
-          <div class="border-b border-slate-700 pb-4">
-            <h3 class="text-xl font-bold">SRS / SBRT</h3>
-            <p class="text-slate-400 text-sm mt-1">End-to-end QA, Winston-Lutz, patient-specific verification</p>
-          </div>
-          <div class="border-b border-slate-700 pb-4">
-            <h3 class="text-xl font-bold">Treatment Planning</h3>
-            <p class="text-slate-400 text-sm mt-1">VMAT, 3D conformal therapy, independent chart review</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold">Radiation Safety</h3>
-            <p class="text-slate-400 text-sm mt-1">Radiation protection, program review, regulatory support</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid sm:grid-cols-3 gap-5 mt-16 pt-9 border-t border-slate-700 text-center">
-      <div><div class="text-2xl font-extrabold">ABR</div><div class="text-slate-400 text-sm">Board Certification</div></div>
-      <div><div class="text-2xl font-extrabold">20+ Years</div><div class="text-slate-400 text-sm">Clinical Physics Experience</div></div>
-      <div><div class="text-2xl font-extrabold">On-Site & Remote</div><div class="text-slate-400 text-sm">Consulting Options</div></div>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-5 py-20 lg:py-28">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<span class="inline-block border border-teal-500 text-teal-300 rounded-full px-4 py-2 text-xs font-bold mb-6">Board-Certified Clinical Medical Physics</span>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+Precision Physics.<br>
+<span class="text-teal-400">Safer Treatments.</span><br>
+Better Clinical Support.
+</h1>
+<p class="text-slate-300 text-lg leading-relaxed mb-8">
+Independent medical physics consulting for radiation oncology facilities, hospitals and cancer centers. Specialized support for linear accelerator quality assurance, SRS/SBRT, treatment planning, reference dosimetry and radiation safety.
+</p>
+<div class="flex flex-wrap gap-4">
+<a href="#contact" class="btn">Request Consultation</a>
+<a href="#services" class="border border-slate-500 rounded-lg px-6 py-3 font-bold hover:bg-slate-700">Explore Services</a>
+</div>
+</div>
+<div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 shadow-2xl">
+<div class="text-teal-400 text-sm font-bold uppercase tracking-widest mb-5">Clinical Expertise</div>
+<div class="space-y-5">
+<div class="border-b border-slate-700 pb-4">
+<h3 class="text-xl font-bold">Radiation Oncology Physics</h3>
+<p class="text-slate-400 text-sm mt-1">Linac QA, TG-51, TG-142, commissioning support</p>
+</div>
+<div class="border-b border-slate-700 pb-4">
+<h3 class="text-xl font-bold">SRS / SBRT</h3>
+<p class="text-slate-400 text-sm mt-1">End-to-end QA, Winston-Lutz, patient-specific verification</p>
+</div>
+<div class="border-b border-slate-700 pb-4">
+<h3 class="text-xl font-bold">Treatment Planning</h3>
+<p class="text-slate-400 text-sm mt-1">VMAT, 3D conformal therapy, independent chart review</p>
+</div>
+<div>
+<h3 class="text-xl font-bold">Radiation Safety</h3>
+<p class="text-slate-400 text-sm mt-1">Radiation protection, program review and regulatory support</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid sm:grid-cols-3 gap-5 mt-16 pt-9 border-t border-slate-700 text-center">
+<div><div class="text-2xl font-extrabold">ABR</div><div class="text-slate-400 text-sm">Board Certification</div></div>
+<div><div class="text-2xl font-extrabold">20+ Years</div><div class="text-slate-400 text-sm">Clinical Physics Experience</div></div>
+<div><div class="text-2xl font-extrabold">On-Site & Remote</div><div class="text-slate-400 text-sm">Consulting Options</div></div>
+</div>
+</div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="max-w-7xl mx-auto px-5 py-20">
-  <div class="text-center mb-12">
-    <span class="tag">Clinical Services</span>
-    <h2 class="section-title mt-4">Medical Physics Consulting</h2>
-    <p class="text-slate-600 mt-3">Practical clinical support tailored to facility needs.</p>
-  </div>
-
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="card">
-      <div class="text-3xl mb-4">⚛️</div>
-      <h3 class="text-xl font-bold mb-3">Linac Quality Assurance</h3>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Monthly and annual linear accelerator QA, TG-51 output calibration,
-        TG-142 testing, mechanical and imaging QA, and documentation review.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="text-3xl mb-4">🎯</div>
-      <h3 class="text-xl font-bold mb-3">SRS / SBRT Physics</h3>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Stereotactic treatment support, Winston-Lutz testing,
-        end-to-end validation, small-field considerations,
-        and patient-specific QA.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="text-3xl mb-4">📋</div>
-      <h3 class="text-xl font-bold mb-3">Remote Chart Review</h3>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Independent treatment plan review, chart checks,
-        documentation assessment, and clinical physics support
-        through approved facility workflows.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="text-3xl mb-4">🖥️</div>
-      <h3 class="text-xl font-bold mb-3">Treatment Planning</h3>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Eclipse and ARIA workflow experience, VMAT,
-        3D conformal radiotherapy, plan quality review,
-        and treatment planning consultation.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="text-3xl mb-4">🛡️</div>
-      <h3 class="text-xl font-bold mb-3">Radiation Safety</h3>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Radiation protection program consultation,
-        regulatory readiness, quality management,
-        and radiation safety oversight support.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="text-3xl mb-4">🏥</div>
-      <h3 class="text-xl font-bold mb-3">Commissioning & Special Projects</h3>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Equipment acceptance and commissioning assistance,
-        treatment workflow validation, clinical implementation,
-        and independent physics assessments.
-      </p>
-    </div>
-  </div>
+<div class="text-center mb-12">
+<span class="tag">Clinical Services</span>
+<h2 class="section-title mt-4">Medical Physics Consulting</h2>
+<p class="text-slate-600 mt-3">Practical clinical support tailored to facility needs.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="card">
+<div class="text-3xl mb-4">⚛️</div>
+<h3 class="text-xl font-bold mb-3">Linac Quality Assurance</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Monthly and annual linear accelerator QA, TG-51 output calibration, TG-142 testing, mechanical and imaging QA, and documentation review.</p>
+</div>
+<div class="card">
+<div class="text-3xl mb-4">🎯</div>
+<h3 class="text-xl font-bold mb-3">SRS / SBRT Physics</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Stereotactic treatment support, Winston-Lutz testing, end-to-end validation, small-field considerations and patient-specific QA.</p>
+</div>
+<div class="card">
+<div class="text-3xl mb-4">📋</div>
+<h3 class="text-xl font-bold mb-3">Remote Chart Review</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Independent treatment plan review, chart checks, documentation assessment and clinical physics support through approved facility workflows.</p>
+</div>
+<div class="card">
+<div class="text-3xl mb-4">🖥️</div>
+<h3 class="text-xl font-bold mb-3">Treatment Planning</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Eclipse and ARIA workflow experience, VMAT, 3D conformal radiotherapy, plan quality review and treatment planning consultation.</p>
+</div>
+<div class="card">
+<div class="text-3xl mb-4">🛡️</div>
+<h3 class="text-xl font-bold mb-3">Radiation Safety</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Radiation protection program consultation, regulatory readiness, quality management and radiation safety oversight support.</p>
+</div>
+<div class="card">
+<div class="text-3xl mb-4">🏥</div>
+<h3 class="text-xl font-bold mb-3">Commissioning & Special Projects</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Equipment acceptance and commissioning assistance, workflow validation, clinical implementation and independent physics assessments.</p>
+</div>
+</div>
 </section>
 
-<!-- TASK GROUP DIRECTORY -->
 <section id="references" class="bg-slate-100 border-y py-20">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="text-center mb-10">
-      <span class="tag">Reference Library</span>
-      <h2 class="section-title mt-4">Medical Physics Task Groups</h2>
-      <p class="text-slate-600 mt-3">Search clinical physics references and open publication pages.</p>
-    </div>
-
-    <div class="grid sm:grid-cols-2 gap-4 mb-8 max-w-3xl mx-auto">
-      <input id="tgSearch" class="field" placeholder="Search TG-51, SRS, QA, shielding...">
-      <select id="tgCategory" class="field">
-        <option value="all">All Categories</option>
-        <option value="therapy">Radiation Therapy</option>
-        <option value="diagnostic">Diagnostic Imaging</option>
-        <option value="safety">Radiation Safety</option>
-      </select>
-    </div>
-
-    <div id="tgGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-    <p class="text-xs text-slate-500 mt-7 text-center">
-      Publication links are provided for reference. Verify the current report,
-      updates, errata, and local regulatory requirements before clinical use.
-    </p>
-  </div>
+<div class="max-w-7xl mx-auto px-5">
+<div class="text-center mb-10">
+<span class="tag">Reference Library</span>
+<h2 class="section-title mt-4">Medical Physics Task Groups</h2>
+<p class="text-slate-600 mt-3">Search clinical physics references and open publication pages.</p>
+</div>
+<div class="grid sm:grid-cols-2 gap-4 mb-8 max-w-3xl mx-auto">
+<input id="tgSearch" class="field" placeholder="Search TG-51, SRS, QA, shielding...">
+<select id="tgCategory" class="field">
+<option value="all">All Categories</option>
+<option value="therapy">Radiation Therapy</option>
+<option value="diagnostic">Diagnostic Imaging</option>
+<option value="safety">Radiation Safety</option>
+</select>
+</div>
+<div id="tgGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+<p class="text-xs text-slate-500 mt-7 text-center">
+Verify current publications, updates, errata and regulatory requirements before clinical use.
+</p>
+</div>
 </section>
 
-<!-- SCOPE ESTIMATOR -->
 <section id="estimator" class="max-w-7xl mx-auto px-5 py-20">
-  <div class="text-center mb-12">
-    <span class="tag">Project Planning</span>
-    <h2 class="section-title mt-4">Clinical Project Scope Estimator</h2>
-    <p class="text-slate-600 mt-3">
-      Generate a preliminary estimate of physicist effort.
-    </p>
-  </div>
-
-  <div class="grid lg:grid-cols-2 rounded-3xl overflow-hidden border bg-white shadow-lg">
-    <div class="p-7 md:p-10 space-y-5">
-      <h3 class="text-xl font-bold mb-5">Facility Equipment & Services</h3>
-
-      <div>
-        <label class="small-label" for="estCommission">Linac Full Commissioning — Units</label>
-        <input id="estCommission" class="field" type="number" min="0" max="20" value="0">
-      </div>
-      <div>
-        <label class="small-label" for="estAnnual">Linac Annual QA — Units</label>
-        <input id="estAnnual" class="field" type="number" min="0" max="30" value="1">
-      </div>
-      <div>
-        <label class="small-label" for="estCarm">C-Arm / Fluoroscopy Surveys — Units</label>
-        <input id="estCarm" class="field" type="number" min="0" max="50" value="0">
-      </div>
-      <div>
-        <label class="small-label" for="estCT">CT Physics Surveys — Units</label>
-        <input id="estCT" class="field" type="number" min="0" max="30" value="0">
-      </div>
-      <div>
-        <label class="small-label" for="estShield">Shielding Design Projects — Rooms</label>
-        <input id="estShield" class="field" type="number" min="0" max="30" value="0">
-      </div>
-
-      <button class="btn w-full" onclick="calculateScope()">Calculate Estimated Scope</button>
-    </div>
-
-    <div class="bg-navy text-white p-7 md:p-10 flex flex-col justify-between">
-      <div>
-        <div class="text-teal-400 text-xs font-bold uppercase tracking-widest mb-5">
-          Preliminary Planning Estimate
-        </div>
-        <div class="text-slate-400 text-sm">Estimated Physicist Effort</div>
-        <div class="text-5xl font-extrabold my-3" id="scopeResult">1.5</div>
-        <div class="text-slate-300 text-sm">Person-days (illustrative)</div>
-
-        <div class="border-t border-slate-700 mt-8 pt-6">
-          <h4 class="font-bold mb-3">Selected Services</h4>
-          <div id="scopeDetails" class="text-sm text-slate-300 leading-relaxed">
-            Linac annual QA
-          </div>
-        </div>
-
-        <p class="text-xs text-slate-400 leading-relaxed mt-8">
-          Estimates use simplified planning assumptions and are not binding
-          quotations. Actual effort depends on equipment, scope, access,
-          measurements, documentation, and clinical requirements.
-          Commissioning may require substantially more time.
-        </p>
-      </div>
-      <a href="#contact" class="btn mt-8">Request a Formal Proposal</a>
-    </div>
-  </div>
+<div class="text-center mb-12">
+<span class="tag">Project Planning</span>
+<h2 class="section-title mt-4">Clinical Project Scope Estimator</h2>
+<p class="text-slate-600 mt-3">Generate a preliminary estimate of physicist effort.</p>
+</div>
+<div class="grid lg:grid-cols-2 rounded-3xl overflow-hidden border bg-white shadow-lg">
+<div class="p-7 md:p-10 space-y-5">
+<h3 class="text-xl font-bold mb-5">Facility Equipment & Services</h3>
+<div><label class="small-label" for="estCommission">Linac Full Commissioning — Units</label><input id="estCommission" class="field" type="number" min="0" max="20" value="0"></div>
+<div><label class="small-label" for="estAnnual">Linac Annual QA — Units</label><input id="estAnnual" class="field" type="number" min="0" max="30" value="1"></div>
+<div><label class="small-label" for="estCarm">C-Arm / Fluoroscopy Surveys — Units</label><input id="estCarm" class="field" type="number" min="0" max="50" value="0"></div>
+<div><label class="small-label" for="estCT">CT Physics Surveys — Units</label><input id="estCT" class="field" type="number" min="0" max="30" value="0"></div>
+<div><label class="small-label" for="estShield">Shielding Design Projects — Rooms</label><input id="estShield" class="field" type="number" min="0" max="30" value="0"></div>
+<button type="button" class="btn w-full" onclick="calculateScope()">Calculate Estimated Scope</button>
+</div>
+<div class="bg-navy text-white p-7 md:p-10 flex flex-col justify-between">
+<div>
+<div class="text-teal-400 text-xs font-bold uppercase tracking-widest mb-5">Preliminary Planning Estimate</div>
+<div class="text-slate-400 text-sm">Estimated Physicist Effort</div>
+<div class="text-5xl font-extrabold my-3" id="scopeResult">1.5</div>
+<div class="text-slate-300 text-sm">Person-days (illustrative)</div>
+<div class="border-t border-slate-700 mt-8 pt-6">
+<h4 class="font-bold mb-3">Selected Services</h4>
+<div id="scopeDetails" class="text-sm text-slate-300 leading-relaxed">Linac annual QA</div>
+</div>
+<p class="text-xs text-slate-400 leading-relaxed mt-8">
+Simplified planning assumptions only, not a binding quotation. Actual effort depends on equipment, access, measurements, documentation and clinical requirements.
+</p>
+</div>
+<a href="#contact" class="btn mt-8">Request a Formal Proposal</a>
+</div>
+</div>
 </section>
 
-<!-- PHYSICS TOOLS -->
 <section id="tools" class="bg-slate-100 border-y py-20">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="text-center mb-12">
-      <span class="tag">Physics Toolbox</span>
-      <h2 class="section-title mt-4">Interactive Physics Calculators</h2>
-      <p class="text-slate-600 mt-3">
-        Educational and preliminary calculation tools for medical physics.
-      </p>
-    </div>
+<div class="max-w-7xl mx-auto px-5">
+<div class="text-center mb-12">
+<span class="tag">Physics Toolbox</span>
+<h2 class="section-title mt-4">Interactive Physics Calculators</h2>
+<p class="text-slate-600 mt-3">Educational and preliminary calculation tools.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="card calc-card">
+<h3 class="font-extrabold text-lg">Inverse Square Law</h3>
+<p class="text-xs text-slate-500 mt-1">I₂ = I₁ × (d₁/d₂)²</p>
+<label for="invI">Initial Dose Rate</label><input id="invI" type="number" value="100" step="any">
+<label for="invD1">Initial Distance (cm)</label><input id="invD1" type="number" value="100" step="any">
+<label for="invD2">New Distance (cm)</label><input id="invD2" type="number" value="200" step="any">
+<button type="button" onclick="calculateInverse()">Calculate</button>
+<div class="result"><div class="text-xs text-slate-400">New Dose Rate</div><div class="text-xl font-bold text-teal-300" id="inverseResult">25</div><div class="text-xs text-slate-400">Same units as input</div></div>
+</div>
 
-      <!-- INVERSE SQUARE -->
-      <div class="card calc-card">
-        <h3 class="font-extrabold text-lg">Inverse Square Law</h3>
-        <p class="text-xs text-slate-500 mt-1">I₂ = I₁ × (d₁/d₂)²</p>
+<div class="card calc-card">
+<h3 class="font-extrabold text-lg">Radioactive Decay</h3>
+<p class="text-xs text-slate-500 mt-1">A = A₀ × 2^(-t/T½)</p>
+<label for="isotope">Isotope</label>
+<select id="isotope">
+<option value="6.647">Lu-177 (6.647 d)</option>
+<option value="73.83">Ir-192 (73.83 d)</option>
+<option value="8.02">I-131 (8.02 d)</option>
+<option value="59.4">I-125 (59.4 d)</option>
+<option value="0.25">Tc-99m (6 h)</option>
+<option value="1925.28">Co-60 (approx. 5.27 y)</option>
+</select>
+<label for="decayInitial">Initial Activity</label><input id="decayInitial" type="number" value="10" step="any">
+<label for="decayDays">Elapsed Time (days)</label><input id="decayDays" type="number" value="7" step="any">
+<button type="button" onclick="calculateDecay()">Calculate</button>
+<div class="result"><div class="text-xs text-slate-400">Remaining Activity</div><div class="text-xl font-bold text-teal-300" id="decayResult">—</div><div class="text-xs text-slate-400">Same units as input</div></div>
+</div>
 
-        <label for="invI">Initial Dose Rate</label>
-        <input id="invI" type="number" value="100" step="any">
+<div class="card calc-card">
+<h3 class="font-extrabold text-lg">HVL Estimator</h3>
+<p class="text-xs text-slate-500 mt-1">Monoexponential approximation</p>
+<label for="hvlInitial">Unattenuated Intensity (I₀)</label><input id="hvlInitial" type="number" value="100" step="any">
+<label for="hvlMeasured">Attenuated Intensity (I)</label><input id="hvlMeasured" type="number" value="62" step="any">
+<label for="hvlThickness">Filter Thickness (mm Al)</label><input id="hvlThickness" type="number" value="2" step="any">
+<button type="button" onclick="calculateHVL()">Calculate</button>
+<div class="result"><div class="text-xs text-slate-400">Estimated HVL</div><div class="text-xl font-bold text-teal-300" id="hvlResult">—</div><div class="text-xs text-slate-400">mm Al</div></div>
+<p class="text-xs text-slate-500 mt-3">Not a substitute for a validated measured HVL protocol.</p>
+</div>
 
-        <label for="invD1">Initial Distance (cm)</label>
-        <input id="invD1" type="number" value="100" step="any">
+<div class="card calc-card">
+<h3 class="font-extrabold text-lg">Unit Converter</h3>
+<p class="text-xs text-slate-500 mt-1">Radiation quantities</p>
+<label for="conversionType">Conversion</label>
+<select id="conversionType">
+<option value="gy-rad">Gy → rad</option>
+<option value="rad-gy">rad → Gy</option>
+<option value="sv-rem">Sv → rem</option>
+<option value="rem-sv">rem → Sv</option>
+<option value="ci-gbq">Ci → GBq</option>
+<option value="gbq-ci">GBq → Ci</option>
+<option value="mci-mbq">mCi → MBq</option>
+<option value="mbq-mci">MBq → mCi</option>
+</select>
+<label for="conversionInput">Input Value</label><input id="conversionInput" type="number" value="2" step="any">
+<button type="button" onclick="calculateConversion()">Convert</button>
+<div class="result"><div class="text-xs text-slate-400">Converted Value</div><div class="text-xl font-bold text-teal-300" id="conversionResult">200 rad</div></div>
+</div>
 
-        <label for="invD2">New Distance (cm)</label>
-        <input id="invD2" type="number" value="200" step="any">
-
-        <button onclick="calculateInverse()">Calculate</button>
-        <div class="result">
-          <div class="text-xs text-slate-400">New Dose Rate</div>
-          <div class="text-xl font-bold text-teal-300" id="inverseResult">25.0000</div>
-          <div class="text-xs text-slate-400">Same units as input</div>
-        </div>
-      </div>
-
-      <!-- DECAY -->
-      <div class="card calc-card">
-        <h3 class="font-extrabold text-lg">Radioactive Decay</h3>
-        <p class="text-xs text-slate-500 mt-1">A = A₀ × 2^(-t/T½)</p>
-
-        <label for="isotope">Isotope</label>
-        <select id="isotope">
-          <option value="6.647">Lu-177 (6.647 d)</option>
-          <option value="73.83">Ir-192 (73.83 d)</option>
-          <option value="8.02">I-131 (8.02 d)</option>
-          <option value="59.4">I-125 (59.4 d)</option>
-          <option value="0.25">Tc-99m (6 h)</option>
-          <option value="1925.28">Co-60 (approx. 5.27 y)</option>
-        </select>
-
-        <label for="decayInitial">Initial Activity</label>
-        <input id="decayInitial" type="number" value="10" step="any">
-
-        <label for="decayDays">Elapsed Time (days)</label>
-        <input id="decayDays" type="number" value="7" step="any">
-
-        <button onclick="calculateDecay()">Calculate</button>
-        <div class="result">
-          <div class="text-xs text-slate-400">Remaining Activity</div>
-          <div class="text-xl font-bold text-teal-300" id="decayResult">—</div>
-          <div class="text-xs text-slate-400">Same units as input</div>
-        </div>
-      </div>
-
-      <!-- HVL -->
-      <div class="card calc-card">
-        <h3 class="font-extrabold text-lg">HVL Estimator</h3>
-        <p class="text-xs text-slate-500 mt-1">Monoexponential approximation</p>
-
-        <label for="hvlInitial">Unattenuated Intensity (I₀)</label>
-        <input id="hvlInitial" type="number" value="100" step="any">
-
-        <label for="hvlMeasured">Attenuated Intensity (I)</label>
-        <input id="hvlMeasured" type="number" value="62" step="any">
-
-        <label for="hvlThickness">Filter Thickness (mm Al)</label>
-        <input id="hvlThickness" type="number" value="2" step="any">
-
-        <button onclick="calculateHVL()">Calculate</button>
-        <div class="result">
-          <div class="text-xs text-slate-400">Estimated HVL</div>
-          <div class="text-xl font-bold text-teal-300" id="hvlResult">—</div>
-          <div class="text-xs text-slate-400">mm Al</div>
-        </div>
-        <p class="text-xs text-slate-500 mt-3">
-          Not a substitute for measured HVL using a validated protocol.
-        </p>
-      </div>
-
-      <!-- UNIT CONVERTER -->
-      <div class="card calc-card">
-        <h3 class="font-extrabold text-lg">Unit Converter</h3>
-        <p class="text-xs text-slate-500 mt-1">Radiation quantities</p>
-
-        <label for="conversionType">Conversion</label>
-        <select id="conversionType">
-          <option value="gy-rad">Gy → rad</option>
-          <option value="rad-gy">rad → Gy</option>
-          <option value="sv-rem">Sv → rem</option>
-          <option value="rem-sv">rem → Sv</option>
-          <option value="ci-gbq">Ci → GBq</option>
-          <option value="gbq-ci">GBq → Ci</option>
-          <option value="mci-mbq">mCi → MBq</option>
-          <option value="mbq-mci">MBq → mCi</option>
-        </select>
-
-        <label for="conversionInput">Input Value</label>
-        <input id="conversionInput" type="number" value="2" step="any">
-
-        <button onclick="calculateConversion()">Convert</button>
-        <div class="result">
-          <div class="text-xs text-slate-400">Converted Value</div>
-          <div class="text-xl font-bold text-teal-300" id="conversionResult">200 rad</div>
-        </div>
-      </div>
-
-    </div>
-
-    <p class="text-xs text-slate-500 text-center mt-8 max-w-3xl mx-auto">
-      Important: These calculators are provided for educational and preliminary
-      reference purposes. They have not been independently validated for
-      clinical decision-making. Verify all calculations using approved
-      clinical procedures, instruments, and independent checks.
-    </p>
-  </div>
+</div>
+<p class="text-xs text-slate-500 text-center mt-8 max-w-3xl mx-auto">
+These calculators are for educational and preliminary reference purposes only. They have not been independently validated for clinical decision-making. Use approved clinical procedures and independent verification.
+</p>
+</div>
 </section>
 
-<!-- CREDENTIALS -->
 <section id="credentials" class="bg-navy text-white py-20">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="text-center mb-12">
-      <span class="text-teal-400 text-xs font-bold uppercase">Professional Experience</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mt-4">
-        Credentials & Technical Expertise
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
-        <h3 class="text-xl font-bold mb-4">Qualifications</h3>
-        <div class="space-y-3 text-sm text-slate-300">
-          <p>✓ American Board of Radiology Certification</p>
-          <p>✓ Therapeutic Medical Physics</p>
-          <p>✓ Chief Physicist Experience</p>
-          <p>✓ Radiation Safety Officer Experience</p>
-          <p>✓ Clinical Quality Assurance</p>
-        </div>
-      </div>
-
-      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
-        <h3 class="text-xl font-bold mb-4">Clinical Systems</h3>
-        <div class="space-y-3 text-sm text-slate-300">
-          <p>✓ Varian TrueBeam</p>
-          <p>✓ Eclipse / ARIA</p>
-          <p>✓ Elekta Unity MR-Linac Experience</p>
-          <p>✓ VMAT / SRS / SBRT</p>
-          <p>✓ HDR / LDR Brachytherapy Experience</p>
-        </div>
-      </div>
-
-      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
-        <h3 class="text-xl font-bold mb-4">Physics QA Tools</h3>
-        <div class="space-y-3 text-sm text-slate-300">
-          <p>✓ Ionization Chambers & Electrometers</p>
-          <p>✓ Sun Nuclear ArcCHECK</p>
-          <p>✓ SRS MapCHECK</p>
-          <p>✓ Delta4</p>
-          <p>✓ Winston-Lutz / MPC / TG-51</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-5">
+<div class="text-center mb-12">
+<span class="text-teal-400 text-xs font-bold uppercase">Professional Experience</span>
+<h2 class="text-3xl md:text-4xl font-extrabold mt-4">Credentials & Technical Expertise</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
+<h3 class="text-xl font-bold mb-4">Qualifications</h3>
+<div class="space-y-3 text-sm text-slate-300">
+<p>✓ American Board of Radiology Certification</p>
+<p>✓ Therapeutic Medical Physics</p>
+<p>✓ Chief Physicist Experience</p>
+<p>✓ Radiation Safety Officer Experience</p>
+<p>✓ Clinical Quality Assurance</p>
+</div>
+</div>
+<div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
+<h3 class="text-xl font-bold mb-4">Clinical Systems</h3>
+<div class="space-y-3 text-sm text-slate-300">
+<p>✓ Varian TrueBeam</p>
+<p>✓ Eclipse / ARIA</p>
+<p>✓ Elekta Unity MR-Linac Experience</p>
+<p>✓ VMAT / SRS / SBRT</p>
+<p>✓ HDR / LDR Brachytherapy Experience</p>
+</div>
+</div>
+<div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
+<h3 class="text-xl font-bold mb-4">Physics QA Tools</h3>
+<div class="space-y-3 text-sm text-slate-300">
+<p>✓ Ionization Chambers & Electrometers</p>
+<p>✓ Sun Nuclear ArcCHECK</p>
+<p>✓ SRS MapCHECK</p>
+<p>✓ Delta4</p>
+<p>✓ Winston-Lutz / MPC / TG-51</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="bg-white py-20">
-  <div class="max-w-3xl mx-auto px-5">
-    <div class="text-center mb-10">
-      <span class="tag">Contact</span>
-      <h2 class="section-title mt-4">Request a Clinical Consultation</h2>
-      <p class="text-slate-600 mt-3">
-        Tell us about your facility and medical physics support needs.
-      </p>
-    </div>
+<div class="max-w-3xl mx-auto px-5">
+<div class="text-center mb-10">
+<span class="tag">Contact</span>
+<h2 class="section-title mt-4">Request a Clinical Consultation</h2>
+<p class="text-slate-600 mt-3">Tell us about your facility and medical physics support needs.</p>
+<p class="mt-3 text-sm">
+Email: <a href="mailto:gmedphys@gmail.com" class="text-teal font-semibold">gmedphys@gmail.com</a>
+</p>
+</div>
 
-    <form id="contactForm" class="bg-slate-50 border rounded-2xl p-6 md:p-9 space-y-5">
-      <div class="grid md:grid-cols-2 gap-5">
-        <div>
-          <label class="small-label" for="facility">Facility / Organization</label>
-          <input id="facility" class="field" required placeholder="Hospital or Cancer Center">
-        </div>
-        <div>
-          <label class="small-label" for="contactName">Your Name</label>
-          <input id="contactName" class="field" required placeholder="Full Name">
-        </div>
-      </div>
+<form id="contactForm"
+action="https://formsubmit.co/ajax/gmedphys@gmail.com"
+method="POST"
+class="bg-slate-50 border rounded-2xl p-6 md:p-9 space-y-5">
 
-      <div class="grid md:grid-cols-2 gap-5">
-        <div>
-          <label class="small-label" for="contactEmail">Email</label>
-          <input id="contactEmail" type="email" class="field" required placeholder="name@hospital.org">
-        </div>
-        <div>
-          <label class="small-label" for="contactService">Service Needed</label>
-          <select id="contactService" class="field">
-            <option>Linac QA / TG-51</option>
-            <option>SRS / SBRT Physics</option>
-            <option>Remote Chart Review</option>
-            <option>Treatment Planning</option>
-            <option>Commissioning Support</option>
-            <option>Radiation Safety</option>
-            <option>Other Consultation</option>
-          </select>
-        </div>
-      </div>
+<input type="hidden" name="_subject" value="New Medical Physics Consultation Request">
+<input type="hidden" name="_template" value="table">
 
-      <div>
-        <label class="small-label" for="contactDetails">Project Details</label>
-        <textarea id="contactDetails" class="field" rows="5"
-          placeholder="Equipment, project scope, facility location, and expected timeline..."></textarea>
-      </div>
+<div style="position:absolute;left:-9999px" aria-hidden="true">
+<label for="companyWebsite">Leave this field blank</label>
+<input id="companyWebsite" type="text" name="_honey" tabindex="-1" autocomplete="off">
+</div>
 
-      <button type="submit" class="btn w-full">Prepare Consultation Email</button>
-      <p id="formStatus" role="status" class="text-sm text-slate-600"></p>
-      <p class="text-xs text-slate-500">
-        This form opens your email application. Please send the prepared email
-        to complete your request. Do not include patient-identifying information.
-      </p>
-    </form>
-  </div>
+<div class="grid md:grid-cols-2 gap-5">
+<div>
+<label class="small-label" for="facility">Facility / Organization</label>
+<input id="facility" name="facility" class="field" required maxlength="150" placeholder="Hospital or Cancer Center">
+</div>
+<div>
+<label class="small-label" for="contactName">Your Name</label>
+<input id="contactName" name="name" class="field" required maxlength="100" placeholder="Full Name">
+</div>
+</div>
+
+<div class="grid md:grid-cols-2 gap-5">
+<div>
+<label class="small-label" for="contactEmail">Email</label>
+<input id="contactEmail" name="email" type="email" class="field" required maxlength="200" placeholder="name@hospital.org">
+</div>
+<div>
+<label class="small-label" for="contactService">Service Needed</label>
+<select id="contactService" name="service" class="field">
+<option>Linac QA / TG-51</option>
+<option>SRS / SBRT Physics</option>
+<option>Remote Chart Review</option>
+<option>Treatment Planning</option>
+<option>Commissioning Support</option>
+<option>Radiation Safety</option>
+<option>Other Consultation</option>
+</select>
+</div>
+</div>
+
+<div>
+<label class="small-label" for="contactDetails">Project Details</label>
+<textarea id="contactDetails" name="message" class="field" rows="5" required maxlength="5000" placeholder="Equipment, project scope, facility location and expected timeline. Do not include patient information."></textarea>
+</div>
+
+<button id="contactSubmitButton" type="submit" class="btn w-full">Send Consultation Request</button>
+<p id="formStatus" role="status" aria-live="polite" class="text-sm text-slate-600"></p>
+<p class="text-xs text-slate-500">
+This form uses a third-party submission service. Do not submit patient-identifying information or protected health information (PHI).
+</p>
+</form>
+</div>
 </section>
 
-<!-- FOOTER -->
 <footer class="bg-navy text-slate-400 border-t border-slate-700 py-10">
-  <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between gap-5">
-    <div>
-      <div class="text-white font-extrabold text-lg">Global Medical Physics LLC</div>
-      <p class="text-sm mt-2">Independent Clinical Medical Physics Consulting</p>
-    </div>
-    <div class="text-sm md:text-right">
-      <p>© 2026 Global Medical Physics LLC</p>
-      <p class="mt-2">Clinical Physics · Quality Assurance · Radiation Safety</p>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between gap-5">
+<div>
+<div class="text-white font-extrabold text-lg">Global Medical Physics LLC</div>
+<p class="text-sm mt-2">Independent Clinical Medical Physics Consulting</p>
+</div>
+<div class="text-sm md:text-right">
+<p>© 2026 Global Medical Physics LLC</p>
+<p class="mt-2">Clinical Physics · Quality Assurance · Radiation Safety</p>
+</div>
+</div>
 </footer>
 
 <script>
 "use strict";
 
-/*
-  IMPORTANT:
-  Replace this placeholder with your actual business email.
-*/
-const BUSINESS_EMAIL = "REPLACE_WITH_YOUR_BUSINESS_EMAIL@example.com";
+const byId=id=>document.getElementById(id);
 
-const byId = id => document.getElementById(id);
-
-function readNumber(id) {
-  const value = byId(id).value.trim();
-  if (value === "") return NaN;
-  return Number(value);
+function readNumber(id){
+const value=byId(id).value.trim();
+return value===""?NaN:Number(value);
 }
 
-function displayNumber(value, digits = 4) {
-  if (!Number.isFinite(value)) return "Invalid input";
-  return Number(value.toPrecision(Math.max(1, digits))).toString();
+function displayNumber(value,digits=5){
+if(!Number.isFinite(value))return "Invalid input";
+return Number(value.toPrecision(digits)).toString();
 }
 
 // MOBILE NAVIGATION
-byId("menuButton").addEventListener("click", () => {
-  const menu = byId("mobileMenu");
-  const hidden = menu.classList.toggle("hidden");
-  byId("menuButton").setAttribute("aria-expanded", String(!hidden));
+byId("menuButton").addEventListener("click",()=>{
+const menu=byId("mobileMenu");
+const hidden=menu.classList.toggle("hidden");
+byId("menuButton").setAttribute("aria-expanded",String(!hidden));
 });
 
-document.querySelectorAll("#mobileMenu a").forEach(link => {
-  link.addEventListener("click", () => {
-    byId("mobileMenu").classList.add("hidden");
-    byId("menuButton").setAttribute("aria-expanded", "false");
-  });
+document.querySelectorAll("#mobileMenu a").forEach(link=>{
+link.addEventListener("click",()=>{
+byId("mobileMenu").classList.add("hidden");
+byId("menuButton").setAttribute("aria-expanded","false");
+});
 });
 
-// TASK GROUP DATA
-const taskGroups = [
-  {
-    code:"AAPM TG-51",
-    category:"therapy",
-    title:"Reference Dosimetry",
-    desc:"Clinical reference dosimetry for high-energy photon and electron beams.",
-    url:"https://www.aapm.org/pubs/reports/RPT_51.pdf"
-  },
-  {
-    code:"AAPM TG-142",
-    category:"therapy",
-    title:"Linac Quality Assurance",
-    desc:"Quality assurance recommendations for medical linear accelerators.",
-    url:"https://www.aapm.org/pubs/reports/RPT_142.pdf"
-  },
-  {
-    code:"AAPM TG-218",
-    category:"therapy",
-    title:"IMRT Patient-Specific QA",
-    desc:"Recommendations for tolerance limits and methodologies in measurement-based IMRT QA.",
-    url:"https://doi.org/10.1002/mp.12810"
-  },
-  {
-    code:"AAPM TG-101",
-    category:"therapy",
-    title:"Stereotactic Body Radiation Therapy",
-    desc:"Physics practice guidance and considerations for SBRT.",
-    url:"https://www.aapm.org/pubs/reports/RPT_101.pdf"
-  },
-  {
-    code:"AAPM TG-100",
-    category:"therapy",
-    title:"Risk-Based Quality Management",
-    desc:"Application of risk analysis methods to radiation therapy quality management.",
-    url:"https://doi.org/10.1118/1.4947547"
-  },
-  {
-    code:"AAPM TG-76",
-    category:"therapy",
-    title:"Respiratory Motion Management",
-    desc:"Management of respiratory motion in radiation oncology.",
-    url:"https://www.aapm.org/pubs/reports/RPT_76.pdf"
-  },
-  {
-    code:"AAPM TG-150",
-    category:"diagnostic",
-    title:"Digital Radiography Quality Control",
-    desc:"Quality control program guidance for digital radiography.",
-    url:"https://www.aapm.org/pubs/reports/"
-  },
-  {
-    code:"NCRP Report 147",
-    category:"safety",
-    title:"Medical X-Ray Shielding",
-    desc:"Structural shielding design for medical X-ray imaging facilities.",
-    url:"https://ncrponline.org/publications/reports/"
-  },
-  {
-    code:"NCRP Report 151",
-    category:"safety",
-    title:"Megavoltage Radiotherapy Shielding",
-    desc:"Structural shielding design for megavoltage radiotherapy facilities.",
-    url:"https://ncrponline.org/publications/reports/"
-  }
+// TASK GROUP REFERENCES
+const taskGroups=[
+{code:"AAPM TG-51",category:"therapy",title:"Reference Dosimetry",desc:"Reference dosimetry for high-energy photon and electron beams.",url:"https://www.aapm.org/pubs/reports/RPT_51.pdf"},
+{code:"AAPM TG-142",category:"therapy",title:"Linac Quality Assurance",desc:"Quality assurance recommendations for medical linear accelerators.",url:"https://www.aapm.org/pubs/reports/RPT_142.pdf"},
+{code:"AAPM TG-218",category:"therapy",title:"IMRT Patient-Specific QA",desc:"Recommendations for measurement-based IMRT quality assurance.",url:"https://doi.org/10.1002/mp.12810"},
+{code:"AAPM TG-101",category:"therapy",title:"Stereotactic Body Radiation Therapy",desc:"Physics practice guidance for SBRT.",url:"https://www.aapm.org/pubs/reports/RPT_101.pdf"},
+{code:"AAPM TG-100",category:"therapy",title:"Risk-Based Quality Management",desc:"Risk analysis for radiation therapy quality management.",url:"https://doi.org/10.1118/1.4947547"},
+{code:"AAPM TG-76",category:"therapy",title:"Respiratory Motion Management",desc:"Management of respiratory motion in radiation oncology.",url:"https://www.aapm.org/pubs/reports/RPT_76.pdf"},
+{code:"AAPM TG-150",category:"diagnostic",title:"Digital Radiography Quality Control",desc:"Quality control guidance for digital radiography.",url:"https://www.aapm.org/pubs/reports/"},
+{code:"NCRP Report 147",category:"safety",title:"Medical X-Ray Shielding",desc:"Structural shielding for medical X-ray imaging facilities.",url:"https://ncrponline.org/publications/reports/"},
+{code:"NCRP Report 151",category:"safety",title:"Megavoltage Radiotherapy Shielding",desc:"Structural shielding for megavoltage radiotherapy facilities.",url:"https://ncrponline.org/publications/reports/"}
 ];
 
-function renderTaskGroups() {
-  const query = byId("tgSearch").value.toLowerCase().trim();
-  const category = byId("tgCategory").value;
-  const grid = byId("tgGrid");
-  grid.replaceChildren();
+function renderTaskGroups(){
+const query=byId("tgSearch").value.toLowerCase().trim();
+const category=byId("tgCategory").value;
+const grid=byId("tgGrid");
+grid.replaceChildren();
 
-  const filtered = taskGroups.filter(item => {
-    const matchesCategory = category === "all" || item.category === category;
-    const text = [item.code,item.title,item.desc].join(" ").toLowerCase();
-    return matchesCategory && text.includes(query);
-  });
+const filtered=taskGroups.filter(item=>
+(category==="all"||item.category===category)&&
+[item.code,item.title,item.desc].join(" ").toLowerCase().includes(query)
+);
 
-  if (!filtered.length) {
-    const message = document.createElement("p");
-    message.className = "text-slate-500 col-span-full text-center py-8";
-    message.textContent = "No matching references found.";
-    grid.appendChild(message);
-    return;
-  }
+if(!filtered.length){
+const p=document.createElement("p");
+p.className="text-slate-500 col-span-full text-center py-8";
+p.textContent="No matching references found.";
+grid.appendChild(p);
+return;
+}
 
-  filtered.forEach(item => {
-    const card = document.createElement("article");
-    card.className = "card flex flex-col justify-between";
-
-    const content = document.createElement("div");
-    const code = document.createElement("span");
-    code.className = "tag";
-    code.textContent = item.code;
-
-    const title = document.createElement("h3");
-    title.className = "font-bold text-lg mt-4 mb-2";
-    title.textContent = item.title;
-
-    const description = document.createElement("p");
-    description.className = "text-sm text-slate-600 leading-relaxed";
-    description.textContent = item.desc;
-
-    content.append(code,title,description);
-
-    const link = document.createElement("a");
-    link.href = item.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.className = "text-teal font-bold text-sm mt-6 inline-block";
-    link.textContent = "View Publication / Reference →";
-
-    card.append(content,link);
-    grid.appendChild(card);
-  });
+filtered.forEach(item=>{
+const card=document.createElement("article");
+card.className="card flex flex-col justify-between";
+const content=document.createElement("div");
+const code=document.createElement("span");
+code.className="tag";
+code.textContent=item.code;
+const title=document.createElement("h3");
+title.className="font-bold text-lg mt-4 mb-2";
+title.textContent=item.title;
+const desc=document.createElement("p");
+desc.className="text-sm text-slate-600 leading-relaxed";
+desc.textContent=item.desc;
+content.append(code,title,desc);
+const link=document.createElement("a");
+link.href=item.url;
+link.target="_blank";
+link.rel="noopener noreferrer";
+link.className="text-teal font-bold text-sm mt-6 inline-block";
+link.textContent="View Publication / Reference →";
+card.append(content,link);
+grid.appendChild(card);
+});
 }
 
 byId("tgSearch").addEventListener("input",renderTaskGroups);
 byId("tgCategory").addEventListener("change",renderTaskGroups);
-renderTaskGroups();
 
-// SCOPE ESTIMATOR
-function calculateScope() {
-  const config = [
-    ["estCommission","Linac commissioning",7],
-    ["estAnnual","Linac annual QA",1.5],
-    ["estCarm","C-Arm / fluoroscopy survey",0.25],
-    ["estCT","CT physics survey",0.5],
-    ["estShield","Shielding design",1.5]
-  ];
+// PROJECT SCOPE
+function calculateScope(){
+const config=[
+["estCommission","Linac commissioning",7],
+["estAnnual","Linac annual QA",1.5],
+["estCarm","C-Arm / fluoroscopy survey",0.25],
+["estCT","CT physics survey",0.5],
+["estShield","Shielding design",1.5]
+];
+let days=0;
+const selected=[];
 
-  let days = 0;
-  const selected = [];
-
-  for (const [id,name,factor] of config) {
-    const quantity = readNumber(id);
-
-    if (!Number.isInteger(quantity) || quantity < 0 || quantity > 100) {
-      byId("scopeResult").textContent = "Invalid";
-      byId("scopeDetails").textContent =
-        "Enter a valid nonnegative whole number for each service.";
-      return;
-    }
-
-    if (quantity > 0) {
-      days += quantity * factor;
-      selected.push(`${quantity} × ${name}`);
-    }
-  }
-
-  byId("scopeResult").textContent = displayNumber(days,5);
-  byId("scopeDetails").textContent =
-    selected.length ? selected.join(" · ") : "No services selected.";
+for(const [id,name,factor] of config){
+const quantity=readNumber(id);
+if(!Number.isInteger(quantity)||quantity<0||quantity>100){
+byId("scopeResult").textContent="Invalid";
+byId("scopeDetails").textContent="Enter a valid nonnegative whole number for each service.";
+return;
+}
+if(quantity>0){
+days+=quantity*factor;
+selected.push(quantity+" × "+name);
+}
+}
+byId("scopeResult").textContent=displayNumber(days);
+byId("scopeDetails").textContent=selected.length?selected.join(" · "):"No services selected.";
 }
 
-["estCommission","estAnnual","estCarm","estCT","estShield"].forEach(id => {
-  byId(id).addEventListener("input",calculateScope);
+["estCommission","estAnnual","estCarm","estCT","estShield"].forEach(id=>{
+byId(id).addEventListener("input",calculateScope);
 });
 
-// INVERSE SQUARE LAW
-function calculateInverse() {
-  const intensity = readNumber("invI");
-  const d1 = readNumber("invD1");
-  const d2 = readNumber("invD2");
-
-  if (![intensity,d1,d2].every(Number.isFinite) ||
-      intensity < 0 || d1 <= 0 || d2 <= 0) {
-    byId("inverseResult").textContent = "Invalid input";
-    return;
-  }
-
-  const result = intensity * Math.pow(d1/d2,2);
-  byId("inverseResult").textContent = displayNumber(result,6);
+// INVERSE SQUARE
+function calculateInverse(){
+const intensity=readNumber("invI");
+const d1=readNumber("invD1");
+const d2=readNumber("invD2");
+if(![intensity,d1,d2].every(Number.isFinite)||intensity<0||d1<=0||d2<=0){
+byId("inverseResult").textContent="Invalid input";
+return;
+}
+byId("inverseResult").textContent=displayNumber(intensity*Math.pow(d1/d2,2),6);
 }
 
 // RADIOACTIVE DECAY
-function calculateDecay() {
-  const halfLife = readNumber("isotope");
-  const initial = readNumber("decayInitial");
-  const elapsed = readNumber("decayDays");
-
-  if (![halfLife,initial,elapsed].every(Number.isFinite) ||
-      halfLife <= 0 || initial < 0 || elapsed < 0) {
-    byId("decayResult").textContent = "Invalid input";
-    return;
-  }
-
-  const remaining = initial * Math.pow(2,-elapsed/halfLife);
-  byId("decayResult").textContent = displayNumber(remaining,7);
+function calculateDecay(){
+const halfLife=readNumber("isotope");
+const initial=readNumber("decayInitial");
+const elapsed=readNumber("decayDays");
+if(![halfLife,initial,elapsed].every(Number.isFinite)||halfLife<=0||initial<0||elapsed<0){
+byId("decayResult").textContent="Invalid input";
+return;
+}
+byId("decayResult").textContent=displayNumber(initial*Math.pow(2,-elapsed/halfLife),7);
 }
 
-// HVL ESTIMATOR
-function calculateHVL() {
-  const i0 = readNumber("hvlInitial");
-  const i = readNumber("hvlMeasured");
-  const thickness = readNumber("hvlThickness");
-
-  if (![i0,i,thickness].every(Number.isFinite) ||
-      i0 <= 0 || i <= 0 || i >= i0 || thickness <= 0) {
-    byId("hvlResult").textContent = "Invalid input";
-    return;
-  }
-
-  const mu = Math.log(i0/i)/thickness;
-  const hvl = Math.log(2)/mu;
-  byId("hvlResult").textContent = displayNumber(hvl,6);
+// HVL
+function calculateHVL(){
+const i0=readNumber("hvlInitial");
+const i=readNumber("hvlMeasured");
+const thickness=readNumber("hvlThickness");
+if(![i0,i,thickness].every(Number.isFinite)||i0<=0||i<=0||i>=i0||thickness<=0){
+byId("hvlResult").textContent="Invalid input";
+return;
+}
+const mu=Math.log(i0/i)/thickness;
+byId("hvlResult").textContent=displayNumber(Math.log(2)/mu,6);
 }
 
-// RADIATION UNIT CONVERTER
-function calculateConversion() {
-  const mode = byId("conversionType").value;
-  const input = readNumber("conversionInput");
-
-  if (!Number.isFinite(input)) {
-    byId("conversionResult").textContent = "Invalid input";
-    return;
-  }
-
-  const conversions = {
-    "gy-rad": [100,"rad"],
-    "rad-gy": [0.01,"Gy"],
-    "sv-rem": [100,"rem"],
-    "rem-sv": [0.01,"Sv"],
-    "ci-gbq": [37,"GBq"],
-    "gbq-ci": [1/37,"Ci"],
-    "mci-mbq": [37,"MBq"],
-    "mbq-mci": [1/37,"mCi"]
-  };
-
-  const [factor,unit] = conversions[mode];
-  const result = input * factor;
-  byId("conversionResult").textContent =
-    displayNumber(result,8) + " " + unit;
+// UNIT CONVERTER
+function calculateConversion(){
+const mode=byId("conversionType").value;
+const input=readNumber("conversionInput");
+if(!Number.isFinite(input)){
+byId("conversionResult").textContent="Invalid input";
+return;
+}
+const conversions={
+"gy-rad":[100,"rad"],
+"rad-gy":[0.01,"Gy"],
+"sv-rem":[100,"rem"],
+"rem-sv":[0.01,"Sv"],
+"ci-gbq":[37,"GBq"],
+"gbq-ci":[1/37,"Ci"],
+"mci-mbq":[37,"MBq"],
+"mbq-mci":[1/37,"mCi"]
+};
+const [factor,unit]=conversions[mode];
+byId("conversionResult").textContent=displayNumber(input*factor,8)+" "+unit;
 }
 
-// CONTACT FORM
-byId("contactForm").addEventListener("submit",event => {
-  event.preventDefault();
+// ONLINE CONTACT FORM
+const contactForm=byId("contactForm");
+const contactButton=byId("contactSubmitButton");
+const contactStatus=byId("formStatus");
 
-  const status = byId("formStatus");
+contactForm.addEventListener("submit",async event=>{
+event.preventDefault();
+if(!contactForm.reportValidity())return;
 
-  if (BUSINESS_EMAIL.includes("REPLACE_WITH_") ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(BUSINESS_EMAIL)) {
-    status.textContent =
-      "Contact form is not configured. The site administrator must set the business email address.";
-    status.className = "text-sm text-red-700 font-semibold";
-    return;
-  }
+contactButton.disabled=true;
+contactButton.textContent="Sending...";
+contactStatus.textContent="Submitting your request...";
+contactStatus.className="text-sm text-slate-600";
 
-  const facility = byId("facility").value.trim();
-  const name = byId("contactName").value.trim();
-  const email = byId("contactEmail").value.trim();
-  const service = byId("contactService").value;
-  const details = byId("contactDetails").value.trim();
+const data=new FormData(contactForm);
 
-  const subject = "Medical Physics Consultation - " + facility;
+try{
+const response=await fetch(
+"https://formsubmit.co/ajax/gmedphys@gmail.com",
+{
+method:"POST",
+headers:{"Accept":"application/json"},
+body:data
+}
+);
 
-  const body =
-    "Facility: " + facility + "\n" +
-    "Contact: " + name + "\n" +
-    "Email: " + email + "\n" +
-    "Service: " + service + "\n\n" +
-    "Project Details:\n" + details;
+const result=await response.json();
 
-  const mailto =
-    "mailto:" + BUSINESS_EMAIL +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
+if(!response.ok||result.success===false||result.success==="false"){
+throw new Error(result.message||"Submission failed");
+}
 
-  status.textContent =
-    "Your email application should open. Please send the prepared message to complete your inquiry.";
-  status.className = "text-sm text-teal-700 font-semibold";
+contactStatus.textContent=
+"Your request has been submitted to the form service. If this is the first submission, email activation may be required before delivery.";
 
-  window.location.href = mailto;
+contactStatus.className="text-sm text-green-700 font-semibold";
+contactForm.reset();
+
+}catch(error){
+contactStatus.textContent=
+"We could not confirm your submission. Please email gmedphys@gmail.com directly.";
+contactStatus.className="text-sm text-red-700 font-semibold";
+}finally{
+contactButton.disabled=false;
+contactButton.textContent="Send Consultation Request";
+}
 });
 
-// INITIAL CALCULATIONS
+// INITIALIZE
+renderTaskGroups();
 calculateScope();
 calculateInverse();
 calculateDecay();
