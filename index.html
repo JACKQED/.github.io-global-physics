@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -200,11 +199,11 @@ footer{background:var(--navy);color:#cbd5e1;padding:35px 0}
 #reportPrint h2{font-size:12px;margin:11px 0 5px}
 #reportPrint .report-table{
   width:100%;border-collapse:collapse;table-layout:fixed;
-  font-size:10px;margin:0 0 7px
+  font-size:11px;margin:0 0 7px
 }
 #reportPrint .report-table th,
 #reportPrint .report-table td{
-  padding:4px 6px;border:1px solid #b9c4d1;
+  padding:5px 6px;border:1px solid #b9c4d1;
   text-align:left;vertical-align:top;overflow-wrap:anywhere
 }
 #reportPrint .report-table th{
@@ -938,6 +937,23 @@ placeholder="TG51-2026-001">
 placeholder="TG-51 / applicable addendum">
 </div>
 </div>
+<h3 style="margin-top:24px">Output Verification — V2</h3>
+<div class="inputs">
+<div><label class="label" for="repModality">Beam Modality</label>
+<select id="repModality" class="field"><option value="Photon">Photon</option><option value="Electron">Electron</option></select></div>
+<div><label class="label" for="repQuality">Beam Quality (%dd(10)x or R50)</label>
+<input id="repQuality" class="field" maxlength="70" placeholder="Specify parameter and value"></div>
+<div><label class="label" for="repMU">Monitor Units Delivered (MU)</label>
+<input id="repMU" class="field" type="number" min="0" step="any" placeholder="e.g. 100"></div>
+<div><label class="label" for="repExpected">Expected Dose at Measurement Point (cGy/MU)</label>
+<input id="repExpected" class="field" type="number" min="0" step="any" placeholder="Same depth and geometry"></div>
+<div><label class="label" for="repOutputBasis">Output Comparison Basis</label>
+<input id="repOutputBasis" class="field" maxlength="160" placeholder="e.g. reference depth, SSD 100 cm"></div>
+<div><label class="label" for="repCalDate">Chamber Calibration Date</label>
+<input id="repCalDate" class="field" type="date"></div>
+</div>
+<p class="small">Calculated cGy/MU applies only to the entered measurement conditions. This tool does not convert reference-depth dose to dmax, nor calculate photon/electron beam-quality factors.</p>
+<div class="result"><small>Measured dose at measurement point</small><strong id="repCgyMu">—</strong><small id="repDifference">Expected-output comparison: —</small></div>
 <label class="label">Notes / Independent Checks</label>
 <textarea id="repNotes" class="field" rows="3" maxlength="1200"
 placeholder="Reference conditions, beam quality, checks and limitations"></textarea>
@@ -955,6 +971,7 @@ Generate / Print TG-51 Report
 <p>✓ Report ID and measurement geometry</p>
 <p>✓ PTP, Pion, Ppol and corrected chamber reading</p>
 <p>✓ Absorbed dose in Gy and cGy</p>
+<p>✓ MU, cGy/MU, expected output and percentage difference</p>
 <p>✓ Formula and notes</p>
 <p>✓ Physicist Review / Date</p>
 <p>✓ Independent Verification / Date</p>
@@ -1647,6 +1664,7 @@ function calculateTG51(){
 
   function error(message){
     tgValues=null;
+    calculateOutputV2();
     $("tgHeadline").textContent="Invalid input";
     ["tgPTP","tgM","tgDose","tgDoseCgy"].forEach(id=>{
       $(id).textContent="—";
@@ -1669,6 +1687,7 @@ function calculateTG51(){
   }
 
   tgValues={t,p,raw,elec,pol,ion,ndw,kq,ptp,m,dose};
+  calculateOutputV2();
 
   $("tgPTP").textContent=fmt(ptp);
   $("tgM").textContent=fmt(m)+" nC";
@@ -1819,6 +1838,38 @@ $("polReference").addEventListener("change",invalidatePpol);
 // TG-51 PRINTABLE REPORT
 // ==========================================
 
+function calculateOutputV2(){
+  const mu=num("repMU");
+  const rawExpected=$("repExpected").value.trim();
+  const expected=rawExpected===""?null:Number(rawExpected);
+  const muValid=Number.isFinite(mu)&&mu>0;
+  const measured=tgValues&&muValid?tgValues.dose*100/mu:null;
+  const measuredValid=measured!==null&&Number.isFinite(measured)&&measured>0;
+  const expectedValid=expected===null||(Number.isFinite(expected)&&expected>0);
+  const diff=measuredValid&&expected!==null&&expectedValid?
+    100*(measured-expected)/expected:null;
+  $("repCgyMu").textContent=measuredValid?fmt(measured,9)+" cGy/MU":"—";
+  $("repDifference").textContent=!expectedValid?
+    "Expected output must be greater than zero.":
+    diff!==null&&Number.isFinite(diff)?
+      "Difference: "+fmt(diff,7)+"% (measured − expected)/expected":
+      "Expected-output comparison: —";
+  return measuredValid&&expectedValid?{mu,measured,expected,diff}:null;
+}
+["repMU","repExpected"].forEach(id=>
+  $(id).addEventListener("input",calculateOutputV2));
+
+// Prevent results calculated with old chamber inputs from being reused.
+["tgTemp","tgPressure","tgMraw","tgPelec","tgPpol","tgPion","tgNDw","tgKq"].forEach(id=>{
+  $(id).addEventListener("input",()=>{
+    tgValues=null;
+    ["tgPTP","tgM","tgDose","tgDoseCgy"].forEach(key=>$(key).textContent="—");
+    $("tgHeadline").textContent="Recalculate";
+    $("tgMessage").textContent="Inputs changed. Recalculate before using results.";
+    calculateOutputV2();
+  });
+});
+
 const reportFields=[
   ["Facility / Institution","repFacility"],
   ["Measurement Date","repDate"],
@@ -1879,7 +1930,7 @@ function printTG51Report(){
   const subtitle=document.createElement("p");
   subtitle.className="report-subtitle";
   subtitle.textContent=
-    "TG-51 Reference Dosimetry — Calculation Worksheet";
+    "TG-51 Reference Dosimetry — Worksheet V2";
 
   left.append(company,subtitle);
 
@@ -1910,6 +1961,13 @@ function printTG51Report(){
   const metadata=reportFields.map(([label,id])=>[
     label,$(id).value.trim()||"Not provided"
   ]);
+
+  metadata.push(
+    ["Beam Modality",$("repModality").value],
+    ["Beam Quality",$("repQuality").value.trim()||"Not provided"],
+    ["Chamber Calibration Date",$("repCalDate").value||"Not provided"],
+    ["Output Comparison Basis",$("repOutputBasis").value.trim()||"Not provided"]
+  );
 
   const midpoint=Math.ceil(metadata.length/2);
 
@@ -1949,6 +2007,18 @@ function printTG51Report(){
     ["Corrected reading M (nC)",fmt(v.m,12)],
     ["Absorbed dose (Gy)",fmt(v.dose,12)],
     ["Absorbed dose (cGy)",fmt(v.dose*100,12)]
+  ]);
+
+  const output=calculateOutputV2();
+  if($("repExpected").value.trim()!=="" && (!Number.isFinite(num("repExpected"))||num("repExpected")<=0)){
+    $("reportStatus").textContent="Expected output must be positive or left blank.";
+    return;
+  }
+  addReportTable(outputs,"Output Verification (V2)",[
+    ["MU Delivered",output?fmt(output.mu,10):"Not provided / invalid"],
+    ["Measured at point (cGy/MU)",output?fmt(output.measured,10):"Not calculated"],
+    ["Expected at same point (cGy/MU)",output&&output.expected!==null?fmt(output.expected,10):"Not provided"],
+    ["Difference (%)",output&&output.diff!==null?fmt(output.diff,8):"Not calculated"]
   ]);
 
   const bottom=document.createElement("div");
@@ -1994,7 +2064,7 @@ function printTG51Report(){
   const disclaimer=document.createElement("p");
   disclaimer.className="report-disclaimer";
   disclaimer.textContent=
-    "Educational arithmetic worksheet only. Not clinically validated; "+
+    "Educational arithmetic worksheet only. Reference-depth cGy/MU is not automatically converted to dmax. Not clinically validated; "+
     "does not demonstrate TG-51 protocol compliance or beam calibration. "+
     "All correction factors, reference conditions, chamber calibration, "+
     "beam quality and dose normalization require independent verification. "+
@@ -2006,7 +2076,10 @@ function printTG51Report(){
     "Report prepared. Select Print or Save as PDF.";
 
   document.body.classList.add("printing-report");
-  window.print();
+  try{window.print();}catch(err){
+    document.body.classList.remove("printing-report");
+    $("reportStatus").textContent="Printing could not start. Please try again.";
+  }
 }
 
 window.addEventListener("afterprint",()=>{
