@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07172b">
-<meta name="description" content="Global Medical Physics LLC: ABR-certified therapeutic medical physics consulting, radiation oncology QA, SRS/SBRT, treatment planning, radiation safety and Lu-177 physics resources.">
-<title>Global Medical Physics LLC | Clinical Medical Physics Consulting</title>
+<meta name="description" content="Global Medical Physics LLC: ABR-certified therapeutic medical physics consulting, linac QA, SRS/SBRT, treatment planning, radiation safety and Lu-177 physics resources.">
+<title>Global Medical Physics LLC | Clinical Physics Consulting</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config={theme:{extend:{colors:{navy:"#07172b",teal:"#0d9488"}}}};
@@ -14,7 +14,7 @@ tailwind.config={theme:{extend:{colors:{navy:"#07172b",teal:"#0d9488"}}}};
 html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{font-family:Arial,Helvetica,sans-serif}
 .card{background:white;border:1px solid #e2e8f0;border-radius:18px;padding:24px}
-.field{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;background:white}
+.field{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;background:white;color:#0f172a}
 .field:focus{outline:2px solid #0d9488;outline-offset:1px}
 .btn{display:inline-block;background:#0d9488;color:white;padding:12px 20px;border-radius:10px;font-weight:700;text-align:center;cursor:pointer}
 .btn:hover{background:#0f766e}
@@ -26,10 +26,17 @@ body{font-family:Arial,Helvetica,sans-serif}
 .tool input,.tool select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px}
 .tool button{background:#0d9488;color:white;border-radius:8px;padding:10px 16px;font-weight:700;margin-top:15px}
 .tool button:hover{background:#0f766e}
-.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px;border-bottom:1px solid #e2e8f0}
-.checkrow input{margin-top:4px;accent-color:#0d9488}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px;border-bottom:1px solid #e2e8f0;cursor:pointer}
+.checkrow input{margin-top:4px;accent-color:#0d9488;flex-shrink:0}
+.checkrow:hover{background:#f8fafc}
+@media print{
+header,footer,.no-print{display:none!important}
+body{background:white!important}
+.card{break-inside:avoid}
+}
 </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800">
 
 <div class="bg-navy text-slate-300 text-xs text-center p-3">
@@ -45,30 +52,36 @@ ABR-Certified Therapeutic Medical Physics | Clinical QA | Radiation Safety
 <div class="text-xs text-teal font-bold">LLC · Clinical Consulting</div>
 </div>
 </a>
-<nav class="hidden xl:flex gap-5 items-center text-sm font-semibold">
+
+<nav class="hidden xl:flex gap-4 items-center text-sm font-semibold">
 <a href="#home">Home</a>
 <a href="#services">Services</a>
 <a href="#references">Task Groups</a>
-<a href="#estimator">Scope Estimator</a>
+<a href="#estimator">Estimator</a>
 <a href="#tools">Physics Tools</a>
-<a href="#lu177" class="text-teal">Lu-177 Physics</a>
+<a href="#lu177">Lu-177</a>
+<a href="#qa">QA Checklists</a>
 <a href="#credentials">Credentials</a>
 <a href="#contact" class="btn">Contact</a>
 </nav>
+
 <button id="menuButton" type="button" aria-label="Toggle menu" aria-expanded="false" class="xl:hidden border rounded-lg px-3 py-2 text-xl">☰</button>
 </div>
+
 <nav id="mobileMenu" class="hidden xl:hidden bg-white border-t px-6 py-5 space-y-4 font-semibold">
 <a class="block" href="#home">Home</a>
 <a class="block" href="#services">Services</a>
 <a class="block" href="#references">Task Groups</a>
-<a class="block" href="#estimator">Scope Estimator</a>
+<a class="block" href="#estimator">Estimator</a>
 <a class="block" href="#tools">Physics Tools</a>
-<a class="block" href="#lu177">Lu-177 Physics</a>
+<a class="block" href="#lu177">Lu-177</a>
+<a class="block" href="#qa">QA Checklists</a>
 <a class="block" href="#credentials">Credentials</a>
 <a class="block" href="#contact">Contact</a>
 </nav>
 </header>
 
+<!-- HOME -->
 <section id="home" class="bg-gradient-to-br from-navy via-slate-900 to-slate-800 text-white">
 <div class="max-w-7xl mx-auto px-5 py-20 lg:py-28">
 <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -80,13 +93,14 @@ Precision Physics.<br>
 Better Clinical Support.
 </h1>
 <p class="text-slate-300 text-lg leading-relaxed mb-8">
-Independent medical physics consulting for radiation oncology facilities, hospitals and cancer centers. Specialized support for linac quality assurance, SRS/SBRT, treatment planning, reference dosimetry and radiation safety.
+Independent medical physics consulting for radiation oncology facilities, hospitals and cancer centers. Specialized support for linear accelerator quality assurance, SRS/SBRT, treatment planning, reference dosimetry and radiation safety.
 </p>
 <div class="flex flex-wrap gap-4">
 <a href="#contact" class="btn">Request Consultation</a>
 <a href="#services" class="border border-slate-500 rounded-lg px-6 py-3 font-bold">Explore Services</a>
 </div>
 </div>
+
 <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 shadow-2xl">
 <div class="text-teal-400 text-sm font-bold uppercase tracking-widest mb-5">Clinical Expertise</div>
 <div class="space-y-5">
@@ -109,6 +123,7 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 </div>
 </div>
 </div>
+
 <div class="grid sm:grid-cols-3 gap-5 mt-16 pt-9 border-t border-slate-700 text-center">
 <div><div class="text-2xl font-extrabold">ABR</div><div class="text-slate-400 text-sm">Board Certification</div></div>
 <div><div class="text-2xl font-extrabold">20+ Years</div><div class="text-slate-400 text-sm">Clinical Physics Experience</div></div>
@@ -117,12 +132,14 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="max-w-7xl mx-auto px-5 py-20">
 <div class="text-center mb-12">
 <span class="tag">Clinical Services</span>
 <h2 class="heading mt-4">Medical Physics Consulting</h2>
 <p class="text-slate-600 mt-3">Practical clinical support tailored to facility needs.</p>
 </div>
+
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 <div class="card">
 <div class="text-3xl mb-4">⚛️</div>
@@ -157,6 +174,7 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 </div>
 </section>
 
+<!-- TASK GROUPS -->
 <section id="references" class="bg-slate-100 border-y py-20">
 <div class="max-w-7xl mx-auto px-5">
 <div class="text-center mb-10">
@@ -164,6 +182,7 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 <h2 class="heading mt-4">Medical Physics Task Groups</h2>
 <p class="text-slate-600 mt-3">Search commonly used clinical physics references.</p>
 </div>
+
 <div class="grid sm:grid-cols-2 gap-4 mb-8 max-w-3xl mx-auto">
 <input id="tgSearch" class="field" placeholder="Search TG-51, SRS, QA, shielding...">
 <select id="tgCategory" class="field">
@@ -173,17 +192,22 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 <option value="safety">Radiation Safety</option>
 </select>
 </div>
+
 <div id="tgGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-<p class="text-xs text-slate-500 mt-7 text-center">Verify current publications, errata and regulatory requirements before clinical use.</p>
+<p class="text-xs text-slate-500 mt-7 text-center">
+Verify current publications, errata and regulatory requirements before clinical use.
+</p>
 </div>
 </section>
 
+<!-- SCOPE ESTIMATOR -->
 <section id="estimator" class="max-w-7xl mx-auto px-5 py-20">
 <div class="text-center mb-12">
 <span class="tag">Project Planning</span>
 <h2 class="heading mt-4">Clinical Project Scope Estimator</h2>
 <p class="text-slate-600 mt-3">Illustrative estimate of physicist effort.</p>
 </div>
+
 <div class="grid lg:grid-cols-2 rounded-3xl overflow-hidden border bg-white shadow-lg">
 <div class="p-7 md:p-10 space-y-5">
 <h3 class="text-xl font-bold">Facility Equipment & Services</h3>
@@ -194,23 +218,25 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 <div><label class="label" for="estShield">Shielding Design Projects — Rooms</label><input id="estShield" class="field" type="number" min="0" max="30" value="0"></div>
 <button type="button" class="btn w-full" onclick="calculateScope()">Calculate Estimated Scope</button>
 </div>
+
 <div class="bg-navy text-white p-7 md:p-10 flex flex-col justify-between">
 <div>
 <div class="text-teal-400 text-xs font-bold uppercase tracking-widest mb-5">Preliminary Planning Estimate</div>
 <div class="text-slate-400 text-sm">Estimated Physicist Effort</div>
-<div class="text-5xl font-extrabold my-3" id="scopeResult">1.5</div>
+<div class="text-5xl font-extrabold my-3" id="scopeResult">—</div>
 <div class="text-slate-300 text-sm">Person-days (illustrative)</div>
 <div class="border-t border-slate-700 mt-8 pt-6">
 <h4 class="font-bold mb-3">Selected Services</h4>
 <div id="scopeDetails" class="text-sm text-slate-300 leading-relaxed"></div>
 </div>
-<p class="text-xs text-slate-400 mt-8 leading-relaxed">Planning assumptions only. Actual effort depends on equipment, scope, access, documentation and clinical requirements. Not a binding quotation.</p>
+<p class="text-xs text-slate-400 mt-8 leading-relaxed">Planning assumptions only. Not a binding quotation.</p>
 </div>
 <a href="#contact" class="btn mt-8">Request a Formal Proposal</a>
 </div>
 </div>
 </section>
 
+<!-- PHYSICS CALCULATORS -->
 <section id="tools" class="bg-slate-100 border-y py-20">
 <div class="max-w-7xl mx-auto px-5">
 <div class="text-center mb-12">
@@ -218,6 +244,7 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 <h2 class="heading mt-4">Interactive Physics Calculators</h2>
 <p class="text-slate-600 mt-3">Educational and preliminary calculation tools.</p>
 </div>
+
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
 <div class="card tool">
@@ -256,7 +283,6 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 <label class="label" for="hvlThickness">Filter Thickness (mm Al)</label><input id="hvlThickness" type="number" value="2" step="any">
 <button type="button" onclick="calculateHVL()">Calculate</button>
 <div class="result"><div class="text-xs text-slate-400">Estimated HVL</div><div class="text-xl font-bold text-teal-300" id="hvlResult">—</div><div class="text-xs text-slate-400">mm Al</div></div>
-<p class="text-xs text-slate-500 mt-3">Not a substitute for validated measurement.</p>
 </div>
 
 <div class="card tool">
@@ -277,21 +303,19 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 <button type="button" onclick="calculateConversion()">Convert</button>
 <div class="result"><div class="text-xs text-slate-400">Converted Value</div><div class="text-xl font-bold text-teal-300" id="conversionResult">—</div></div>
 </div>
-
 </div>
-<p class="text-xs text-slate-500 text-center mt-8">All calculators require independent validation before any clinical application.</p>
+
+<p class="text-xs text-slate-500 text-center mt-8">Calculators require independent validation before any clinical application.</p>
 </div>
 </section>
 
-<!-- PHASE 3: LU-177 PHYSICS -->
+<!-- LU-177 -->
 <section id="lu177" class="py-20 bg-white">
 <div class="max-w-7xl mx-auto px-5">
 <div class="text-center mb-12">
-<span class="tag">New · Phase 3</span>
+<span class="tag">Nuclear Medicine Physics</span>
 <h2 class="heading mt-4">Lu-177 / Pluvicto Physics Resources</h2>
-<p class="text-slate-600 mt-3 max-w-3xl mx-auto">
-Physical decay calculations and preliminary nuclear medicine program planning resources.
-</p>
+<p class="text-slate-600 mt-3">Physical decay calculations and preliminary program planning resources.</p>
 </div>
 
 <div class="grid lg:grid-cols-3 gap-6">
@@ -299,10 +323,8 @@ Physical decay calculations and preliminary nuclear medicine program planning re
 <div class="card tool">
 <h3 class="text-xl font-bold mb-2">Lu-177 Activity Decay</h3>
 <p class="text-sm text-slate-600">Physical half-life: 6.647 days.</p>
-<label class="label" for="luInitial">Initial Activity (GBq)</label>
-<input id="luInitial" type="number" value="7.4" min="0" step="any">
-<label class="label" for="luElapsed">Elapsed Time (hours)</label>
-<input id="luElapsed" type="number" value="24" min="0" step="any">
+<label class="label" for="luInitial">Initial Activity (GBq)</label><input id="luInitial" type="number" value="7.4" min="0" step="any">
+<label class="label" for="luElapsed">Elapsed Time (hours)</label><input id="luElapsed" type="number" value="24" min="0" step="any">
 <button type="button" onclick="calculateLuDecay()">Calculate Activity</button>
 <div class="result">
 <div class="text-xs text-slate-400">Remaining Activity</div>
@@ -313,11 +335,9 @@ Physical decay calculations and preliminary nuclear medicine program planning re
 
 <div class="card tool">
 <h3 class="text-xl font-bold mb-2">Time to Target Activity</h3>
-<p class="text-sm text-slate-600">Estimate the time required for physical decay to a target activity.</p>
-<label class="label" for="luStart">Starting Activity (GBq)</label>
-<input id="luStart" type="number" value="7.4" min="0" step="any">
-<label class="label" for="luTarget">Target Activity (GBq)</label>
-<input id="luTarget" type="number" value="3.7" min="0" step="any">
+<p class="text-sm text-slate-600">Physical decay to a target activity.</p>
+<label class="label" for="luStart">Starting Activity (GBq)</label><input id="luStart" type="number" value="7.4" min="0" step="any">
+<label class="label" for="luTarget">Target Activity (GBq)</label><input id="luTarget" type="number" value="3.7" min="0" step="any">
 <button type="button" onclick="calculateLuTime()">Calculate Time</button>
 <div class="result">
 <div class="text-xs text-slate-400">Elapsed Time</div>
@@ -333,7 +353,7 @@ Physical decay calculations and preliminary nuclear medicine program planning re
 <div class="border-b pb-3"><div class="text-slate-500">Physical Half-Life</div><div class="font-bold">Approximately 6.647 days</div></div>
 <div class="border-b pb-3"><div class="text-slate-500">Decay</div><div class="font-bold">β⁻ emission to stable Hf-177</div></div>
 <div class="border-b pb-3"><div class="text-slate-500">Clinical Context</div><div class="font-bold">Lu-177 radioligand therapy</div></div>
-<div><div class="text-slate-500">Model Limitations</div><div class="font-bold">Physical decay only; no biological clearance or patient dosimetry</div></div>
+<div><div class="text-slate-500">Limitations</div><div class="font-bold">Physical decay only; no biological clearance or patient dosimetry</div></div>
 </div>
 </div>
 </div>
@@ -342,51 +362,99 @@ Physical decay calculations and preliminary nuclear medicine program planning re
 <div class="card">
 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
 <h3 class="text-xl font-bold">Therapy Program Startup Checklist</h3>
-<span id="checkProgress" class="tag">0 / 8 reviewed</span>
+<span id="luProgress" class="tag">0 / 8 reviewed</span>
 </div>
-<div id="luChecklist" class="space-y-1">
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Confirm applicable radioactive materials license and authorization for the intended therapy.</span></label>
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Verify Authorized User qualifications and responsibilities under applicable regulations.</span></label>
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Review Radiation Safety Officer oversight and radiation safety program requirements.</span></label>
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Establish written handling, contamination control and waste management procedures.</span></label>
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Confirm appropriate activity measurement instrumentation, calibration and QC.</span></label>
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Establish staff training, emergency procedures and spill response workflows.</span></label>
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Develop patient instructions, release assessment and documentation procedures.</span></label>
-<label class="checkrow"><input type="checkbox" class="lu-check"><span>Approve institution-specific treatment workflow, verification and quality assurance procedures.</span></label>
-</div>
-<button type="button" class="mt-5 text-teal font-bold text-sm" onclick="resetChecklist()">Reset Checklist</button>
-<p class="text-xs text-slate-500 mt-4">This is a general planning aid, not a regulatory compliance determination or complete clinical checklist.</p>
+<div id="luChecklist"></div>
+<button type="button" class="mt-5 text-teal font-bold text-sm" onclick="resetChecklist('luChecklist')">Reset Checklist</button>
 </div>
 
 <div class="bg-navy text-white rounded-2xl p-8">
 <h3 class="text-2xl font-bold mb-4">Nuclear Medicine Physics Consultation</h3>
 <p class="text-slate-300 leading-relaxed mb-6">
-Global Medical Physics LLC welcomes inquiries regarding radiation safety planning, quality assurance and physics consultation for radiopharmaceutical therapy programs. Project-specific capabilities and availability are assessed individually.
+Inquiries regarding radiation safety planning, quality assurance and physics consultation for radiopharmaceutical therapy programs are welcome. Project-specific capabilities and availability are assessed individually.
 </p>
-<h4 class="font-bold text-teal-300 mb-3">Potential Project Areas</h4>
 <ul class="space-y-3 text-sm text-slate-300 list-disc pl-5 mb-8">
 <li>Radiation safety program planning</li>
 <li>Activity measurement and instrument QA considerations</li>
 <li>Facility workflow and documentation review</li>
-<li>Program implementation planning and physics consultation</li>
+<li>Program implementation planning</li>
 </ul>
 <a href="#contact" class="btn">Discuss Your Project</a>
 </div>
 </div>
+</div>
+</section>
 
-<div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm text-amber-950 leading-relaxed">
-<strong>Clinical and regulatory disclaimer:</strong>
-The Lu-177 tools calculate physical radioactive decay only. They do not calculate patient absorbed dose, radiopharmaceutical biodistribution, biological clearance, release eligibility or prescribed activity. Do not use them to make treatment, administration, patient-release or regulatory decisions. Use validated institutional procedures, applicable product labeling and qualified professional review.
+<!-- PHASE 4 QA CHECKLISTS -->
+<section id="qa" class="bg-slate-100 border-y py-20">
+<div class="max-w-7xl mx-auto px-5">
+<div class="text-center mb-12">
+<span class="tag">Radiation Oncology Physics</span>
+<h2 class="heading mt-4">Clinical QA Checklists</h2>
+<p class="text-slate-600 mt-3 max-w-3xl mx-auto">
+Interactive planning checklists for stereotactic radiotherapy and linear accelerator quality assurance.
+</p>
+</div>
+
+<div class="grid lg:grid-cols-2 gap-7">
+
+<div class="card">
+<div class="flex flex-wrap justify-between gap-3 items-start mb-5">
+<div>
+<h3 class="text-2xl font-extrabold text-slate-900">SRS / SBRT QA</h3>
+<p class="text-sm text-slate-500 mt-2">Workflow review checklist</p>
+</div>
+<span id="srsProgress" class="tag">0 / 10 reviewed</span>
+</div>
+<div class="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
+<div id="srsBar" class="h-full bg-teal transition-all" style="width:0%"></div>
+</div>
+<div id="srsChecklist"></div>
+<div class="flex flex-wrap gap-3 mt-6 no-print">
+<button type="button" class="btn" onclick="printChecklist('srsChecklist','SRS / SBRT QA Checklist')">Print Checklist</button>
+<button type="button" class="border rounded-lg px-4 py-2 font-semibold" onclick="resetChecklist('srsChecklist')">Reset</button>
+</div>
+</div>
+
+<div class="card">
+<div class="flex flex-wrap justify-between gap-3 items-start mb-5">
+<div>
+<h3 class="text-2xl font-extrabold text-slate-900">Linac Monthly / Annual QA</h3>
+<p class="text-sm text-slate-500 mt-2">Equipment and documentation review</p>
+</div>
+<span id="linacProgress" class="tag">0 / 12 reviewed</span>
+</div>
+<div class="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
+<div id="linacBar" class="h-full bg-teal transition-all" style="width:0%"></div>
+</div>
+<div id="linacChecklist"></div>
+<div class="flex flex-wrap gap-3 mt-6 no-print">
+<button type="button" class="btn" onclick="printChecklist('linacChecklist','Linac QA Checklist')">Print Checklist</button>
+<button type="button" class="border rounded-lg px-4 py-2 font-semibold" onclick="resetChecklist('linacChecklist')">Reset</button>
+</div>
+</div>
+</div>
+
+<div class="mt-8 bg-white border rounded-2xl p-7">
+<h3 class="text-xl font-bold mb-3">Clinical QA Guidance</h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+These checklists are intended as general review prompts, not complete testing protocols. Testing frequency, measurement methods, action levels, tolerances and required documentation must follow the facility's approved QA program, equipment configuration, current professional guidance and applicable regulations.
+</p>
+<p class="text-sm text-slate-600 leading-relaxed mt-3">
+Checking a box means an item has been reviewed on this webpage. It does not establish that a test passed, that a qualified physicist approved it, or that the equipment is safe for clinical use. This page does not retain an auditable QA record.
+</p>
 </div>
 </div>
 </section>
 
+<!-- CREDENTIALS -->
 <section id="credentials" class="bg-navy text-white py-20">
 <div class="max-w-7xl mx-auto px-5">
 <div class="text-center mb-12">
 <span class="text-teal-400 text-xs font-bold uppercase">Professional Experience</span>
 <h2 class="text-3xl md:text-4xl font-extrabold mt-4">Credentials & Technical Expertise</h2>
 </div>
+
 <div class="grid md:grid-cols-3 gap-6">
 <div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
 <h3 class="text-xl font-bold mb-4">Qualifications</h3>
@@ -420,6 +488,7 @@ The Lu-177 tools calculate physical radioactive decay only. They do not calculat
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="bg-white py-20">
 <div class="max-w-3xl mx-auto px-5">
 <div class="text-center mb-10">
@@ -429,11 +498,7 @@ The Lu-177 tools calculate physical radioactive decay only. They do not calculat
 <p class="mt-3 text-sm">Email: <a class="text-teal font-bold" href="mailto:gmedphys@gmail.com">gmedphys@gmail.com</a></p>
 </div>
 
-<form id="contactForm"
-action="https://formsubmit.co/ajax/gmedphys@gmail.com"
-method="POST"
-class="bg-slate-50 border rounded-2xl p-6 md:p-9 space-y-5">
-
+<form id="contactForm" action="https://formsubmit.co/ajax/gmedphys@gmail.com" method="POST" class="bg-slate-50 border rounded-2xl p-6 md:p-9 space-y-5">
 <input type="hidden" name="_subject" value="New Medical Physics Consultation Request">
 <input type="hidden" name="_template" value="table">
 
@@ -500,6 +565,7 @@ class="bg-slate-50 border rounded-2xl p-6 md:p-9 space-y-5">
 
 <script>
 "use strict";
+
 const byId=id=>document.getElementById(id);
 const readNumber=id=>{
 const value=byId(id).value.trim();
@@ -573,7 +639,7 @@ card.append(content,link);grid.appendChild(card);
 byId("tgSearch").addEventListener("input",renderTaskGroups);
 byId("tgCategory").addEventListener("change",renderTaskGroups);
 
-// SCOPE ESTIMATOR
+// PROJECT ESTIMATOR
 function calculateScope(){
 const items=[
 ["estCommission","Linac commissioning",7],
@@ -599,7 +665,7 @@ byId("scopeDetails").textContent=selected.join(" · ")||"No services selected.";
 byId(id).addEventListener("input",calculateScope)
 );
 
-// GENERAL PHYSICS CALCULATORS
+// GENERAL CALCULATORS
 function calculateInverse(){
 const a=readNumber("invI"),d1=readNumber("invD1"),d2=readNumber("invD2");
 byId("inverseResult").textContent=
@@ -634,7 +700,7 @@ byId("conversionResult").textContent=
 Number.isFinite(input)?fmt(input*factor,8)+" "+unit:"Invalid input";
 }
 
-// LU-177 PHYSICS
+// LU-177
 const LU_HALF_LIFE_DAYS=6.647;
 const LU_HALF_LIFE_HOURS=LU_HALF_LIFE_DAYS*24;
 
@@ -664,18 +730,110 @@ byId("luTimeResult").textContent=fmt(days*24)+" hours";
 byId("luTimeDays").textContent=fmt(days)+" days";
 }
 
-function updateChecklist(){
-const boxes=[...document.querySelectorAll(".lu-check")];
-const checked=boxes.filter(x=>x.checked).length;
-byId("checkProgress").textContent=checked+" / "+boxes.length+" reviewed";
+// CHECKLIST DATA
+const checklistData={
+luChecklist:[
+"Confirm applicable radioactive materials license and authorization for the intended therapy.",
+"Verify Authorized User qualifications and responsibilities.",
+"Review Radiation Safety Officer oversight and program requirements.",
+"Establish handling, contamination control and waste procedures.",
+"Confirm activity measurement instrumentation, calibration and QC.",
+"Establish staff training, emergency procedures and spill response.",
+"Develop patient instructions, release assessment and documentation procedures.",
+"Approve institution-specific treatment workflow and QA procedures."
+],
+srsChecklist:[
+"Review approved SRS/SBRT commissioning and baseline documentation.",
+"Review mechanical isocenter and radiation isocenter verification.",
+"Review Winston-Lutz testing for applicable treatment configurations.",
+"Review image guidance and imaging-to-treatment coordinate agreement.",
+"Review couch positioning and rotational correction QA where applicable.",
+"Review small-field dosimetry and beam model validation.",
+"Review MLC positioning and delivery accuracy.",
+"Review end-to-end test coverage for relevant clinical workflows.",
+"Review patient-specific plan QA and independent verification workflow.",
+"Review treatment time-out, documentation and escalation procedures."
+],
+linacChecklist:[
+"Review reference output constancy measurements and trending.",
+"Review photon and electron beam quality and profile constancy as applicable.",
+"Review mechanical isocenter, gantry, collimator and couch tests.",
+"Review field size and light/radiation field alignment where applicable.",
+"Review laser alignment, ODI and patient setup accessories.",
+"Review MLC positioning, motion and relevant delivery tests.",
+"Review kV and MV imaging geometry and image quality QA.",
+"Review CBCT geometry and image quality where applicable.",
+"Review treatment and imaging isocenter agreement.",
+"Review safety interlocks, door interlock and audiovisual systems.",
+"Review imaging, motion management and special procedure QA as applicable.",
+"Review QA records, trends, corrective actions and independent sign-off."
+]
+};
+
+const checklistProgress={
+luChecklist:"luProgress",
+srsChecklist:"srsProgress",
+linacChecklist:"linacProgress"
+};
+
+function renderChecklist(id){
+const container=byId(id);
+container.replaceChildren();
+checklistData[id].forEach((text,index)=>{
+const label=document.createElement("label");
+label.className="checkrow";
+const input=document.createElement("input");
+input.type="checkbox";
+input.dataset.index=String(index);
+const span=document.createElement("span");
+span.className="text-sm text-slate-700 leading-relaxed";
+span.textContent=text;
+input.addEventListener("change",()=>updateChecklist(id));
+label.append(input,span);
+container.appendChild(label);
+});
+updateChecklist(id);
 }
-function resetChecklist(){
-document.querySelectorAll(".lu-check").forEach(x=>x.checked=false);
-updateChecklist();
+
+function updateChecklist(id){
+const inputs=[...byId(id).querySelectorAll("input[type=checkbox]")];
+const checked=inputs.filter(x=>x.checked).length;
+byId(checklistProgress[id]).textContent=checked+" / "+inputs.length+" reviewed";
+const barId=id==="srsChecklist"?"srsBar":id==="linacChecklist"?"linacBar":null;
+if(barId)byId(barId).style.width=(inputs.length?100*checked/inputs.length:0)+"%";
 }
-document.querySelectorAll(".lu-check").forEach(x=>
-x.addEventListener("change",updateChecklist)
-);
+
+function resetChecklist(id){
+byId(id).querySelectorAll("input[type=checkbox]").forEach(x=>x.checked=false);
+updateChecklist(id);
+}
+
+function printChecklist(id,title){
+const entries=checklistData[id];
+const checks=[...byId(id).querySelectorAll("input[type=checkbox]")];
+const printable=entries.map((item,i)=>
+(checks[i]&&checks[i].checked?"[Reviewed] ":"[Not reviewed] ")+item
+).join("\n\n");
+const text=title+"\n\n"+printable+
+"\n\nGeneral planning aid only. Not an official QA record or evidence of passing results.";
+const popup=window.open("","_blank","width=800,height=700");
+if(!popup){
+alert("Please allow pop-ups to print the checklist.");
+return;
+}
+const doc=popup.document;
+doc.title=title;
+const heading=doc.createElement("h1");
+heading.textContent=title;
+const pre=doc.createElement("pre");
+pre.style.whiteSpace="pre-wrap";
+pre.style.fontFamily="Arial,sans-serif";
+pre.style.lineHeight="1.7";
+pre.textContent=text;
+doc.body.append(heading,pre);
+popup.focus();
+popup.print();
+}
 
 // CONTACT FORM
 const contactForm=byId("contactForm");
@@ -729,7 +887,7 @@ contactButton.textContent="Send Consultation Request";
 }
 });
 
-// INITIALIZATION
+// INITIALIZE
 renderTaskGroups();
 calculateScope();
 calculateInverse();
@@ -738,7 +896,7 @@ calculateHVL();
 calculateConversion();
 calculateLuDecay();
 calculateLuTime();
-updateChecklist();
+Object.keys(checklistData).forEach(renderChecklist);
 </script>
 </body>
 </html>
