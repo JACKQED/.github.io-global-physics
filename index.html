@@ -2,264 +2,274 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#07172b">
 <title>Global Medical Physics LLC | Clinical Physics Consulting</title>
-<meta name="description" content="Medical physics consulting, radiation oncology QA, SRS/SBRT, reference dosimetry and clinical physics tools.">
-
+<meta name="description" content="Independent therapeutic medical physics consulting, linac QA, SRS/SBRT, reference dosimetry and clinical physics resources.">
 <style>
 :root{
---navy:#07172b;
---navy2:#202c40;
---teal:#0d9488;
---line:#dbe3ee;
---muted:#64748b;
+  --navy:#07172b;
+  --navy2:#202c40;
+  --teal:#0d9488;
+  --line:#dbe3ee;
+  --muted:#64748b;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{margin:0;font:15px Arial,Helvetica,sans-serif;color:#0f172a}
-a{text-decoration:none;color:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;color:#0f172a;font:15px Arial,Helvetica,sans-serif}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
+a{text-decoration:none;color:inherit}
 .container{max-width:1250px;margin:auto;padding:0 24px}
-.section{padding:75px 0}
+.section{padding:72px 0}
 .alt{background:#f1f5f9}
 .center{text-align:center}
 .title{font-size:clamp(28px,4vw,40px);margin:12px 0}
 .sub{color:#475569;line-height:1.7}
 .tag{
-display:inline-block;background:#ccfbf1;color:#115e59;
-padding:7px 13px;border-radius:30px;font-size:12px;font-weight:bold
+  display:inline-block;background:#ccfbf1;color:#115e59;
+  padding:7px 13px;border-radius:30px;font-size:12px;font-weight:bold
 }
 .grid2,.grid3,.grid4{
-display:grid;gap:24px;
-grid-template-columns:repeat(2,minmax(0,1fr))
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px
 }
 .grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .card{
-background:white;border:1px solid var(--line);
-border-radius:18px;padding:24px;min-width:0
+  background:white;border:1px solid var(--line);
+  border-radius:18px;padding:24px;min-width:0
 }
 .card h3{font-size:21px;margin:0 0 14px}
 .card p{color:#475569;line-height:1.65}
 .btn,.outline{
-display:inline-block;padding:13px 18px;
-border-radius:9px;font-weight:bold;text-align:center
+  display:inline-block;padding:13px 18px;border-radius:9px;
+  font-weight:bold;text-align:center
 }
 .btn{background:var(--teal);color:white;border:0}
 .btn:hover{background:#0f766e}
-.outline{background:white;border:1px solid #cbd5e1;color:#0f172a}
-.btn:disabled,.outline:disabled{opacity:.5;cursor:not-allowed}
+.outline{background:white;color:#0f172a;border:1px solid #cbd5e1}
+button:disabled{opacity:.5;cursor:not-allowed}
 .field{
-width:100%;padding:12px;border:1px solid #cbd5e1;
-border-radius:9px;background:white;min-width:0
+  width:100%;min-width:0;padding:12px;
+  border:1px solid #cbd5e1;border-radius:9px;background:white
 }
 .field:focus{outline:2px solid var(--teal)}
 .label{
-display:block;font-size:12px;font-weight:bold;
-margin:13px 0 7px;color:#475569
+  display:block;font-size:12px;font-weight:bold;
+  color:#475569;margin:13px 0 7px
 }
 .inputs{
-display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-gap:0 14px
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px
 }
 .result{
-background:var(--navy);color:white;
-border-radius:12px;padding:17px;margin:17px 0
+  background:var(--navy);color:white;
+  border-radius:12px;padding:17px;margin:17px 0
 }
 .result strong{
-font-size:25px;display:block;margin:6px 0;
-overflow-wrap:anywhere
+  display:block;font-size:25px;margin:6px 0;overflow-wrap:anywhere
 }
 .result small{color:#a5b4c9}
 .dark{
-background:var(--navy);color:white;
-border-radius:20px;padding:30px
+  background:var(--navy);color:white;border-radius:20px;padding:30px
 }
 .dark p{color:#cbd5e1;line-height:1.7}
-.big{
-font-size:clamp(29px,4vw,42px);
-font-weight:800;margin:18px 0
-}
+.big{font-size:clamp(29px,4vw,42px);font-weight:800;margin:18px 0}
 .metric{
-display:flex;justify-content:space-between;
-gap:15px;border-bottom:1px solid #40506a;padding:14px 0
+  display:flex;justify-content:space-between;gap:15px;
+  padding:14px 0;border-bottom:1px solid #40506a
 }
-.metric strong{overflow-wrap:anywhere;text-align:right}
+.metric strong{text-align:right;overflow-wrap:anywhere}
 .small{font-size:12px;color:var(--muted);line-height:1.7}
 .notice{
-background:#fffbeb;border:1px solid #fcd34d;
-color:#78350f;border-radius:12px;padding:17px;
-margin-top:25px;line-height:1.65;font-size:13px
+  background:#fffbeb;border:1px solid #fcd34d;color:#78350f;
+  border-radius:12px;padding:17px;margin-top:25px;
+  line-height:1.65;font-size:13px
 }
 .checkrow{
-display:flex;gap:12px;align-items:flex-start;
-border-bottom:1px solid var(--line);
-padding:13px 3px;line-height:1.5;font-size:14px
+  display:flex;align-items:flex-start;gap:12px;
+  border-bottom:1px solid var(--line);
+  padding:13px 3px;line-height:1.5;font-size:14px
 }
 .checkrow input{accent-color:var(--teal);margin-top:3px}
 .progress{
-height:8px;background:#e2e8f0;border-radius:10px;
-overflow:hidden;margin:18px 0
+  height:8px;background:#e2e8f0;border-radius:10px;
+  overflow:hidden;margin:18px 0
 }
 .progress div{height:100%;background:var(--teal);width:0}
 header{
-position:sticky;top:0;z-index:20;
-background:white;border-bottom:1px solid var(--line)
+  position:sticky;top:0;z-index:20;
+  background:white;border-bottom:1px solid var(--line)
 }
 .nav{
-min-height:76px;display:flex;
-align-items:center;justify-content:space-between;gap:12px
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px
 }
 .brand{display:flex;align-items:center;gap:12px}
 .brand-icon{
-width:44px;height:44px;display:grid;place-items:center;
-background:var(--navy);color:var(--teal);
-font-size:27px;border-radius:12px
+  width:44px;height:44px;display:grid;place-items:center;
+  background:var(--navy);color:var(--teal);
+  font-size:27px;border-radius:12px
 }
 .brand strong{display:block;font-size:19px}
 .brand small{display:block;color:var(--teal);font-weight:bold}
-.links{
-display:flex;align-items:center;
-gap:15px;font-size:13px;font-weight:bold
-}
+.links{display:flex;align-items:center;gap:15px;font-size:13px;font-weight:bold}
 .links a:hover{color:var(--teal)}
 #menuButton{display:none}
 .mobile{display:none;padding:10px 24px 20px}
 .mobile a{display:block;padding:10px 0;font-weight:bold}
 .hero{
-background:linear-gradient(125deg,#07172b,#131c30);
-color:white;padding:105px 0 65px
+  background:linear-gradient(125deg,#07172b,#131c30);
+  color:white;padding:105px 0 65px
 }
 .hero h1{
-font-size:clamp(38px,5vw,62px);
-line-height:1.08;margin:23px 0
+  font-size:clamp(38px,5vw,62px);line-height:1.08;margin:23px 0
 }
 .hero p{color:#cbd5e1;line-height:1.8;font-size:17px}
 .hero-panel{
-background:#202c40;border:1px solid #334155;
-border-radius:23px;padding:32px
+  background:#202c40;border:1px solid #334155;
+  border-radius:23px;padding:32px
 }
-.hero-panel div{
-padding:16px 0;border-bottom:1px solid #40506a
-}
+.hero-panel div{padding:16px 0;border-bottom:1px solid #40506a}
 .hero-panel div:last-child{border:0}
 .hero-panel p{margin:6px 0 0;font-size:14px}
 .stats{
-border-top:1px solid #40506a;
-display:grid;grid-template-columns:repeat(3,1fr);
-gap:20px;text-align:center;margin-top:55px;padding-top:30px
+  border-top:1px solid #40506a;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;text-align:center;margin-top:55px;padding-top:30px
 }
 .stats strong{display:block;font-size:25px}
 .stats small{color:#94a3b8}
-footer{
-background:var(--navy);color:#cbd5e1;padding:35px 0
-}
+footer{background:var(--navy);color:#cbd5e1;padding:35px 0}
 .status{font-size:13px;line-height:1.6;margin-top:12px}
 
-/* Phase 7 report */
+/* PRINT REPORT */
 #reportPrint{display:none}
-.report-table{
-width:100%;border-collapse:collapse;
-margin:12px 0 22px;font-size:12px
+#reportPrint .report-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  border-bottom:2px solid #0f172a;padding-bottom:8px;margin-bottom:9px
 }
-.report-table td,.report-table th{
-border:1px solid #aab5c5;padding:8px;text-align:left
+#reportPrint h1{font-size:19px;margin:0 0 4px}
+#reportPrint .report-subtitle{font-size:11px;margin:0}
+#reportPrint .report-id{font-size:10px;text-align:right}
+#reportPrint .report-warning{
+  border:1px solid #9a3412;color:#9a3412;
+  padding:6px 8px;font-size:10px;font-weight:bold;margin:8px 0
 }
-.report-table th{background:#edf2f7}
-.report-sign{
-display:grid;grid-template-columns:1fr 1fr;
-gap:35px;margin-top:35px
+#reportPrint h2{font-size:12px;margin:11px 0 5px}
+#reportPrint .report-table{
+  width:100%;border-collapse:collapse;table-layout:fixed;
+  font-size:10px;margin:0 0 7px
 }
-.signature{
-border-top:1px solid #334155;
-padding-top:8px;margin-top:45px;font-size:12px
+#reportPrint .report-table th,
+#reportPrint .report-table td{
+  padding:4px 6px;border:1px solid #b9c4d1;
+  text-align:left;vertical-align:top;overflow-wrap:anywhere
 }
+#reportPrint .report-table th{
+  width:40%;font-weight:600;background:#f1f5f9
+}
+#reportPrint .report-two{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px
+}
+#reportPrint .report-formula{
+  font-size:10px;line-height:1.5;margin:7px 0
+}
+#reportPrint .report-notes{
+  white-space:pre-wrap;font-size:10px;
+  line-height:1.45;margin:4px 0;overflow-wrap:anywhere
+}
+#reportPrint .report-signatures{
+  display:grid;grid-template-columns:1fr 1fr;gap:28px;
+  margin-top:24px
+}
+#reportPrint .report-signature{
+  border-top:1px solid #334155;padding-top:5px;font-size:10px
+}
+#reportPrint .report-disclaimer{
+  font-size:9px;line-height:1.45;
+  margin-top:12px;border-top:1px solid #cbd5e1;padding-top:6px
+}
+#reportPrint .report-bottom{break-inside:avoid;page-break-inside:avoid}
 
 @media(max-width:1160px){
-.links{display:none}
-#menuButton{
-display:block;background:white;border:1px solid var(--line);
-border-radius:8px;padding:8px 12px;font-size:21px
-}
-.mobile.open{display:block}
+  .links{display:none}
+  #menuButton{
+    display:block;background:white;border:1px solid var(--line);
+    border-radius:8px;padding:8px 12px;font-size:21px
+  }
+  .mobile.open{display:block}
 }
 @media(max-width:850px){
-.grid2,.grid3,.grid4,.stats{grid-template-columns:1fr}
-.section{padding:52px 0}
-.hero{padding:65px 0}
+  .grid2,.grid3,.grid4,.stats{grid-template-columns:1fr}
+  .section{padding:52px 0}
+  .hero{padding:65px 0}
 }
 @media(max-width:490px){
-.inputs{grid-template-columns:1fr}
-.container{padding:0 17px}
-.card,.dark{padding:20px}
-.brand strong{font-size:15px}
+  .inputs{grid-template-columns:1fr}
+  .container{padding:0 17px}
+  .card,.dark{padding:20px}
+  .brand strong{font-size:15px}
 }
 @media print{
-body.printing-report>*:not(#reportPrint){display:none!important}
-body.printing-report #reportPrint{
-display:block!important;color:black;background:white;
-padding:0;font-family:Arial,sans-serif
-}
-body.printing-report #reportPrint h1{
-font-size:23px;margin:0 0 5px
-}
-body.printing-report #reportPrint h2{
-font-size:16px;margin:18px 0 8px
-}
-body.printing-report .report-table,
-body.printing-report .report-sign{
-page-break-inside:avoid
-}
-@page{size:letter;margin:0.55in}
+  body.printing-report>*:not(#reportPrint){display:none!important}
+  body.printing-report #reportPrint{
+    display:block!important;
+    position:static!important;
+    padding:0!important;margin:0!important;
+    background:white!important;color:black!important;
+    font-family:Arial,Helvetica,sans-serif
+  }
+  body.printing-report #reportPrint .report-table th{
+    background:#f1f5f9!important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact
+  }
+  body.printing-report #reportPrint .report-two{
+    grid-template-columns:1fr 1fr!important
+  }
+  @page{size:letter;margin:0.42in}
 }
 </style>
 </head>
-
 <body>
 
 <header>
 <div class="container nav">
 <a class="brand" href="#home">
-<div class="brand-icon">Ω</div>
-<div>
-<strong>Global Medical Physics</strong>
-<small>LLC · Clinical Consulting</small>
-</div>
+  <div class="brand-icon">Ω</div>
+  <div>
+    <strong>Global Medical Physics</strong>
+    <small>LLC · Clinical Consulting</small>
+  </div>
 </a>
-
 <nav class="links">
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#references">Task Groups</a>
-<a href="#estimator">Estimator</a>
-<a href="#tools">Physics Tools</a>
-<a href="#lu177">Lu-177</a>
-<a href="#qa">QA Checklists</a>
-<a href="#tg51">TG-51</a>
-<a href="#credentials">Credentials</a>
-<a href="#contact" class="btn">Contact</a>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#references">Task Groups</a>
+  <a href="#estimator">Estimator</a>
+  <a href="#tools">Physics Tools</a>
+  <a href="#lu177">Lu-177</a>
+  <a href="#qa">QA Checklists</a>
+  <a href="#tg51">TG-51</a>
+  <a href="#credentials">Credentials</a>
+  <a href="#contact" class="btn">Contact</a>
 </nav>
-
 <button id="menuButton" type="button" aria-label="Toggle menu">☰</button>
 </div>
-
 <nav id="mobileMenu" class="mobile">
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#references">Task Groups</a>
-<a href="#estimator">Estimator</a>
-<a href="#tools">Physics Tools</a>
-<a href="#lu177">Lu-177</a>
-<a href="#qa">QA Checklists</a>
-<a href="#tg51">TG-51</a>
-<a href="#credentials">Credentials</a>
-<a href="#contact">Contact</a>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#references">Task Groups</a>
+  <a href="#estimator">Estimator</a>
+  <a href="#tools">Physics Tools</a>
+  <a href="#lu177">Lu-177</a>
+  <a href="#qa">QA Checklists</a>
+  <a href="#tg51">TG-51</a>
+  <a href="#credentials">Credentials</a>
+  <a href="#contact">Contact</a>
 </nav>
 </header>
 
-<!-- HOME -->
 <section id="home" class="hero">
 <div class="container">
 <div class="grid2" style="align-items:center">
@@ -279,7 +289,6 @@ planning, reference dosimetry and radiation safety.
 <a class="outline" href="#services">Explore Services</a>
 </div>
 </div>
-
 <div class="hero-panel">
 <h3>CLINICAL EXPERTISE</h3>
 <div>
@@ -300,7 +309,6 @@ planning, reference dosimetry and radiation safety.
 </div>
 </div>
 </div>
-
 <div class="stats">
 <div><strong>ABR</strong><small>Board Certification</small></div>
 <div><strong>20+ Years</strong><small>Clinical Physics Experience</small></div>
@@ -309,7 +317,6 @@ planning, reference dosimetry and radiation safety.
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="section">
 <div class="container">
 <div class="center">
@@ -317,7 +324,6 @@ planning, reference dosimetry and radiation safety.
 <h2 class="title">Medical Physics Consulting</h2>
 <p class="sub">Practical clinical support tailored to facility needs.</p>
 </div>
-
 <div class="grid3" style="margin-top:35px">
 <div class="card">
 <h3>Linac Quality Assurance</h3>
@@ -353,7 +359,6 @@ workflow validation and independent assessments.</p>
 </div>
 </section>
 
-<!-- TASK GROUPS -->
 <section id="references" class="section alt">
 <div class="container">
 <div class="center">
@@ -361,7 +366,6 @@ workflow validation and independent assessments.</p>
 <h2 class="title">Medical Physics Task Groups</h2>
 <p class="sub">Search commonly used clinical physics references.</p>
 </div>
-
 <div class="grid2" style="max-width:760px;margin:30px auto">
 <input id="tgSearch" class="field" placeholder="Search TG-51, SRS, QA...">
 <select id="tgCategory" class="field">
@@ -371,7 +375,6 @@ workflow validation and independent assessments.</p>
 <option value="safety">Radiation Safety</option>
 </select>
 </div>
-
 <div id="tgGrid" class="grid3"></div>
 <p class="small center">
 Verify current publications, addenda, errata and regulatory
@@ -380,39 +383,30 @@ requirements before clinical use.
 </div>
 </section>
 
-<!-- ESTIMATOR -->
 <section id="estimator" class="section">
 <div class="container">
 <div class="center">
 <span class="tag">Project Planning</span>
 <h2 class="title">Clinical Project Scope Estimator</h2>
-<p class="sub">Illustrative estimate of physicist effort,
-not a binding quotation.</p>
+<p class="sub">Illustrative estimate of physicist effort, not a binding quotation.</p>
 </div>
-
 <div class="grid2" style="margin-top:35px">
 <div class="card">
 <h3>Facility Equipment & Services</h3>
-
 <label class="label">Linac Full Commissioning — Units</label>
 <input id="estCommission" class="field" type="number" min="0" step="1" value="0">
-
 <label class="label">Linac Annual QA — Units</label>
 <input id="estAnnual" class="field" type="number" min="0" step="1" value="1">
-
 <label class="label">C-Arm / Fluoroscopy Surveys — Units</label>
 <input id="estCarm" class="field" type="number" min="0" step="1" value="0">
-
 <label class="label">CT Physics Surveys — Units</label>
 <input id="estCT" class="field" type="number" min="0" step="1" value="0">
-
 <label class="label">Shielding Design Projects — Rooms</label>
 <input id="estShield" class="field" type="number" min="0" step="1" value="0">
-
-<button class="btn" style="width:100%;margin-top:20px"
-onclick="calculateScope()">Calculate Estimated Scope</button>
+<button class="btn" style="width:100%;margin-top:20px" onclick="calculateScope()">
+Calculate Estimated Scope
+</button>
 </div>
-
 <div class="dark">
 <h3>Preliminary Planning Estimate</h3>
 <p>Estimated Physicist Effort</p>
@@ -429,7 +423,6 @@ travel, documentation and project requirements.</p>
 </div>
 </section>
 
-<!-- PHYSICS TOOLS -->
 <section id="tools" class="section alt">
 <div class="container">
 <div class="center">
@@ -437,7 +430,6 @@ travel, documentation and project requirements.</p>
 <h2 class="title">Interactive Physics Calculators</h2>
 <p class="sub">Educational and preliminary calculation tools.</p>
 </div>
-
 <div class="grid4" style="margin-top:35px">
 
 <div class="card">
@@ -520,7 +512,6 @@ travel, documentation and project requirements.</p>
 </div>
 
 </div>
-
 <div class="notice">
 These calculators are simplified educational tools.
 Independent validation is required before clinical application.
@@ -528,7 +519,6 @@ Independent validation is required before clinical application.
 </div>
 </section>
 
-<!-- LU-177 -->
 <section id="lu177" class="section">
 <div class="container">
 <div class="center">
@@ -537,8 +527,8 @@ Independent validation is required before clinical application.
 <p class="sub">Physical decay calculations and preliminary
 nuclear medicine program planning resources.</p>
 </div>
-
 <div class="grid3" style="margin-top:35px">
+
 <div class="card">
 <h3>Lu-177 Activity Decay</h3>
 <p>Physical half-life: 6.647 days.</p>
@@ -595,7 +585,6 @@ facility workflow and program implementation consultation.</p>
 <a class="btn" href="#contact">Discuss Your Project</a>
 </div>
 </div>
-
 <div class="notice">
 Physical decay does not determine patient absorbed dose,
 biological clearance, administered activity or release eligibility.
@@ -603,16 +592,14 @@ biological clearance, administered activity or release eligibility.
 </div>
 </section>
 
-<!-- QA CHECKLISTS -->
 <section id="qa" class="section alt">
 <div class="container">
 <div class="center">
 <span class="tag">Radiation Oncology Physics</span>
 <h2 class="title">Clinical QA Checklists</h2>
-<p class="sub">Interactive planning checklists for
-stereotactic radiotherapy and linear accelerator QA.</p>
+<p class="sub">Interactive planning checklists for stereotactic
+radiotherapy and linear accelerator QA.</p>
 </div>
-
 <div class="grid2" style="margin-top:35px">
 <div class="card">
 <h3>SRS / SBRT QA</h3>
@@ -621,12 +608,12 @@ stereotactic radiotherapy and linear accelerator QA.</p>
 <div class="progress"><div id="srsBar"></div></div>
 <div id="srsChecklist"></div>
 <div style="margin-top:20px">
-<button class="btn"
-onclick="printChecklist('srsChecklist','SRS / SBRT QA Checklist')">Print Checklist</button>
+<button class="btn" onclick="printChecklist('srsChecklist','SRS / SBRT QA Checklist')">
+Print Checklist
+</button>
 <button class="outline" onclick="resetChecklist('srsChecklist')">Reset</button>
 </div>
 </div>
-
 <div class="card">
 <h3>Linac Monthly / Annual QA</h3>
 <p class="small">Equipment and documentation review</p>
@@ -634,13 +621,13 @@ onclick="printChecklist('srsChecklist','SRS / SBRT QA Checklist')">Print Checkli
 <div class="progress"><div id="linacBar"></div></div>
 <div id="linacChecklist"></div>
 <div style="margin-top:20px">
-<button class="btn"
-onclick="printChecklist('linacChecklist','Linac QA Checklist')">Print Checklist</button>
+<button class="btn" onclick="printChecklist('linacChecklist','Linac QA Checklist')">
+Print Checklist
+</button>
 <button class="outline" onclick="resetChecklist('linacChecklist')">Reset</button>
 </div>
 </div>
 </div>
-
 <div class="notice">
 Reviewed does not mean passed. These lists are not complete
 testing protocols or auditable clinical QA records.
@@ -648,24 +635,21 @@ testing protocols or auditable clinical QA records.
 </div>
 </section>
 
-<!-- TG-51 -->
 <section id="tg51" class="section">
 <div class="container">
 <div class="center">
-<span class="tag">Phase 7 · Report Builder</span>
+<span class="tag">Phase 7.1 · Professional Report</span>
 <h2 class="title">TG-51 Reference Dosimetry Calculator</h2>
 <p class="sub">
 Corrected chamber reading, absorbed dose to water,
-Pion/Ppol and a printable calculation worksheet.
+ion recombination, polarity correction and printable report.
 </p>
 </div>
 
 <div class="grid2" style="margin-top:35px">
-
 <div class="card">
 <h3>Reference Dosimetry Inputs</h3>
 <div class="inputs">
-
 <div>
 <label class="label">Temperature (°C)</label>
 <input id="tgTemp" class="field" type="number" step="any" value="22">
@@ -698,7 +682,6 @@ Pion/Ppol and a printable calculation worksheet.
 <label class="label">Beam Quality Correction (kQ)</label>
 <input id="tgKq" class="field" type="number" step="any" value="1">
 </div>
-
 </div>
 <button class="btn" style="width:100%;margin-top:20px"
 onclick="calculateTG51()">Calculate Absorbed Dose</button>
@@ -712,18 +695,15 @@ independently. kQ = 1 is not a universal clinical value.
 <b style="color:#5eead4">TG-51 CALCULATION RESULTS</b>
 <p>Absorbed Dose to Water</p>
 <div class="big" id="tgHeadline">—</div>
-
 <div style="background:#202c40;padding:16px;border-radius:12px">
 <div class="metric"><span>PTP</span><strong id="tgPTP">—</strong></div>
 <div class="metric"><span>Corrected Reading M</span><strong id="tgM">—</strong></div>
 <div class="metric"><span>Dose (Gy)</span><strong id="tgDose">—</strong></div>
 <div class="metric"><span>Dose (cGy)</span><strong id="tgDoseCgy">—</strong></div>
 </div>
-
 <p id="tgMessage" class="status">
 Arithmetic only — not clinically validated.
 </p>
-
 <hr style="border-color:#40506a">
 <p><b>Temperature / Pressure</b><br>
 PTP = [(273.15 + T) / 295.15] × [101.33 / P]</p>
@@ -732,30 +712,25 @@ M = Mraw × PTP × Pelec × Ppol × Pion</p>
 <p><b>Absorbed Dose</b><br>
 Dw,Q = M × ND,w × kQ</p>
 </div>
-
 </div>
 
-<!-- PION PPOL -->
 <div class="center" style="margin:55px 0 30px">
-<span class="tag">Phase 6</span>
+<span class="tag">Phase 6 · Integrated</span>
 <h2 class="title" style="font-size:30px">
 Ion Recombination & Polarity Corrections
 </h2>
 <p class="sub">
-Separate correction-factor calculations with optional
-transfer to the TG-51 worksheet.
+Calculate Pion and Ppol separately, then transfer them to TG-51.
 </p>
 </div>
 
 <div class="grid2">
-
 <div class="card">
 <h3>Pion — Ion Recombination Correction</h3>
 <p class="small">
 Two-voltage method for applicable pulsed radiation conditions.
-Enter voltage magnitudes and corresponding positive-magnitude readings.
+Enter positive voltage magnitudes and reading magnitudes.
 </p>
-
 <div class="inputs">
 <div>
 <label class="label">High Voltage |VH| (V)</label>
@@ -774,19 +749,15 @@ Enter voltage magnitudes and corresponding positive-magnitude readings.
 <input id="ionML" class="field" type="number" value="19.8" step="any">
 </div>
 </div>
-
 <button class="btn" style="width:100%;margin-top:20px"
 onclick="calculatePion()">Calculate Pion</button>
-
 <div class="result">
 <small>Calculated Pion</small>
 <strong id="ionResult">—</strong>
 <p id="ionDetails"></p>
 </div>
-
 <button id="ionTransfer" class="outline" style="width:100%"
 onclick="transferPion()" disabled>Use Pion in TG-51</button>
-
 <p id="ionStatus" class="status"></p>
 <hr>
 <p><b>Formula — applicable pulsed-beam approximation</b></p>
@@ -802,10 +773,8 @@ or pulsed-scanned alternatives. Confirm protocol applicability.
 <div class="card">
 <h3>Ppol — Polarity Correction</h3>
 <p class="small">
-Enter signed readings and select the reference
-measurement polarity.
+Enter signed readings and select the reference measurement polarity.
 </p>
-
 <div class="inputs">
 <div>
 <label class="label">Positive Bias Reading M+ (nC)</label>
@@ -816,25 +785,20 @@ measurement polarity.
 <input id="polMinus" class="field" type="number" value="-19.9" step="any">
 </div>
 </div>
-
 <label class="label">Reference Measurement Polarity</label>
 <select id="polReference" class="field">
 <option value="plus">Positive bias (+)</option>
 <option value="minus">Negative bias (−)</option>
 </select>
-
 <button class="btn" style="width:100%;margin-top:20px"
 onclick="calculatePpol()">Calculate Ppol</button>
-
 <div class="result">
 <small>Calculated Ppol</small>
 <strong id="polResult">—</strong>
 <p id="polDetails"></p>
 </div>
-
 <button id="polTransfer" class="outline" style="width:100%"
 onclick="transferPpol()" disabled>Use Ppol in TG-51</button>
-
 <p id="polStatus" class="status"></p>
 <hr>
 <p><b>Formula</b></p>
@@ -842,30 +806,22 @@ onclick="transferPpol()" disabled>Use Ppol in TG-51</button>
 Ppol = (|M+| + |M−|) / (2 × |Mref|)
 </p>
 <p class="small">
-Measurements must be made under equivalent conditions.
-Verify electrometer polarity and leakage conventions.
+Verify measurement conditions, polarity conventions and leakage.
 </p>
 </div>
-
 </div>
 
-<!-- PHASE 7 REPORT -->
 <div class="center" style="margin:55px 0 30px">
-<span class="tag">New · Phase 7</span>
-<h2 class="title" style="font-size:30px">
-TG-51 Calculation Report
-</h2>
+<span class="tag">Phase 7.1 · One-Page Report</span>
+<h2 class="title" style="font-size:30px">TG-51 Calculation Report</h2>
 <p class="sub">
-Add equipment metadata, calculate, then print
-or save the worksheet as PDF.
+Complete the report fields and print a compact Letter-size worksheet.
 </p>
 </div>
 
 <div class="grid2">
-
 <div class="card">
 <h3>Report Information</h3>
-
 <div class="inputs">
 <div>
 <label class="label">Facility / Institution</label>
@@ -906,70 +862,76 @@ placeholder="6 MV photon">
 <input id="repCalibration" class="field" maxlength="120">
 </div>
 <div>
-<label class="label">Measurement Geometry</label>
-<input id="repGeometry" class="field" maxlength="120"
-placeholder="SSD/SAD, depth, field size">
+<label class="label">SSD / SAD (cm)</label>
+<input id="repDistance" class="field" maxlength="60"
+placeholder="SSD 100 cm">
+</div>
+<div>
+<label class="label">Measurement Depth (cm)</label>
+<input id="repDepth" class="field" maxlength="60"
+placeholder="10">
+</div>
+<div>
+<label class="label">Field Size (cm × cm)</label>
+<input id="repField" class="field" maxlength="60"
+placeholder="10 × 10">
+</div>
+<div>
+<label class="label">Report ID (optional)</label>
+<input id="repID" class="field" maxlength="70"
+placeholder="TG51-2026-001">
+</div>
+<div>
+<label class="label">Protocol / Addendum</label>
+<input id="repProtocol" class="field" maxlength="100"
+placeholder="TG-51 / applicable addendum">
 </div>
 </div>
+<label class="label">Notes / Independent Checks</label>
+<textarea id="repNotes" class="field" rows="3" maxlength="1200"
+placeholder="Reference conditions, beam quality, checks and limitations"></textarea>
 
-<label class="label">
-Notes / Protocol Version / Independent Checks
-</label>
-<textarea id="repNotes" class="field" rows="4" maxlength="1200"
-placeholder="Protocol, addendum, reference conditions and limitations"></textarea>
-
-<button id="reportButton" class="btn"
-style="width:100%;margin-top:18px"
+<button class="btn" style="width:100%;margin-top:18px"
 onclick="printTG51Report()">
 Generate / Print TG-51 Report
 </button>
-
 <p id="reportStatus" class="status"></p>
 </div>
 
 <div class="dark">
-<h3>Report Includes</h3>
-<p>✓ Facility and equipment identification</p>
-<p>✓ Measurement date and physicist</p>
-<p>✓ All TG-51 worksheet input values</p>
-<p>✓ PTP, corrected chamber reading and absorbed dose</p>
-<p>✓ Calculation formulas and correction factors</p>
-<p>✓ Review and independent verification signature lines</p>
-<p>✓ Explicit unvalidated worksheet disclaimer</p>
-
+<h3>Professional Report Layout</h3>
+<p>✓ Compact US Letter print formatting</p>
+<p>✓ Facility, beam and instrumentation details</p>
+<p>✓ Report ID and measurement geometry</p>
+<p>✓ PTP, Pion, Ppol and corrected chamber reading</p>
+<p>✓ Absorbed dose in Gy and cGy</p>
+<p>✓ Formula and notes</p>
+<p>✓ Physicist Review / Date</p>
+<p>✓ Independent Verification / Date</p>
 <hr style="border-color:#40506a">
-
-<p><b>How to save a PDF:</b></p>
+<p><b>Save as PDF</b></p>
 <p>
-Click Generate / Print TG-51 Report,
-then choose “Save as PDF” in the browser print dialog.
+Click Generate / Print TG-51 Report and choose
+“Save as PDF” in the browser print dialog.
 </p>
-
 <p class="small" style="color:#a5b4c9">
-No report data is uploaded by this feature.
-Report contents remain in your browser until you
-print or save them.
+The report is generated locally in the browser.
+No report information is submitted to the contact form service.
 </p>
 </div>
-
 </div>
 
 <div class="notice">
-<b>Clinical limitation:</b> This is an educational
-calculation worksheet, not a completed clinical beam
-calibration or proof of TG-51 compliance. It omits
-required protocol-specific determinations and
-verification steps. Independently verify chamber
-calibration, beam quality, reference conditions,
-corrections, dose normalization and applicable
-TG-51 addenda before clinical use.
+<b>Clinical limitation:</b> This is an unvalidated arithmetic
+worksheet, not a complete TG-51 beam calibration record.
+Reference conditions, beam quality, correction factors,
+instrument calibration and protocol-specific requirements
+must be independently verified before clinical use.
 Do not enter patient-identifying information.
 </div>
-
 </div>
 </section>
 
-<!-- CREDENTIALS -->
 <section id="credentials" class="section"
 style="background:#07172b;color:white">
 <div class="container">
@@ -977,7 +939,6 @@ style="background:#07172b;color:white">
 <span class="tag">Professional Experience</span>
 <h2 class="title">Credentials & Technical Expertise</h2>
 </div>
-
 <div class="grid3" style="margin-top:35px">
 <div class="dark" style="background:#202c40">
 <h3>Qualifications</h3>
@@ -1005,7 +966,6 @@ style="background:#07172b;color:white">
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
 <div class="container" style="max-width:850px">
 <div class="center">
@@ -1017,25 +977,19 @@ Tell us about your facility and medical physics support needs.
 <p>
 Email:
 <a href="mailto:gmedphys@gmail.com"
-style="color:#0d9488;font-weight:bold">
-gmedphys@gmail.com
-</a>
+style="color:#0d9488;font-weight:bold">gmedphys@gmail.com</a>
 </p>
 </div>
-
 <form id="contactForm"
 action="https://formsubmit.co/ajax/gmedphys@gmail.com"
 method="POST" class="card"
 style="background:#f8fafc;margin-top:30px">
-
 <input type="hidden" name="_subject"
 value="New Medical Physics Consultation Request">
 <input type="hidden" name="_template" value="table">
-
 <div style="position:absolute;left:-9999px" aria-hidden="true">
 <input name="_honey" tabindex="-1" autocomplete="off">
 </div>
-
 <div class="inputs">
 <div>
 <label class="label" for="facility">Facility / Organization</label>
@@ -1064,20 +1018,15 @@ class="field" required maxlength="200">
 </select>
 </div>
 </div>
-
 <label class="label" for="contactDetails">Project Details</label>
 <textarea id="contactDetails" name="message" class="field"
 rows="5" required maxlength="5000"
 placeholder="Describe the project. Do not include patient information."></textarea>
-
 <button id="contactSubmitButton" type="submit"
 class="btn" style="width:100%;margin-top:20px">
 Send Consultation Request
 </button>
-
-<p id="formStatus" role="status"
-aria-live="polite" class="status"></p>
-
+<p id="formStatus" role="status" aria-live="polite" class="status"></p>
 <p class="small">
 This form uses a third-party submission service.
 Do not submit patient-identifying information or PHI.
@@ -1097,35 +1046,31 @@ style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
 </div>
 </footer>
 
-<!-- Hidden printable report -->
 <div id="reportPrint" aria-hidden="true"></div>
 
 <script>
 "use strict";
-
 const $=id=>document.getElementById(id);
 
 function num(id){
-const s=$(id).value.trim();
-return s===""?NaN:Number(s);
+  const s=$(id).value.trim();
+  return s===""?NaN:Number(s);
 }
 function positive(...a){
-return a.every(x=>Number.isFinite(x)&&x>0);
+  return a.every(x=>Number.isFinite(x)&&x>0);
 }
 function fmt(x,d=8){
-return Number.isFinite(x)?
-Number(x.toPrecision(d)).toString():"Invalid";
+  return Number.isFinite(x)?Number(x.toPrecision(d)).toString():"Invalid";
 }
 
-// NAV
 $("menuButton").onclick=()=>{
-$("mobileMenu").classList.toggle("open");
+  $("mobileMenu").classList.toggle("open");
 };
 document.querySelectorAll("#mobileMenu a").forEach(a=>{
-a.onclick=()=>$("mobileMenu").classList.remove("open");
+  a.onclick=()=>$("mobileMenu").classList.remove("open");
 });
 
-// TASK GROUPS
+// TASK GROUP REFERENCE CARDS
 const groups=[
 ["AAPM TG-51","therapy","Reference Dosimetry",
 "Reference dosimetry for high-energy photon and electron beams.",
@@ -1157,138 +1102,124 @@ const groups=[
 ];
 
 function renderGroups(){
-const q=$("tgSearch").value.toLowerCase().trim();
-const cat=$("tgCategory").value;
-const grid=$("tgGrid");
-grid.replaceChildren();
-
-groups.filter(g=>
-(cat==="all"||g[1]===cat)&&
-g.join(" ").toLowerCase().includes(q)
-).forEach(g=>{
-const card=document.createElement("div");
-card.className="card";
-
-const tag=document.createElement("span");
-tag.className="tag";
-tag.textContent=g[0];
-
-const h=document.createElement("h3");
-h.style.marginTop="16px";
-h.textContent=g[2];
-
-const p=document.createElement("p");
-p.textContent=g[3];
-
-const a=document.createElement("a");
-a.href=g[4];
-a.target="_blank";
-a.rel="noopener noreferrer";
-a.style.color="#0d9488";
-a.textContent="View Reference →";
-
-card.append(tag,h,p,a);
-grid.append(card);
-});
+  const q=$("tgSearch").value.toLowerCase().trim();
+  const cat=$("tgCategory").value;
+  const grid=$("tgGrid");
+  grid.replaceChildren();
+  groups.filter(g=>
+    (cat==="all"||g[1]===cat)&&
+    g.join(" ").toLowerCase().includes(q)
+  ).forEach(g=>{
+    const card=document.createElement("div");
+    card.className="card";
+    const tag=document.createElement("span");
+    tag.className="tag";
+    tag.textContent=g[0];
+    const h=document.createElement("h3");
+    h.style.marginTop="16px";
+    h.textContent=g[2];
+    const p=document.createElement("p");
+    p.textContent=g[3];
+    const a=document.createElement("a");
+    a.href=g[4];
+    a.target="_blank";
+    a.rel="noopener noreferrer";
+    a.style.color="#0d9488";
+    a.textContent="View Reference →";
+    card.append(tag,h,p,a);
+    grid.append(card);
+  });
 }
-
 $("tgSearch").oninput=renderGroups;
 $("tgCategory").onchange=renderGroups;
 
 // ESTIMATOR
 function calculateScope(){
-const data=[
-["estCommission","Linac commissioning",7],
-["estAnnual","Linac annual QA",1.5],
-["estCarm","C-Arm survey",0.25],
-["estCT","CT survey",0.5],
-["estShield","Shielding design",1.5]
-];
-let total=0;
-let parts=[];
-
-for(const [id,name,days] of data){
-const n=num(id);
-if(!Number.isInteger(n)||n<0||n>100){
-$("scopeResult").textContent="Invalid input";
-$("scopeDetails").textContent="Use nonnegative whole numbers.";
-return;
-}
-total+=n*days;
-if(n)parts.push(n+" × "+name);
-}
-
-$("scopeResult").textContent=fmt(total);
-$("scopeDetails").textContent=parts.join(" · ")||"No services selected.";
+  const data=[
+    ["estCommission","Linac commissioning",7],
+    ["estAnnual","Linac annual QA",1.5],
+    ["estCarm","C-Arm survey",0.25],
+    ["estCT","CT survey",0.5],
+    ["estShield","Shielding design",1.5]
+  ];
+  let total=0;
+  const parts=[];
+  for(const [id,name,days] of data){
+    const n=num(id);
+    if(!Number.isInteger(n)||n<0||n>100){
+      $("scopeResult").textContent="Invalid input";
+      $("scopeDetails").textContent="Use nonnegative whole numbers.";
+      return;
+    }
+    total+=n*days;
+    if(n)parts.push(n+" × "+name);
+  }
+  $("scopeResult").textContent=fmt(total);
+  $("scopeDetails").textContent=parts.join(" · ")||"No services selected.";
 }
 
 // PHYSICS TOOLS
 function calculateInverse(){
-const a=num("invI"),d1=num("invD1"),d2=num("invD2");
-$("inverseResult").textContent=
-Number.isFinite(a)&&a>=0&&positive(d1,d2)?
-fmt(a*(d1/d2)**2):"Invalid input";
+  const a=num("invI"),d1=num("invD1"),d2=num("invD2");
+  $("inverseResult").textContent=
+    Number.isFinite(a)&&a>=0&&positive(d1,d2)?
+    fmt(a*(d1/d2)**2):"Invalid input";
 }
-
 function calculateDecay(){
-const h=num("isotope"),a=num("decayInitial"),t=num("decayDays");
-$("decayResult").textContent=
-positive(h)&&Number.isFinite(a)&&a>=0&&
-Number.isFinite(t)&&t>=0?
-fmt(a*2**(-t/h)):"Invalid input";
+  const h=num("isotope"),a=num("decayInitial"),t=num("decayDays");
+  $("decayResult").textContent=
+    positive(h)&&Number.isFinite(a)&&a>=0&&
+    Number.isFinite(t)&&t>=0?
+    fmt(a*2**(-t/h)):"Invalid input";
 }
-
 function calculateHVL(){
-const a=num("hvlInitial"),b=num("hvlMeasured"),
-x=num("hvlThickness");
-$("hvlResult").textContent=
-positive(a,b,x)&&b<a?
-fmt(Math.log(2)*x/Math.log(a/b)):"Invalid input";
+  const a=num("hvlInitial"),b=num("hvlMeasured"),
+        x=num("hvlThickness");
+  $("hvlResult").textContent=
+    positive(a,b,x)&&b<a?
+    fmt(Math.log(2)*x/Math.log(a/b)):"Invalid input";
 }
-
 function calculateConversion(){
-const factors={
-"gy-rad":[100,"rad"],
-"rad-gy":[.01,"Gy"],
-"sv-rem":[100,"rem"],
-"rem-sv":[.01,"Sv"],
-"ci-gbq":[37,"GBq"],
-"gbq-ci":[1/37,"Ci"],
-"mci-mbq":[37,"MBq"],
-"mbq-mci":[1/37,"mCi"]
-};
-const v=num("conversionInput");
-const [f,u]=factors[$("conversionType").value];
-$("conversionResult").textContent=
-Number.isFinite(v)?fmt(v*f)+" "+u:"Invalid input";
+  const factors={
+    "gy-rad":[100,"rad"],
+    "rad-gy":[.01,"Gy"],
+    "sv-rem":[100,"rem"],
+    "rem-sv":[.01,"Sv"],
+    "ci-gbq":[37,"GBq"],
+    "gbq-ci":[1/37,"Ci"],
+    "mci-mbq":[37,"MBq"],
+    "mbq-mci":[1/37,"mCi"]
+  };
+  const v=num("conversionInput");
+  const [f,u]=factors[$("conversionType").value];
+  $("conversionResult").textContent=
+    Number.isFinite(v)?fmt(v*f)+" "+u:"Invalid input";
 }
 
 // LU-177
 const LU_HALF=6.647;
-
 function calculateLuDecay(){
-const a=num("luInitial"),h=num("luElapsed");
-if(!Number.isFinite(a)||a<0||!Number.isFinite(h)||h<0){
-$("luRemaining").textContent="Invalid input";
-$("luPercent").textContent="";
-return;
+  const a=num("luInitial"),h=num("luElapsed");
+  if(!Number.isFinite(a)||a<0||!Number.isFinite(h)||h<0){
+    $("luRemaining").textContent="Invalid input";
+    $("luPercent").textContent="";
+    return;
+  }
+  const fraction=2**(-h/(24*LU_HALF));
+  $("luRemaining").textContent=fmt(a*fraction)+" GBq";
+  $("luPercent").textContent=
+    fmt(100*fraction)+"% of initial activity remains";
 }
-const fraction=2**(-h/(24*LU_HALF));
-$("luRemaining").textContent=fmt(a*fraction)+" GBq";
-$("luPercent").textContent=
-fmt(100*fraction)+"% of initial activity remains";
-}
-
 function calculateLuTime(){
-const a=num("luStart"),target=num("luTarget");
-if(!positive(a,target)||target>a){
-$("luTimeResult").textContent="Invalid input";
-$("luTimeDays").textContent="";
-return;
-}
-const days=LU_HALF*Math.log2(a/target);
-$("luTimeResult").textContent=fmt(days*24)+" hours";
-$("luTimeDays").textContent=fmt(days)+" days";
+  const a=num("luStart"),target=num("luTarget");
+  if(!positive(a,target)||target>a){
+    $("luTimeResult").textContent="Invalid input";
+    $("luTimeDays").textContent="";
+    return;
+  }
+  const days=LU_HALF*Math.log2(a/target);
+  $("luTimeResult").textContent=fmt(days*24)+" hours";
+  $("luTimeDays").textContent=fmt(days)+" days";
 }
 
 // CHECKLISTS
@@ -1332,387 +1263,370 @@ linacChecklist:[
 };
 
 function updateChecklist(id){
-const boxes=[...$(id).querySelectorAll("input")];
-const n=boxes.filter(x=>x.checked).length;
-const progress={
-luChecklist:"luProgress",
-srsChecklist:"srsProgress",
-linacChecklist:"linacProgress"
-}[id];
-
-$(progress).textContent=n+" / "+boxes.length+" reviewed";
-
-const bar={
-srsChecklist:"srsBar",
-linacChecklist:"linacBar"
-}[id];
-
-if(bar)$(bar).style.width=100*n/boxes.length+"%";
+  const boxes=[...$(id).querySelectorAll("input")];
+  const n=boxes.filter(x=>x.checked).length;
+  const progress={
+    luChecklist:"luProgress",
+    srsChecklist:"srsProgress",
+    linacChecklist:"linacProgress"
+  }[id];
+  $(progress).textContent=n+" / "+boxes.length+" reviewed";
+  const bar={
+    srsChecklist:"srsBar",
+    linacChecklist:"linacBar"
+  }[id];
+  if(bar)$(bar).style.width=100*n/boxes.length+"%";
 }
-
 function renderChecklist(id){
-checklists[id].forEach(s=>{
-const label=document.createElement("label");
-label.className="checkrow";
-
-const input=document.createElement("input");
-input.type="checkbox";
-input.onchange=()=>updateChecklist(id);
-
-const span=document.createElement("span");
-span.textContent=s;
-
-label.append(input,span);
-$(id).append(label);
-});
-updateChecklist(id);
+  checklists[id].forEach(s=>{
+    const label=document.createElement("label");
+    label.className="checkrow";
+    const input=document.createElement("input");
+    input.type="checkbox";
+    input.onchange=()=>updateChecklist(id);
+    const span=document.createElement("span");
+    span.textContent=s;
+    label.append(input,span);
+    $(id).append(label);
+  });
+  updateChecklist(id);
 }
-
 function resetChecklist(id){
-$(id).querySelectorAll("input").forEach(x=>x.checked=false);
-updateChecklist(id);
+  $(id).querySelectorAll("input").forEach(x=>x.checked=false);
+  updateChecklist(id);
 }
-
 function printChecklist(id,title){
-const w=window.open("","_blank","width=850,height=750");
-if(!w){
-alert("Allow pop-ups to print.");
-return;
-}
-w.document.title=title;
-
-const h=w.document.createElement("h1");
-h.textContent=title;
-
-const pre=w.document.createElement("pre");
-pre.style.cssText="font:14px/1.8 Arial;white-space:pre-wrap";
-pre.textContent=checklists[id].map((s,i)=>
-($(id).querySelectorAll("input")[i].checked?
-"[Reviewed] ":"[Not reviewed] ")+s
-).join("\n\n")+
-"\n\nGeneral planning aid only. Not an official QA record.";
-
-w.document.body.append(h,pre);
-w.focus();
-w.print();
+  const w=window.open("","_blank","width=850,height=750");
+  if(!w){
+    alert("Allow pop-ups to print.");
+    return;
+  }
+  w.document.title=title;
+  const h=w.document.createElement("h1");
+  h.textContent=title;
+  const pre=w.document.createElement("pre");
+  pre.style.cssText="font:14px/1.8 Arial;white-space:pre-wrap";
+  const boxes=[...$(id).querySelectorAll("input")];
+  pre.textContent=checklists[id].map((s,i)=>
+    (boxes[i].checked?"[Reviewed] ":"[Not reviewed] ")+s
+  ).join("\n\n")+
+  "\n\nGeneral planning aid only. Not an official QA record.";
+  w.document.body.append(h,pre);
+  w.focus();
+  w.print();
 }
 
-// TG-51
+// TG-51 CALCULATION
 let tgValues=null;
-
 function calculateTG51(){
-const t=num("tgTemp");
-const p=num("tgPressure");
-const raw=num("tgMraw");
-const elec=num("tgPelec");
-const pol=num("tgPpol");
-const ion=num("tgPion");
-const ndw=num("tgNDw");
-const kq=num("tgKq");
+  const t=num("tgTemp"),p=num("tgPressure"),
+        raw=num("tgMraw"),elec=num("tgPelec"),
+        pol=num("tgPpol"),ion=num("tgPion"),
+        ndw=num("tgNDw"),kq=num("tgKq");
 
-function error(message){
-tgValues=null;
-$("tgHeadline").textContent="Invalid input";
-["tgPTP","tgM","tgDose","tgDoseCgy"].forEach(id=>{
-$(id).textContent="—";
-});
-$("tgMessage").textContent=message;
-return false;
-}
+  function error(message){
+    tgValues=null;
+    $("tgHeadline").textContent="Invalid input";
+    ["tgPTP","tgM","tgDose","tgDoseCgy"].forEach(id=>{
+      $(id).textContent="—";
+    });
+    $("tgMessage").textContent=message;
+    return false;
+  }
 
-if(!Number.isFinite(t)||t<=-273.15||
-!positive(p,raw,elec,pol,ion,ndw,kq)){
-return error("Check all measurement inputs and correction factors.");
-}
+  if(!Number.isFinite(t)||t<=-273.15||
+     !positive(p,raw,elec,pol,ion,ndw,kq)){
+    return error("Check all measurement inputs and correction factors.");
+  }
 
-const ptp=((273.15+t)/295.15)*(101.33/p);
-const m=raw*ptp*elec*pol*ion;
-const dose=m*ndw*kq;
+  const ptp=((273.15+t)/295.15)*(101.33/p);
+  const m=raw*ptp*elec*pol*ion;
+  const dose=m*ndw*kq;
 
-if(!positive(ptp,m,dose)||!Number.isFinite(dose*100)){
-return error("Calculation exceeds supported numeric range.");
-}
+  if(!positive(ptp,m,dose)||!Number.isFinite(dose*100)){
+    return error("Calculation exceeds supported numeric range.");
+  }
 
-tgValues={t,p,raw,elec,pol,ion,ndw,kq,ptp,m,dose};
+  tgValues={t,p,raw,elec,pol,ion,ndw,kq,ptp,m,dose};
 
-$("tgPTP").textContent=fmt(ptp);
-$("tgM").textContent=fmt(m)+" nC";
-$("tgDose").textContent=fmt(dose)+" Gy";
-$("tgDoseCgy").textContent=fmt(dose*100)+" cGy";
-$("tgHeadline").textContent=fmt(dose)+" Gy";
-$("tgMessage").textContent=
-"Arithmetic only — not clinically validated.";
-
-return true;
+  $("tgPTP").textContent=fmt(ptp);
+  $("tgM").textContent=fmt(m)+" nC";
+  $("tgDose").textContent=fmt(dose)+" Gy";
+  $("tgDoseCgy").textContent=fmt(dose*100)+" cGy";
+  $("tgHeadline").textContent=fmt(dose)+" Gy";
+  $("tgMessage").textContent=
+    "Arithmetic only — not clinically validated.";
+  return true;
 }
 
 // PION
 let currentPion=null;
-
 function invalidatePion(){
-currentPion=null;
-$("ionTransfer").disabled=true;
-$("ionResult").textContent="—";
-$("ionDetails").textContent="";
-$("ionStatus").textContent="";
+  currentPion=null;
+  $("ionTransfer").disabled=true;
+  $("ionResult").textContent="—";
+  $("ionDetails").textContent="";
+  $("ionStatus").textContent="";
 }
-
 function calculatePion(){
-invalidatePion();
-
-const vh=num("ionVH");
-const vl=num("ionVL");
-const mh=num("ionMH");
-const ml=num("ionML");
-
-function error(message){
-$("ionResult").textContent="Invalid input";
-$("ionDetails").textContent=message;
+  invalidatePion();
+  const vh=num("ionVH"),vl=num("ionVL"),
+        mh=num("ionMH"),ml=num("ionML");
+  function error(message){
+    $("ionResult").textContent="Invalid input";
+    $("ionDetails").textContent=message;
+  }
+  if(!positive(vh,vl,mh,ml)){
+    error("Enter positive voltage magnitudes and readings.");
+    return;
+  }
+  const ratio=vh/vl;
+  if(ratio<2){
+    error("Use a high-to-low voltage ratio of at least 2 for this implementation.");
+    return;
+  }
+  const readingRatio=mh/ml;
+  if(readingRatio<=1||readingRatio>=ratio){
+    error("MH/ML must be greater than 1 and less than VH/VL.");
+    return;
+  }
+  const pion=(1-ratio)/(readingRatio-ratio);
+  if(!Number.isFinite(pion)||pion<1){
+    error("Calculated correction is inconsistent with this model.");
+    return;
+  }
+  currentPion=pion;
+  $("ionResult").textContent=fmt(pion);
+  $("ionDetails").textContent=
+    "Voltage ratio: "+fmt(ratio)+
+    " | Reading ratio: "+fmt(readingRatio);
+  $("ionTransfer").disabled=false;
+  $("ionStatus").textContent=pion>1.05?
+    "Review required: relatively large correction.":
+    "Arithmetic completed. Independently verify before clinical use.";
 }
-
-if(!positive(vh,vl,mh,ml)){
-error("Enter positive voltage magnitudes and readings.");
-return;
-}
-
-const ratio=vh/vl;
-if(ratio<2){
-error("Use a high-to-low voltage ratio of at least 2 for this implementation.");
-return;
-}
-
-const readingRatio=mh/ml;
-if(readingRatio<=1||readingRatio>=ratio){
-error("MH/ML must be greater than 1 and less than VH/VL.");
-return;
-}
-
-const pion=(1-ratio)/(readingRatio-ratio);
-if(!Number.isFinite(pion)||pion<1){
-error("Calculated correction is inconsistent with this model.");
-return;
-}
-
-currentPion=pion;
-$("ionResult").textContent=fmt(pion);
-$("ionDetails").textContent=
-"Voltage ratio: "+fmt(ratio)+
-" | Reading ratio: "+fmt(readingRatio);
-
-$("ionTransfer").disabled=false;
-$("ionStatus").textContent=pion>1.05?
-"Review required: relatively large correction.":
-"Arithmetic completed. Independently verify before clinical use.";
-}
-
 function transferPion(){
-if(currentPion===null)return;
-$("tgPion").value=fmt(currentPion,12);
-calculateTG51();
-$("ionStatus").textContent="Pion transferred to TG-51.";
+  if(currentPion===null)return;
+  $("tgPion").value=fmt(currentPion,12);
+  calculateTG51();
+  $("ionStatus").textContent="Pion transferred to TG-51.";
 }
-
 ["ionVH","ionVL","ionMH","ionML"].forEach(id=>{
-$(id).addEventListener("input",invalidatePion);
+  $(id).addEventListener("input",invalidatePion);
 });
 
 // PPOL
 let currentPpol=null;
-
 function invalidatePpol(){
-currentPpol=null;
-$("polTransfer").disabled=true;
-$("polResult").textContent="—";
-$("polDetails").textContent="";
-$("polStatus").textContent="";
+  currentPpol=null;
+  $("polTransfer").disabled=true;
+  $("polResult").textContent="—";
+  $("polDetails").textContent="";
+  $("polStatus").textContent="";
 }
-
 function calculatePpol(){
-invalidatePpol();
-
-const plus=num("polPlus");
-const minus=num("polMinus");
-const ref=$("polReference").value;
-
-if(!Number.isFinite(plus)||!Number.isFinite(minus)||
-plus===0||minus===0){
-$("polResult").textContent="Invalid input";
-$("polDetails").textContent="Enter two nonzero readings.";
-return;
+  invalidatePpol();
+  const plus=num("polPlus"),minus=num("polMinus");
+  const ref=$("polReference").value;
+  if(!Number.isFinite(plus)||!Number.isFinite(minus)||
+     plus===0||minus===0){
+    $("polResult").textContent="Invalid input";
+    $("polDetails").textContent="Enter two nonzero readings.";
+    return;
+  }
+  const reference=ref==="plus"?Math.abs(plus):Math.abs(minus);
+  const ppol=(Math.abs(plus)+Math.abs(minus))/(2*reference);
+  if(!positive(ppol)){
+    $("polResult").textContent="Invalid input";
+    return;
+  }
+  currentPpol=ppol;
+  $("polResult").textContent=fmt(ppol);
+  $("polDetails").textContent=
+    "Reference polarity: "+(ref==="plus"?"positive":"negative")+
+    " | Reference reading magnitude: "+fmt(reference)+" nC";
+  $("polTransfer").disabled=false;
+  $("polStatus").textContent=
+    "Arithmetic completed. Independently verify before clinical use.";
 }
-
-const reference=ref==="plus"?Math.abs(plus):Math.abs(minus);
-const ppol=(Math.abs(plus)+Math.abs(minus))/(2*reference);
-
-if(!positive(ppol)){
-$("polResult").textContent="Invalid input";
-return;
-}
-
-currentPpol=ppol;
-$("polResult").textContent=fmt(ppol);
-$("polDetails").textContent=
-"Reference polarity: "+(ref==="plus"?"positive":"negative")+
-" | Reference reading magnitude: "+fmt(reference)+" nC";
-
-$("polTransfer").disabled=false;
-$("polStatus").textContent=
-"Arithmetic completed. Independently verify before clinical use.";
-}
-
 function transferPpol(){
-if(currentPpol===null)return;
-$("tgPpol").value=fmt(currentPpol,12);
-calculateTG51();
-$("polStatus").textContent="Ppol transferred to TG-51.";
+  if(currentPpol===null)return;
+  $("tgPpol").value=fmt(currentPpol,12);
+  calculateTG51();
+  $("polStatus").textContent="Ppol transferred to TG-51.";
 }
-
 ["polPlus","polMinus"].forEach(id=>{
-$(id).addEventListener("input",invalidatePpol);
+  $(id).addEventListener("input",invalidatePpol);
 });
 $("polReference").addEventListener("change",invalidatePpol);
 
-// PHASE 7 REPORT
-const repFields=[
-["Facility / Institution","repFacility"],
-["Measurement Date","repDate"],
-["Linac / Unit ID","repLinac"],
-["Beam Energy / Mode","repBeam"],
-["Physicist","repPhysicist"],
-["Chamber Model","repChamber"],
-["Chamber Serial Number","repSerial"],
-["Electrometer / Serial","repElectrometer"],
-["Calibration Reference / Date","repCalibration"],
-["Measurement Geometry","repGeometry"]
+// PHASE 7.1 PRINT REPORT
+const reportFields=[
+  ["Facility / Institution","repFacility"],
+  ["Measurement Date","repDate"],
+  ["Linac / Unit ID","repLinac"],
+  ["Beam Energy / Mode","repBeam"],
+  ["Physicist","repPhysicist"],
+  ["Chamber Model","repChamber"],
+  ["Chamber Serial Number","repSerial"],
+  ["Electrometer / Serial","repElectrometer"],
+  ["Calibration Reference / Date","repCalibration"],
+  ["SSD / SAD (cm)","repDistance"],
+  ["Measurement Depth (cm)","repDepth"],
+  ["Field Size (cm × cm)","repField"],
+  ["Protocol / Addendum","repProtocol"]
 ];
 
-function reportTable(heading,rows,parent){
-const h=document.createElement("h2");
-h.textContent=heading;
-parent.append(h);
-
-const table=document.createElement("table");
-table.className="report-table";
-
-rows.forEach(([key,value])=>{
-const tr=document.createElement("tr");
-const th=document.createElement("th");
-const td=document.createElement("td");
-
-th.style.width="48%";
-th.textContent=key;
-td.textContent=String(value);
-
-tr.append(th,td);
-table.append(tr);
-});
-
-parent.append(table);
+function addReportTable(parent,heading,rows){
+  const h=document.createElement("h2");
+  h.textContent=heading;
+  parent.append(h);
+  const table=document.createElement("table");
+  table.className="report-table";
+  rows.forEach(([key,value])=>{
+    const tr=document.createElement("tr");
+    const th=document.createElement("th");
+    const td=document.createElement("td");
+    th.textContent=key;
+    td.textContent=String(value);
+    tr.append(th,td);
+    table.append(tr);
+  });
+  parent.append(table);
 }
 
 function printTG51Report(){
-if(!calculateTG51()){
-$("reportStatus").textContent=
-"Please correct TG-51 inputs before generating a report.";
-return;
-}
+  if(!calculateTG51()){
+    $("reportStatus").textContent=
+      "Please correct TG-51 inputs before generating a report.";
+    return;
+  }
 
-const v=tgValues;
-const root=$("reportPrint");
-root.replaceChildren();
+  const v=tgValues;
+  const root=$("reportPrint");
+  root.replaceChildren();
 
-const heading=document.createElement("h1");
-heading.textContent="Global Medical Physics LLC";
+  const head=document.createElement("div");
+  head.className="report-head";
 
-const subtitle=document.createElement("p");
-subtitle.textContent=
-"TG-51 Reference Dosimetry — Calculation Worksheet";
+  const left=document.createElement("div");
+  const company=document.createElement("h1");
+  company.textContent="Global Medical Physics LLC";
+  const subtitle=document.createElement("p");
+  subtitle.className="report-subtitle";
+  subtitle.textContent=
+    "TG-51 Reference Dosimetry — Calculation Worksheet";
+  left.append(company,subtitle);
 
-const warning=document.createElement("p");
-warning.style.cssText=
-"font-weight:bold;color:#9a3412;border:1px solid #9a3412;padding:9px";
-warning.textContent=
-"UNVALIDATED CALCULATION WORKSHEET — NOT A CLINICAL CALIBRATION RECORD";
+  const right=document.createElement("div");
+  right.className="report-id";
+  const id=$("repID").value.trim()||"Not assigned";
+  right.textContent="Report ID: "+id;
 
-root.append(heading,subtitle,warning);
+  head.append(left,right);
+  root.append(head);
 
-reportTable(
-"Facility and Instrument Information",
-repFields.map(([label,id])=>[
-label,$(id).value.trim()||"Not provided"
-]),
-root
-);
+  const warning=document.createElement("div");
+  warning.className="report-warning";
+  warning.textContent=
+    "UNVALIDATED CALCULATION WORKSHEET — NOT A CLINICAL CALIBRATION RECORD";
+  root.append(warning);
 
-reportTable("Measurement Inputs",[
-["Temperature (°C)",fmt(v.t,12)],
-["Pressure (kPa)",fmt(v.p,12)],
-["Raw chamber reading (nC)",fmt(v.raw,12)],
-["Electrometer correction Pelec",fmt(v.elec,12)],
-["Polarity correction Ppol",fmt(v.pol,12)],
-["Ion recombination correction Pion",fmt(v.ion,12)],
-["ND,w (Gy/nC)",fmt(v.ndw,12)],
-["Beam quality correction kQ",fmt(v.kq,12)]
-],root);
+  const info=document.createElement("div");
+  info.className="report-two";
+  root.append(info);
 
-reportTable("Calculation Results",[
-["PTP",fmt(v.ptp,12)],
-["Corrected chamber reading M (nC)",fmt(v.m,12)],
-["Absorbed dose to water (Gy)",fmt(v.dose,12)],
-["Absorbed dose to water (cGy)",fmt(v.dose*100,12)]
-],root);
+  const leftInfo=document.createElement("div");
+  const rightInfo=document.createElement("div");
+  info.append(leftInfo,rightInfo);
 
-const formula=document.createElement("p");
-formula.style.cssText="font-size:12px;line-height:1.6";
-formula.textContent=
-"PTP = [(273.15 + T)/295.15] × [101.33/P]; "+
-"M = Mraw × PTP × Pelec × Ppol × Pion; "+
-"Dw,Q = M × ND,w × kQ.";
-root.append(formula);
+  const metadata=reportFields.map(([label,id])=>[
+    label,$(id).value.trim()||"Not provided"
+  ]);
+  const midpoint=Math.ceil(metadata.length/2);
 
-const notesHeading=document.createElement("h2");
-notesHeading.textContent="Notes / Protocol / Independent Checks";
+  addReportTable(leftInfo,"Facility & Beam",metadata.slice(0,midpoint));
+  addReportTable(rightInfo,"Instrumentation & Setup",metadata.slice(midpoint));
 
-const notes=document.createElement("p");
-notes.style.cssText=
-"white-space:pre-wrap;font-size:12px;min-height:45px";
-notes.textContent=$("repNotes").value.trim()||"Not provided";
-root.append(notesHeading,notes);
+  const calculations=document.createElement("div");
+  calculations.className="report-two";
+  root.append(calculations);
 
-const sign=document.createElement("div");
-sign.className="report-sign";
+  const inputs=document.createElement("div");
+  const outputs=document.createElement("div");
+  calculations.append(inputs,outputs);
 
-for(const label of [
-"Physicist Review / Date",
-"Independent Verification / Date"
-]){
-const line=document.createElement("div");
-line.className="signature";
-line.textContent=label;
-sign.append(line);
-}
-root.append(sign);
+  addReportTable(inputs,"Measurement Inputs",[
+    ["Temperature (°C)",fmt(v.t,12)],
+    ["Pressure (kPa)",fmt(v.p,12)],
+    ["Raw chamber reading (nC)",fmt(v.raw,12)],
+    ["Electrometer correction Pelec",fmt(v.elec,12)],
+    ["Polarity correction Ppol",fmt(v.pol,12)],
+    ["Ion recombination correction Pion",fmt(v.ion,12)],
+    ["ND,w (Gy/nC)",fmt(v.ndw,12)],
+    ["Beam quality correction kQ",fmt(v.kq,12)]
+  ]);
 
-const disclaimer=document.createElement("p");
-disclaimer.style.cssText=
-"font-size:10px;line-height:1.5;margin-top:25px";
-disclaimer.textContent=
-"Educational arithmetic worksheet only. Not clinically validated; "+
-"does not demonstrate TG-51 protocol compliance or beam calibration. "+
-"All correction factors, reference conditions, chamber calibration, "+
-"beam quality and dose normalization require independent verification. "+
-"No patient information should be entered.";
-root.append(disclaimer);
+  addReportTable(outputs,"Calculation Results",[
+    ["PTP",fmt(v.ptp,12)],
+    ["Corrected reading M (nC)",fmt(v.m,12)],
+    ["Absorbed dose (Gy)",fmt(v.dose,12)],
+    ["Absorbed dose (cGy)",fmt(v.dose*100,12)]
+  ]);
 
-$("reportStatus").textContent=
-"Report prepared. Select Print or Save as PDF.";
+  const bottom=document.createElement("div");
+  bottom.className="report-bottom";
+  root.append(bottom);
 
-document.body.classList.add("printing-report");
-window.print();
+  const formulaHeading=document.createElement("h2");
+  formulaHeading.textContent="Calculation Formulas";
+  const formula=document.createElement("p");
+  formula.className="report-formula";
+  formula.textContent=
+    "PTP = [(273.15 + T)/295.15] × [101.33/P]; "+
+    "M = Mraw × PTP × Pelec × Ppol × Pion; "+
+    "Dw,Q = M × ND,w × kQ.";
+  bottom.append(formulaHeading,formula);
+
+  const notesHeading=document.createElement("h2");
+  notesHeading.textContent="Notes / Independent Checks";
+  const notes=document.createElement("p");
+  notes.className="report-notes";
+  notes.textContent=$("repNotes").value.trim()||"Not provided";
+  bottom.append(notesHeading,notes);
+
+  const signatures=document.createElement("div");
+  signatures.className="report-signatures";
+  for(const label of [
+    "Physicist Review / Date",
+    "Independent Verification / Date"
+  ]){
+    const line=document.createElement("div");
+    line.className="report-signature";
+    line.textContent=label;
+    signatures.append(line);
+  }
+  bottom.append(signatures);
+
+  const disclaimer=document.createElement("p");
+  disclaimer.className="report-disclaimer";
+  disclaimer.textContent=
+    "Educational arithmetic worksheet only. Not clinically validated; "+
+    "does not demonstrate TG-51 protocol compliance or beam calibration. "+
+    "All correction factors, reference conditions, chamber calibration, "+
+    "beam quality and dose normalization require independent verification. "+
+    "No patient information should be entered.";
+  bottom.append(disclaimer);
+
+  $("reportStatus").textContent=
+    "Report prepared. Select Print or Save as PDF.";
+
+  document.body.classList.add("printing-report");
+  window.print();
 }
 
 window.addEventListener("afterprint",()=>{
-document.body.classList.remove("printing-report");
+  document.body.classList.remove("printing-report");
 });
 
 // CONTACT FORM
@@ -1721,51 +1635,48 @@ const send=$("contactSubmitButton");
 const status=$("formStatus");
 
 form.addEventListener("submit",async e=>{
-e.preventDefault();
-if(!form.reportValidity())return;
+  e.preventDefault();
+  if(!form.reportValidity())return;
 
-send.disabled=true;
-send.textContent="Sending...";
-status.textContent="Submitting your request...";
+  send.disabled=true;
+  send.textContent="Sending...";
+  status.style.color="#475569";
+  status.textContent="Submitting your request...";
 
-const controller=new AbortController();
-const timeout=setTimeout(()=>controller.abort(),20000);
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),20000);
 
-try{
-const response=await fetch(
-"https://formsubmit.co/ajax/gmedphys@gmail.com",
-{
-method:"POST",
-headers:{"Accept":"application/json"},
-body:new FormData(form),
-signal:controller.signal
-}
-);
-
-if(!response.ok)throw Error("HTTP "+response.status);
-const data=await response.json();
-
-if(data.success===false||data.success==="false"){
-throw Error("Submission rejected");
-}
-
-status.style.color="#047857";
-status.textContent=
-"Your consultation request was accepted by the form service. Thank you!";
-form.reset();
-
-}catch(err){
-status.style.color="#b91c1c";
-status.textContent=
-"Unable to confirm submission. Please email gmedphys@gmail.com directly. Check before resending.";
-}finally{
-clearTimeout(timeout);
-send.disabled=false;
-send.textContent="Send Consultation Request";
-}
+  try{
+    const response=await fetch(
+      "https://formsubmit.co/ajax/gmedphys@gmail.com",
+      {
+        method:"POST",
+        headers:{"Accept":"application/json"},
+        body:new FormData(form),
+        signal:controller.signal
+      }
+    );
+    if(!response.ok)throw Error("HTTP "+response.status);
+    const data=await response.json();
+    if(data.success===false||data.success==="false"){
+      throw Error("Submission rejected");
+    }
+    status.style.color="#047857";
+    status.textContent=
+      "Your consultation request was accepted by the form service. Thank you!";
+    form.reset();
+  }catch(err){
+    status.style.color="#b91c1c";
+    status.textContent=
+      "Unable to confirm submission. Please email gmedphys@gmail.com directly. Check before resending.";
+  }finally{
+    clearTimeout(timeout);
+    send.disabled=false;
+    send.textContent="Send Consultation Request";
+  }
 });
 
-// INITIALIZATION
+// INITIALIZE
 renderGroups();
 calculateScope();
 calculateInverse();
@@ -1774,13 +1685,10 @@ calculateHVL();
 calculateConversion();
 calculateLuDecay();
 calculateLuTime();
-
 Object.keys(checklists).forEach(renderChecklist);
-
 calculateTG51();
 calculatePion();
 calculatePpol();
-
 </script>
 </body>
 </html>
