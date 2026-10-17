@@ -4,56 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07172b">
-<meta name="description" content="Global Medical Physics LLC - ABR-certified therapeutic medical physics consulting, linac QA, SRS/SBRT, dosimetry and radiation safety.">
+<meta name="description" content="Global Medical Physics LLC - ABR-certified therapeutic medical physics consulting, clinical QA, SRS/SBRT, dosimetry and radiation safety.">
 <title>Global Medical Physics LLC | Clinical Physics Consulting</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config={theme:{extend:{colors:{navy:"#07172b",teal:"#0d9488"}}}};
-</script>
 <style>
+:root{
+  --navy:#07172b;
+  --navy2:#17243b;
+  --teal:#0d9488;
+  --teal-dark:#0f766e;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --line:#dbe3ee;
+  --light:#f1f5f9;
+}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{font-family:Arial,Helvetica,sans-serif}
-.card{background:white;border:1px solid #e2e8f0;border-radius:18px;padding:24px}
-.field{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:9px;background:white;color:#0f172a}
-.field:focus{outline:2px solid #0d9488;outline-offset:1px}
-.btn{display:inline-block;background:#0d9488;color:white;padding:12px 19px;border-radius:10px;font-weight:700;text-align:center;cursor:pointer}
-.btn:hover{background:#0f766e}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:white}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{max-width:1250px;margin:auto;padding-left:24px;padding-right:24px}
+.section{padding:80px 0}
+.alt{background:var(--light)}
+.center{text-align:center}
+.section-title{font-size:clamp(28px,3.5vw,40px);font-weight:800;margin:14px 0}
+.subtitle{color:#475569;line-height:1.65;max-width:800px;margin:12px auto 0}
+.tag{display:inline-block;background:#ccfbf1;color:#115e59;padding:7px 13px;border-radius:30px;font-size:12px;font-weight:700}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;min-width:0}
+.card h3{margin:0 0 12px;font-size:21px}
+.card p{line-height:1.65;color:#475569}
+.btn{background:var(--teal);color:#fff;border:0;border-radius:10px;padding:13px 19px;font-weight:700;display:inline-block;text-align:center}
+.btn:hover{background:var(--teal-dark)}
 .btn:disabled{opacity:.6;cursor:not-allowed}
-.heading{font-size:clamp(26px,4vw,38px);font-weight:800;color:#0f172a}
-.tag{display:inline-block;background:#ccfbf1;color:#115e59;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px}
-.label{display:block;font-size:12px;font-weight:700;color:#475569;margin:12px 0 6px}
-.result{background:#07172b;color:white;border-radius:12px;padding:17px;margin-top:15px}
-.tool input,.tool select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px}
-.tool button{background:#0d9488;color:white;border-radius:8px;padding:10px 16px;font-weight:700;margin-top:15px}
-.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px;border-bottom:1px solid #e2e8f0;cursor:pointer}
-.checkrow input{margin-top:4px;accent-color:#0d9488;flex-shrink:0}
-.checkrow:hover{background:#f8fafc}
-.metric{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #e2e8f0;padding:9px 0}
-.metric strong{font-variant-numeric:tabular-nums}
+.btn-outline{background:transparent;border:1px solid #cbd5e1;border-radius:10px;padding:12px 18px;font-weight:700}
+.btn-outline:hover{background:#f1f5f9}
+.field{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:12px;background:white;color:var(--ink);min-width:0}
+.field:focus{outline:2px solid var(--teal);outline-offset:1px}
+.label{display:block;font-size:12px;font-weight:700;color:#475569;margin:14px 0 7px}
+.result{background:var(--navy);color:white;border-radius:12px;padding:17px;margin-top:17px}
+.result small{color:#a5b4c9}
+.result strong{display:block;font-size:24px;margin-top:5px;overflow-wrap:anywhere}
+.notice{border:1px solid #fcd34d;background:#fffbeb;color:#78350f;padding:20px;border-radius:13px;font-size:14px;line-height:1.7;margin-top:26px}
+.dark-panel{background:var(--navy);color:white;border-radius:20px;padding:30px;min-width:0}
+.dark-panel h3{margin-top:0}
+.metric{display:flex;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid #40506a;align-items:center}
+.metric:last-child{border-bottom:0}
+.metric span{color:#cbd5e1}
+.metric strong{text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.checkrow{display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid var(--line);padding:13px 5px;cursor:pointer;font-size:14px;line-height:1.5}
+.checkrow input{accent-color:var(--teal);margin-top:3px}
+.progress{height:8px;background:#e2e8f0;border-radius:20px;overflow:hidden;margin:18px 0}
+.progress div{height:100%;background:var(--teal);width:0;transition:width .2s}
+header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-icon{background:var(--navy);color:var(--teal);border-radius:12px;width:44px;height:44px;display:grid;place-items:center;font-size:27px;font-weight:bold;flex-shrink:0}
+.brand strong{display:block;font-size:19px}
+.brand small{display:block;color:var(--teal);font-weight:bold}
+.desktop-nav{display:flex;gap:17px;align-items:center;font-size:13px;font-weight:700}
+.desktop-nav a:hover{color:var(--teal)}
+.menu-button{display:none;border:1px solid var(--line);background:white;border-radius:8px;padding:8px 12px;font-size:22px}
+.mobile-nav{display:none;padding:12px 24px 22px;border-top:1px solid var(--line)}
+.mobile-nav a{display:block;padding:11px 0;font-weight:700}
+.hero{background:linear-gradient(130deg,#07172b,#111a2e);color:white;padding:105px 0 60px}
+.hero h1{font-size:clamp(40px,5vw,64px);line-height:1.07;letter-spacing:-1px;margin:25px 0}
+.hero p{font-size:17px;color:#cbd5e1;line-height:1.8}
+.hero-panel{background:#202c40;border:1px solid #334155;border-radius:25px;padding:32px}
+.hero-panel h3{margin:0 0 7px}
+.hero-panel p{font-size:14px;margin:0}
+.hero-line{padding:17px 0;border-bottom:1px solid #3a475d}
+.hero-line:last-child{border:0}
+.stats{border-top:1px solid #334155;margin-top:60px;padding-top:30px;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:20px}
+.stats strong{display:block;font-size:25px}
+.stats small{color:#94a3b8}
+.tg-item a{color:var(--teal);font-weight:700;font-size:14px}
+.tg-item{display:flex;flex-direction:column;justify-content:space-between}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.report-title{color:#5eead4;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;font-weight:bold}
+.report-big{font-size:clamp(29px,3vw,43px);font-weight:800;margin:15px 0 25px;overflow-wrap:anywhere}
+.formula{font-family:Arial,sans-serif;font-size:14px;line-height:1.8;overflow-wrap:anywhere}
+.small{font-size:12px;color:var(--muted);line-height:1.65}
+.status{font-size:13px;margin-top:13px;line-height:1.6}
+footer{background:var(--navy);color:#cbd5e1;padding:35px 0}
+@media(max-width:1150px){
+.desktop-nav{display:none}
+.menu-button{display:block}
+.mobile-nav.open{display:block}
+}
+@media(max-width:850px){
+.grid2,.grid3,.grid4{grid-template-columns:1fr}
+.hero{padding:65px 0}
+.stats{grid-template-columns:1fr}
+.section{padding:55px 0}
+}
+@media(max-width:500px){
+.form-grid{grid-template-columns:1fr}
+.brand strong{font-size:15px}
+.brand small{font-size:11px}
+.container{padding-left:17px;padding-right:17px}
+.card,.dark-panel{padding:20px}
+}
 @media print{
 header,footer,.no-print{display:none!important}
+.section{padding:15px 0}
 .card{break-inside:avoid}
 }
 </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800">
+<body>
 
-<div class="bg-navy text-slate-300 text-xs text-center p-3">
-ABR-Certified Therapeutic Medical Physics | Clinical QA | Radiation Safety
-</div>
-
-<header class="sticky top-0 z-50 bg-white border-b shadow-sm">
-<div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
-<a href="#home" class="flex gap-3 items-center">
-<div class="w-11 h-11 bg-navy rounded-xl flex justify-center items-center text-teal-400 text-2xl font-bold">Ω</div>
+<header>
+<div class="container nav-wrap">
+<a class="brand" href="#home">
+<div class="brand-icon">Ω</div>
 <div>
-<div class="font-extrabold text-slate-900 text-lg leading-tight">Global Medical Physics</div>
-<div class="text-xs text-teal font-bold">LLC · Clinical Consulting</div>
+<strong>Global Medical Physics</strong>
+<small>LLC · Clinical Consulting</small>
 </div>
 </a>
-
-<nav class="hidden 2xl:flex gap-4 items-center text-sm font-semibold">
+<nav class="desktop-nav">
 <a href="#home">Home</a>
 <a href="#services">Services</a>
 <a href="#references">Task Groups</a>
@@ -63,137 +136,82 @@ ABR-Certified Therapeutic Medical Physics | Clinical QA | Radiation Safety
 <a href="#qa">QA Checklists</a>
 <a href="#tg51">TG-51</a>
 <a href="#credentials">Credentials</a>
-<a href="#contact" class="btn">Contact</a>
+<a class="btn" href="#contact">Contact</a>
 </nav>
-
-<button id="menuButton" type="button" aria-label="Toggle menu" aria-expanded="false" class="2xl:hidden border rounded-lg px-3 py-2 text-xl">☰</button>
+<button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button>
 </div>
-
-<nav id="mobileMenu" class="hidden 2xl:hidden bg-white border-t px-6 py-5 space-y-4 font-semibold">
-<a class="block" href="#home">Home</a>
-<a class="block" href="#services">Services</a>
-<a class="block" href="#references">Task Groups</a>
-<a class="block" href="#estimator">Estimator</a>
-<a class="block" href="#tools">Physics Tools</a>
-<a class="block" href="#lu177">Lu-177</a>
-<a class="block" href="#qa">QA Checklists</a>
-<a class="block" href="#tg51">TG-51</a>
-<a class="block" href="#credentials">Credentials</a>
-<a class="block" href="#contact">Contact</a>
+<nav class="mobile-nav" id="mobileMenu">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#references">Task Groups</a>
+<a href="#estimator">Estimator</a>
+<a href="#tools">Physics Tools</a>
+<a href="#lu177">Lu-177</a>
+<a href="#qa">QA Checklists</a>
+<a href="#tg51">TG-51</a>
+<a href="#credentials">Credentials</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
 <!-- HOME -->
-<section id="home" class="bg-gradient-to-br from-navy via-slate-900 to-slate-800 text-white">
-<div class="max-w-7xl mx-auto px-5 py-20 lg:py-28">
-<div class="grid lg:grid-cols-2 gap-12 items-center">
-
+<section id="home" class="hero">
+<div class="container">
+<div class="grid2" style="align-items:center">
 <div>
-<span class="inline-block border border-teal-500 text-teal-300 rounded-full px-4 py-2 text-xs font-bold mb-6">
-Board-Certified Clinical Medical Physics
-</span>
-<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-Precision Physics.<br>
-<span class="text-teal-400">Safer Treatments.</span><br>
-Better Clinical Support.
-</h1>
-<p class="text-slate-300 text-lg leading-relaxed mb-8">
-Independent medical physics consulting for radiation oncology facilities, hospitals and cancer centers. Specialized support for linear accelerator quality assurance, SRS/SBRT, treatment planning, reference dosimetry and radiation safety.
-</p>
-<div class="flex flex-wrap gap-4">
-<a href="#contact" class="btn">Request Consultation</a>
-<a href="#services" class="border border-slate-500 rounded-lg px-6 py-3 font-bold">Explore Services</a>
+<span style="display:inline-block;border:1px solid #64748b;border-radius:30px;padding:9px 15px;font-size:12px;font-weight:bold">Board-Certified Clinical Medical Physics</span>
+<h1>Precision Physics.<br>Safer Treatments.<br>Better Clinical Support.</h1>
+<p>Independent medical physics consulting for radiation oncology facilities, hospitals and cancer centers. Specialized support for linear accelerator quality assurance, SRS/SBRT, treatment planning, reference dosimetry and radiation safety.</p>
+<div style="display:flex;flex-wrap:wrap;gap:15px;margin-top:32px">
+<a class="btn" href="#contact">Request Consultation</a>
+<a class="btn-outline" style="color:white;border-color:#64748b" href="#services">Explore Services</a>
 </div>
 </div>
-
-<div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 shadow-2xl">
-<div class="text-teal-400 text-sm font-bold uppercase tracking-widest mb-5">Clinical Expertise</div>
-<div class="space-y-5">
-<div class="border-b border-slate-700 pb-4">
-<h3 class="text-xl font-bold">Radiation Oncology Physics</h3>
-<p class="text-slate-400 text-sm mt-1">Linac QA, TG-51, TG-142 and commissioning support</p>
-</div>
-<div class="border-b border-slate-700 pb-4">
-<h3 class="text-xl font-bold">SRS / SBRT</h3>
-<p class="text-slate-400 text-sm mt-1">Winston-Lutz, end-to-end QA and patient-specific verification</p>
-</div>
-<div class="border-b border-slate-700 pb-4">
-<h3 class="text-xl font-bold">Treatment Planning</h3>
-<p class="text-slate-400 text-sm mt-1">VMAT, 3D conformal therapy and chart review</p>
-</div>
-<div>
-<h3 class="text-xl font-bold">Radiation Safety</h3>
-<p class="text-slate-400 text-sm mt-1">Radiation protection and regulatory support</p>
+<div class="hero-panel">
+<div class="report-title">Clinical Expertise</div>
+<div class="hero-line"><h3>Radiation Oncology Physics</h3><p>Linac QA, TG-51, TG-142 and commissioning support</p></div>
+<div class="hero-line"><h3>SRS / SBRT</h3><p>Winston-Lutz, end-to-end QA and patient-specific verification</p></div>
+<div class="hero-line"><h3>Treatment Planning</h3><p>VMAT, 3D conformal therapy and chart review</p></div>
+<div class="hero-line"><h3>Radiation Safety</h3><p>Radiation protection and regulatory support</p></div>
 </div>
 </div>
-</div>
-</div>
-
-<div class="grid sm:grid-cols-3 gap-5 mt-16 pt-9 border-t border-slate-700 text-center">
-<div><div class="text-2xl font-extrabold">ABR</div><div class="text-slate-400 text-sm">Board Certification</div></div>
-<div><div class="text-2xl font-extrabold">20+ Years</div><div class="text-slate-400 text-sm">Clinical Physics Experience</div></div>
-<div><div class="text-2xl font-extrabold">On-Site & Remote</div><div class="text-slate-400 text-sm">Consulting Options</div></div>
+<div class="stats">
+<div><strong>ABR</strong><small>Board Certification</small></div>
+<div><strong>20+ Years</strong><small>Clinical Physics Experience</small></div>
+<div><strong>On-Site & Remote</strong><small>Consulting Options</small></div>
 </div>
 </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="max-w-7xl mx-auto px-5 py-20">
-<div class="text-center mb-12">
+<section id="services" class="section">
+<div class="container">
+<div class="center" style="margin-bottom:42px">
 <span class="tag">Clinical Services</span>
-<h2 class="heading mt-4">Medical Physics Consulting</h2>
-<p class="text-slate-600 mt-3">Practical clinical support tailored to facility needs.</p>
+<h2 class="section-title">Medical Physics Consulting</h2>
+<p class="subtitle">Practical clinical support tailored to facility needs.</p>
 </div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-<div class="card">
-<div class="text-3xl mb-4">⚛️</div>
-<h3 class="text-xl font-bold mb-3">Linac Quality Assurance</h3>
-<p class="text-sm text-slate-600">Monthly and annual linac QA, TG-51 reference dosimetry, mechanical and imaging QA, and documentation review.</p>
-</div>
-
-<div class="card">
-<div class="text-3xl mb-4">🎯</div>
-<h3 class="text-xl font-bold mb-3">SRS / SBRT Physics</h3>
-<p class="text-sm text-slate-600">Stereotactic treatment support, Winston-Lutz testing, end-to-end validation and patient-specific QA.</p>
-</div>
-
-<div class="card">
-<div class="text-3xl mb-4">📋</div>
-<h3 class="text-xl font-bold mb-3">Remote Chart Review</h3>
-<p class="text-sm text-slate-600">Independent chart checks, treatment plan review and clinical physics support through approved workflows.</p>
-</div>
-
-<div class="card">
-<div class="text-3xl mb-4">🖥️</div>
-<h3 class="text-xl font-bold mb-3">Treatment Planning</h3>
-<p class="text-sm text-slate-600">Eclipse and ARIA experience, VMAT, 3D conformal therapy and plan quality consultation.</p>
-</div>
-
-<div class="card">
-<div class="text-3xl mb-4">🛡️</div>
-<h3 class="text-xl font-bold mb-3">Radiation Safety</h3>
-<p class="text-sm text-slate-600">Radiation protection program consultation, regulatory readiness and radiation safety support.</p>
-</div>
-
-<div class="card">
-<div class="text-3xl mb-4">🏥</div>
-<h3 class="text-xl font-bold mb-3">Commissioning & Special Projects</h3>
-<p class="text-sm text-slate-600">Equipment acceptance, commissioning assistance, workflow validation and independent assessments.</p>
+<div class="grid3">
+<div class="card"><h3>Linac Quality Assurance</h3><p>Monthly and annual QA, TG-51 reference dosimetry, mechanical QA, imaging QA and documentation review.</p></div>
+<div class="card"><h3>SRS / SBRT Physics</h3><p>Winston-Lutz testing, end-to-end validation, stereotactic workflow review and patient-specific QA.</p></div>
+<div class="card"><h3>Remote Chart Review</h3><p>Independent chart checks, treatment plan review and clinical physics support through approved workflows.</p></div>
+<div class="card"><h3>Treatment Planning</h3><p>Eclipse and ARIA experience, VMAT, 3D conformal therapy and plan quality consultation.</p></div>
+<div class="card"><h3>Radiation Safety</h3><p>Radiation protection program consultation, regulatory readiness and safety support.</p></div>
+<div class="card"><h3>Commissioning & Special Projects</h3><p>Equipment acceptance, commissioning assistance, workflow validation and independent assessments.</p></div>
 </div>
 </div>
 </section>
 
 <!-- TASK GROUPS -->
-<section id="references" class="bg-slate-100 border-y py-20">
-<div class="max-w-7xl mx-auto px-5">
-<div class="text-center mb-10">
+<section id="references" class="section alt">
+<div class="container">
+<div class="center" style="margin-bottom:35px">
 <span class="tag">Reference Library</span>
-<h2 class="heading mt-4">Medical Physics Task Groups</h2>
-<p class="text-slate-600 mt-3">Search commonly used clinical physics references.</p>
+<h2 class="section-title">Medical Physics Task Groups</h2>
+<p class="subtitle">Search commonly used clinical physics references.</p>
 </div>
-<div class="grid sm:grid-cols-2 gap-4 mb-8 max-w-3xl mx-auto">
-<input id="tgSearch" class="field" placeholder="Search TG-51, SRS, QA, shielding...">
+<div class="grid2" style="max-width:760px;margin:0 auto 30px">
+<input id="tgSearch" class="field" placeholder="Search TG-51, SRS, QA...">
 <select id="tgCategory" class="field">
 <option value="all">All Categories</option>
 <option value="therapy">Radiation Therapy</option>
@@ -201,102 +219,102 @@ Independent medical physics consulting for radiation oncology facilities, hospit
 <option value="safety">Radiation Safety</option>
 </select>
 </div>
-<div id="tgGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-<p class="text-xs text-slate-500 mt-7 text-center">
-Verify current publications, errata and regulatory requirements before clinical use.
-</p>
+<div id="tgGrid" class="grid3"></div>
+<p class="small center" style="margin-top:25px">Verify current publications, addenda, errata and regulatory requirements before clinical use.</p>
 </div>
 </section>
 
 <!-- ESTIMATOR -->
-<section id="estimator" class="max-w-7xl mx-auto px-5 py-20">
-<div class="text-center mb-12">
+<section id="estimator" class="section">
+<div class="container">
+<div class="center" style="margin-bottom:40px">
 <span class="tag">Project Planning</span>
-<h2 class="heading mt-4">Clinical Project Scope Estimator</h2>
-<p class="text-slate-600 mt-3">Illustrative estimate of physicist effort.</p>
+<h2 class="section-title">Clinical Project Scope Estimator</h2>
+<p class="subtitle">Illustrative estimate of physicist effort, not a binding quotation.</p>
 </div>
-
-<div class="grid lg:grid-cols-2 rounded-3xl overflow-hidden border bg-white shadow-lg">
-<div class="p-7 md:p-10 space-y-5">
-<h3 class="text-xl font-bold">Facility Equipment & Services</h3>
-<div><label class="label" for="estCommission">Linac Full Commissioning — Units</label><input id="estCommission" class="field" type="number" min="0" max="20" value="0"></div>
-<div><label class="label" for="estAnnual">Linac Annual QA — Units</label><input id="estAnnual" class="field" type="number" min="0" max="30" value="1"></div>
-<div><label class="label" for="estCarm">C-Arm / Fluoroscopy Surveys — Units</label><input id="estCarm" class="field" type="number" min="0" max="50" value="0"></div>
-<div><label class="label" for="estCT">CT Physics Surveys — Units</label><input id="estCT" class="field" type="number" min="0" max="30" value="0"></div>
-<div><label class="label" for="estShield">Shielding Design Projects — Rooms</label><input id="estShield" class="field" type="number" min="0" max="30" value="0"></div>
-<button type="button" class="btn w-full" onclick="calculateScope()">Calculate Estimated Scope</button>
+<div class="grid2">
+<div class="card">
+<h3>Facility Equipment & Services</h3>
+<label class="label" for="estCommission">Linac Full Commissioning — Units</label>
+<input class="field" id="estCommission" type="number" min="0" step="1" value="0">
+<label class="label" for="estAnnual">Linac Annual QA — Units</label>
+<input class="field" id="estAnnual" type="number" min="0" step="1" value="1">
+<label class="label" for="estCarm">C-Arm / Fluoroscopy Surveys — Units</label>
+<input class="field" id="estCarm" type="number" min="0" step="1" value="0">
+<label class="label" for="estCT">CT Physics Surveys — Units</label>
+<input class="field" id="estCT" type="number" min="0" step="1" value="0">
+<label class="label" for="estShield">Shielding Design Projects — Rooms</label>
+<input class="field" id="estShield" type="number" min="0" step="1" value="0">
+<button class="btn" style="width:100%;margin-top:22px" onclick="calculateScope()">Calculate Estimated Scope</button>
 </div>
-<div class="bg-navy text-white p-7 md:p-10 flex flex-col justify-between">
-<div>
-<div class="text-teal-400 text-xs font-bold uppercase tracking-widest mb-5">Preliminary Planning Estimate</div>
-<div class="text-slate-400 text-sm">Estimated Physicist Effort</div>
-<div class="text-5xl font-extrabold my-3" id="scopeResult">—</div>
-<div class="text-slate-300 text-sm">Person-days (illustrative)</div>
-<div class="border-t border-slate-700 mt-8 pt-6">
-<h4 class="font-bold mb-3">Selected Services</h4>
-<div id="scopeDetails" class="text-sm text-slate-300 leading-relaxed"></div>
+<div class="dark-panel">
+<div class="report-title">Preliminary Planning Estimate</div>
+<p>Estimated Physicist Effort</p>
+<div class="report-big" id="scopeResult">—</div>
+<p>Person-days (illustrative)</p>
+<hr style="border:0;border-top:1px solid #40506a;margin:25px 0">
+<h3>Selected Services</h3>
+<p id="scopeDetails" style="color:#cbd5e1;line-height:1.7"></p>
+<p class="small" style="color:#94a3b8">Actual effort depends on equipment, travel, documentation and project requirements.</p>
+<a class="btn" href="#contact" style="margin-top:25px">Request a Formal Proposal</a>
 </div>
-<p class="text-xs text-slate-400 mt-8 leading-relaxed">Planning assumptions only. Not a binding quotation.</p>
-</div>
-<a href="#contact" class="btn mt-8">Request a Formal Proposal</a>
 </div>
 </div>
 </section>
 
 <!-- PHYSICS TOOLS -->
-<section id="tools" class="bg-slate-100 border-y py-20">
-<div class="max-w-7xl mx-auto px-5">
-<div class="text-center mb-12">
+<section id="tools" class="section alt">
+<div class="container">
+<div class="center" style="margin-bottom:40px">
 <span class="tag">Physics Toolbox</span>
-<h2 class="heading mt-4">Interactive Physics Calculators</h2>
-<p class="text-slate-600 mt-3">Educational and preliminary calculation tools.</p>
+<h2 class="section-title">Interactive Physics Calculators</h2>
+<p class="subtitle">Educational and preliminary calculation tools.</p>
+</div>
+<div class="grid4">
+
+<div class="card">
+<h3>Inverse Square Law</h3>
+<p class="small">I₂ = I₁ × (d₁/d₂)²</p>
+<label class="label">Initial Dose Rate</label><input class="field" id="invI" type="number" value="100" step="any">
+<label class="label">Initial Distance (cm)</label><input class="field" id="invD1" type="number" value="100" step="any">
+<label class="label">New Distance (cm)</label><input class="field" id="invD2" type="number" value="200" step="any">
+<button class="btn" style="margin-top:15px" onclick="calculateInverse()">Calculate</button>
+<div class="result"><small>New Dose Rate</small><strong id="inverseResult">—</strong><small>Same units as input</small></div>
 </div>
 
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-<div class="card tool">
-<h3 class="font-extrabold text-lg">Inverse Square Law</h3>
-<p class="text-xs text-slate-500 mt-1">I₂ = I₁ × (d₁/d₂)²</p>
-<label class="label" for="invI">Initial Dose Rate</label><input id="invI" type="number" value="100" step="any">
-<label class="label" for="invD1">Initial Distance (cm)</label><input id="invD1" type="number" value="100" step="any">
-<label class="label" for="invD2">New Distance (cm)</label><input id="invD2" type="number" value="200" step="any">
-<button type="button" onclick="calculateInverse()">Calculate</button>
-<div class="result"><div class="text-xs text-slate-400">New Dose Rate</div><div class="text-xl font-bold text-teal-300" id="inverseResult">—</div><div class="text-xs text-slate-400">Same units as input</div></div>
-</div>
-
-<div class="card tool">
-<h3 class="font-extrabold text-lg">Radioactive Decay</h3>
-<p class="text-xs text-slate-500 mt-1">A = A₀ × 2^(-t/T½)</p>
-<label class="label" for="isotope">Isotope</label>
-<select id="isotope">
-<option value="6.647">Lu-177 (6.647 d)</option>
-<option value="73.83">Ir-192 (73.83 d)</option>
-<option value="8.02">I-131 (8.02 d)</option>
-<option value="59.4">I-125 (59.4 d)</option>
-<option value="0.25">Tc-99m (6 h)</option>
-<option value="1925.28">Co-60 (approx. 5.27 y)</option>
+<div class="card">
+<h3>Radioactive Decay</h3>
+<p class="small">A = A₀ × 2^(-t/T½)</p>
+<label class="label">Isotope</label>
+<select class="field" id="isotope">
+<option value="6.647">Lu-177</option>
+<option value="73.83">Ir-192</option>
+<option value="8.02">I-131</option>
+<option value="59.4">I-125</option>
+<option value="0.25">Tc-99m</option>
+<option value="1925.28">Co-60 (approx.)</option>
 </select>
-<label class="label" for="decayInitial">Initial Activity</label><input id="decayInitial" type="number" value="10" step="any">
-<label class="label" for="decayDays">Elapsed Time (days)</label><input id="decayDays" type="number" value="7" step="any">
-<button type="button" onclick="calculateDecay()">Calculate</button>
-<div class="result"><div class="text-xs text-slate-400">Remaining Activity</div><div class="text-xl font-bold text-teal-300" id="decayResult">—</div><div class="text-xs text-slate-400">Same units as input</div></div>
+<label class="label">Initial Activity</label><input class="field" id="decayInitial" type="number" value="10" step="any">
+<label class="label">Elapsed Time (days)</label><input class="field" id="decayDays" type="number" value="7" step="any">
+<button class="btn" style="margin-top:15px" onclick="calculateDecay()">Calculate</button>
+<div class="result"><small>Remaining Activity</small><strong id="decayResult">—</strong></div>
 </div>
 
-<div class="card tool">
-<h3 class="font-extrabold text-lg">HVL Estimator</h3>
-<p class="text-xs text-slate-500 mt-1">Monoexponential approximation</p>
-<label class="label" for="hvlInitial">Unattenuated Intensity</label><input id="hvlInitial" type="number" value="100" step="any">
-<label class="label" for="hvlMeasured">Attenuated Intensity</label><input id="hvlMeasured" type="number" value="62" step="any">
-<label class="label" for="hvlThickness">Filter Thickness (mm Al)</label><input id="hvlThickness" type="number" value="2" step="any">
-<button type="button" onclick="calculateHVL()">Calculate</button>
-<div class="result"><div class="text-xs text-slate-400">Estimated HVL</div><div class="text-xl font-bold text-teal-300" id="hvlResult">—</div><div class="text-xs text-slate-400">mm Al</div></div>
+<div class="card">
+<h3>HVL Estimator</h3>
+<p class="small">Monoexponential approximation</p>
+<label class="label">Unattenuated Intensity</label><input class="field" id="hvlInitial" type="number" value="100" step="any">
+<label class="label">Attenuated Intensity</label><input class="field" id="hvlMeasured" type="number" value="62" step="any">
+<label class="label">Filter Thickness (mm Al)</label><input class="field" id="hvlThickness" type="number" value="2" step="any">
+<button class="btn" style="margin-top:15px" onclick="calculateHVL()">Calculate</button>
+<div class="result"><small>Estimated HVL</small><strong id="hvlResult">—</strong><small>mm Al</small></div>
 </div>
 
-<div class="card tool">
-<h3 class="font-extrabold text-lg">Unit Converter</h3>
-<p class="text-xs text-slate-500 mt-1">Radiation quantities</p>
-<label class="label" for="conversionType">Conversion</label>
-<select id="conversionType">
+<div class="card">
+<h3>Unit Converter</h3>
+<p class="small">Radiation quantities</p>
+<label class="label">Conversion</label>
+<select class="field" id="conversionType">
 <option value="gy-rad">Gy → rad</option>
 <option value="rad-gy">rad → Gy</option>
 <option value="sv-rem">Sv → rem</option>
@@ -306,340 +324,329 @@ Verify current publications, errata and regulatory requirements before clinical 
 <option value="mci-mbq">mCi → MBq</option>
 <option value="mbq-mci">MBq → mCi</option>
 </select>
-<label class="label" for="conversionInput">Input Value</label><input id="conversionInput" type="number" value="2" step="any">
-<button type="button" onclick="calculateConversion()">Convert</button>
-<div class="result"><div class="text-xs text-slate-400">Converted Value</div><div class="text-xl font-bold text-teal-300" id="conversionResult">—</div></div>
+<label class="label">Input Value</label><input class="field" id="conversionInput" type="number" value="2" step="any">
+<button class="btn" style="margin-top:15px" onclick="calculateConversion()">Convert</button>
+<div class="result"><small>Converted Value</small><strong id="conversionResult">—</strong></div>
 </div>
 
 </div>
-<p class="text-xs text-slate-500 text-center mt-8">Calculators require independent validation before any clinical application.</p>
+<div class="notice">These calculators are simplified educational tools and require independent validation before any clinical application.</div>
 </div>
 </section>
 
 <!-- LU-177 -->
-<section id="lu177" class="py-20 bg-white">
-<div class="max-w-7xl mx-auto px-5">
-<div class="text-center mb-12">
+<section id="lu177" class="section">
+<div class="container">
+<div class="center" style="margin-bottom:40px">
 <span class="tag">Nuclear Medicine Physics</span>
-<h2 class="heading mt-4">Lu-177 / Pluvicto Physics Resources</h2>
-<p class="text-slate-600 mt-3">Physical decay calculations and preliminary program planning resources.</p>
+<h2 class="section-title">Lu-177 / Pluvicto Physics Resources</h2>
+<p class="subtitle">Physical decay calculations and preliminary program planning resources.</p>
 </div>
 
-<div class="grid lg:grid-cols-3 gap-6">
-
-<div class="card tool">
-<h3 class="text-xl font-bold mb-2">Lu-177 Activity Decay</h3>
-<p class="text-sm text-slate-600">Physical half-life: 6.647 days.</p>
-<label class="label" for="luInitial">Initial Activity (GBq)</label><input id="luInitial" type="number" value="7.4" min="0" step="any">
-<label class="label" for="luElapsed">Elapsed Time (hours)</label><input id="luElapsed" type="number" value="24" min="0" step="any">
-<button type="button" onclick="calculateLuDecay()">Calculate Activity</button>
-<div class="result">
-<div class="text-xs text-slate-400">Remaining Activity</div>
-<div id="luRemaining" class="text-2xl font-bold text-teal-300">—</div>
-<div id="luPercent" class="text-sm text-slate-300 mt-2">—</div>
-</div>
-</div>
-
-<div class="card tool">
-<h3 class="text-xl font-bold mb-2">Time to Target Activity</h3>
-<p class="text-sm text-slate-600">Physical decay to a target activity.</p>
-<label class="label" for="luStart">Starting Activity (GBq)</label><input id="luStart" type="number" value="7.4" min="0" step="any">
-<label class="label" for="luTarget">Target Activity (GBq)</label><input id="luTarget" type="number" value="3.7" min="0" step="any">
-<button type="button" onclick="calculateLuTime()">Calculate Time</button>
-<div class="result">
-<div class="text-xs text-slate-400">Elapsed Time</div>
-<div id="luTimeResult" class="text-2xl font-bold text-teal-300">—</div>
-<div id="luTimeDays" class="text-sm text-slate-300 mt-2">—</div>
-</div>
-</div>
-
+<div class="grid3">
 <div class="card">
-<h3 class="text-xl font-bold mb-4">Lu-177 Reference Information</h3>
-<div class="space-y-4 text-sm">
-<div class="border-b pb-3"><div class="text-slate-500">Radionuclide</div><div class="font-bold">Lutetium-177</div></div>
-<div class="border-b pb-3"><div class="text-slate-500">Physical Half-Life</div><div class="font-bold">Approximately 6.647 days</div></div>
-<div class="border-b pb-3"><div class="text-slate-500">Decay</div><div class="font-bold">β⁻ emission to stable Hf-177</div></div>
-<div class="border-b pb-3"><div class="text-slate-500">Clinical Context</div><div class="font-bold">Lu-177 radioligand therapy</div></div>
-<div><div class="text-slate-500">Limitations</div><div class="font-bold">Physical decay only; no biological clearance or patient dosimetry</div></div>
+<h3>Lu-177 Activity Decay</h3>
+<p>Physical half-life: 6.647 days.</p>
+<label class="label">Initial Activity (GBq)</label><input class="field" id="luInitial" type="number" value="7.4" step="any">
+<label class="label">Elapsed Time (hours)</label><input class="field" id="luElapsed" type="number" value="24" step="any">
+<button class="btn" style="margin-top:15px" onclick="calculateLuDecay()">Calculate Activity</button>
+<div class="result"><small>Remaining Activity</small><strong id="luRemaining">—</strong><p id="luPercent"></p></div>
 </div>
+<div class="card">
+<h3>Time to Target Activity</h3>
+<p>Estimate physical decay time to a target activity.</p>
+<label class="label">Starting Activity (GBq)</label><input class="field" id="luStart" type="number" value="7.4" step="any">
+<label class="label">Target Activity (GBq)</label><input class="field" id="luTarget" type="number" value="3.7" step="any">
+<button class="btn" style="margin-top:15px" onclick="calculateLuTime()">Calculate Time</button>
+<div class="result"><small>Elapsed Time</small><strong id="luTimeResult">—</strong><p id="luTimeDays"></p></div>
+</div>
+<div class="card">
+<h3>Lu-177 Reference Information</h3>
+<p><strong>Radionuclide:</strong> Lutetium-177</p>
+<p><strong>Half-Life:</strong> Approximately 6.647 days</p>
+<p><strong>Decay:</strong> β⁻ emission to stable Hf-177</p>
+<p><strong>Clinical Context:</strong> Radioligand therapy</p>
+<p><strong>Limitations:</strong> Physical decay only; no biological clearance or patient dosimetry.</p>
 </div>
 </div>
 
-<div class="mt-10 grid lg:grid-cols-2 gap-6">
+<div class="grid2" style="margin-top:28px">
 <div class="card">
-<div class="flex flex-wrap items-center justify-between gap-3 mb-5">
-<h3 class="text-xl font-bold">Therapy Program Startup Checklist</h3>
+<h3>Therapy Program Startup Checklist</h3>
 <span id="luProgress" class="tag">0 / 8 reviewed</span>
-</div>
 <div id="luChecklist"></div>
-<button type="button" class="mt-5 text-teal font-bold text-sm" onclick="resetChecklist('luChecklist')">Reset Checklist</button>
+<button class="btn-outline" style="margin-top:17px" onclick="resetChecklist('luChecklist')">Reset</button>
 </div>
-
-<div class="bg-navy text-white rounded-2xl p-8">
-<h3 class="text-2xl font-bold mb-4">Nuclear Medicine Physics Consultation</h3>
-<p class="text-slate-300 leading-relaxed mb-6">
-Inquiries regarding radiation safety planning, quality assurance and physics consultation for radiopharmaceutical therapy programs are welcome. Project-specific capabilities and availability are assessed individually.
-</p>
-<ul class="space-y-3 text-sm text-slate-300 list-disc pl-5 mb-8">
-<li>Radiation safety program planning</li>
-<li>Activity measurement and instrument QA considerations</li>
-<li>Facility workflow and documentation review</li>
-<li>Program implementation planning</li>
-</ul>
-<a href="#contact" class="btn">Discuss Your Project</a>
+<div class="dark-panel">
+<h3>Nuclear Medicine Physics Consultation</h3>
+<p style="color:#cbd5e1;line-height:1.8">Radiation safety planning, activity measurement QA, facility workflow and program implementation consultation.</p>
+<a class="btn" href="#contact" style="margin-top:22px">Discuss Your Project</a>
 </div>
 </div>
-
-<div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm text-amber-950">
-<strong>Clinical disclaimer:</strong> Physical decay calculations do not determine patient absorbed dose, biological clearance, administered activity or patient release eligibility. Use validated institutional procedures and qualified professional review.
-</div>
+<div class="notice">Physical decay does not determine patient absorbed dose, biological clearance, administered activity or patient release eligibility.</div>
 </div>
 </section>
 
 <!-- QA CHECKLISTS -->
-<section id="qa" class="bg-slate-100 border-y py-20">
-<div class="max-w-7xl mx-auto px-5">
-<div class="text-center mb-12">
+<section id="qa" class="section alt">
+<div class="container">
+<div class="center" style="margin-bottom:40px">
 <span class="tag">Radiation Oncology Physics</span>
-<h2 class="heading mt-4">Clinical QA Checklists</h2>
-<p class="text-slate-600 mt-3">
-Interactive planning checklists for stereotactic radiotherapy and linear accelerator quality assurance.
-</p>
+<h2 class="section-title">Clinical QA Checklists</h2>
+<p class="subtitle">Interactive planning checklists for stereotactic radiotherapy and linear accelerator quality assurance.</p>
 </div>
-
-<div class="grid lg:grid-cols-2 gap-7">
-
+<div class="grid2">
 <div class="card">
-<div class="flex flex-wrap justify-between gap-3 items-start mb-5">
-<div>
-<h3 class="text-2xl font-extrabold text-slate-900">SRS / SBRT QA</h3>
-<p class="text-sm text-slate-500 mt-2">Workflow review checklist</p>
-</div>
-<span id="srsProgress" class="tag">0 / 10 reviewed</span>
-</div>
-<div class="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
-<div id="srsBar" class="h-full bg-teal transition-all" style="width:0%"></div>
-</div>
+<h3>SRS / SBRT QA</h3>
+<p class="small">Workflow review checklist</p>
+<span class="tag" id="srsProgress">0 / 10 reviewed</span>
+<div class="progress"><div id="srsBar"></div></div>
 <div id="srsChecklist"></div>
-<div class="flex flex-wrap gap-3 mt-6 no-print">
-<button type="button" class="btn" onclick="printChecklist('srsChecklist','SRS / SBRT QA Checklist')">Print Checklist</button>
-<button type="button" class="border rounded-lg px-4 py-2 font-semibold" onclick="resetChecklist('srsChecklist')">Reset</button>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:23px">
+<button class="btn" onclick="printChecklist('srsChecklist','SRS / SBRT QA Checklist')">Print Checklist</button>
+<button class="btn-outline" onclick="resetChecklist('srsChecklist')">Reset</button>
 </div>
 </div>
-
 <div class="card">
-<div class="flex flex-wrap justify-between gap-3 items-start mb-5">
-<div>
-<h3 class="text-2xl font-extrabold text-slate-900">Linac Monthly / Annual QA</h3>
-<p class="text-sm text-slate-500 mt-2">Equipment and documentation review</p>
-</div>
-<span id="linacProgress" class="tag">0 / 12 reviewed</span>
-</div>
-<div class="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
-<div id="linacBar" class="h-full bg-teal transition-all" style="width:0%"></div>
-</div>
+<h3>Linac Monthly / Annual QA</h3>
+<p class="small">Equipment and documentation review</p>
+<span class="tag" id="linacProgress">0 / 12 reviewed</span>
+<div class="progress"><div id="linacBar"></div></div>
 <div id="linacChecklist"></div>
-<div class="flex flex-wrap gap-3 mt-6 no-print">
-<button type="button" class="btn" onclick="printChecklist('linacChecklist','Linac QA Checklist')">Print Checklist</button>
-<button type="button" class="border rounded-lg px-4 py-2 font-semibold" onclick="resetChecklist('linacChecklist')">Reset</button>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:23px">
+<button class="btn" onclick="printChecklist('linacChecklist','Linac QA Checklist')">Print Checklist</button>
+<button class="btn-outline" onclick="resetChecklist('linacChecklist')">Reset</button>
 </div>
 </div>
 </div>
-
-<div class="mt-8 bg-white border rounded-2xl p-7 text-sm text-slate-600 leading-relaxed">
-<strong>Clinical QA guidance:</strong> These checklists are general review prompts, not complete testing protocols. Checking a box means an item was reviewed on this webpage, not that the equipment passed QA. Testing requirements, tolerances and approval must follow the facility's validated QA program. This website does not maintain an auditable QA record.
-</div>
+<div class="notice">Checking an item means it was reviewed on this webpage, not that equipment passed QA. These lists are not complete testing protocols or auditable clinical QA records.</div>
 </div>
 </section>
 
-<!-- TG-51 CALCULATOR -->
-<section id="tg51" class="bg-white py-20">
-<div class="max-w-7xl mx-auto px-5">
-
-<div class="text-center mb-12">
-<span class="tag">Reference Dosimetry</span>
-<h2 class="heading mt-4">TG-51 Reference Dosimetry Calculator</h2>
-<p class="text-slate-600 mt-3 max-w-3xl mx-auto">
-Educational calculation worksheet for temperature-pressure correction, corrected chamber reading and absorbed dose to water.
-</p>
+<!-- TG-51 PHASE 6 -->
+<section id="tg51" class="section">
+<div class="container">
+<div class="center" style="margin-bottom:42px">
+<span class="tag">New · Phase 6</span>
+<h2 class="section-title">TG-51 Reference Dosimetry Calculator</h2>
+<p class="subtitle">Corrected chamber reading, absorbed dose to water, ion recombination and polarity corrections.</p>
 </div>
 
-<div class="grid lg:grid-cols-2 gap-7">
+<div class="grid2">
 
 <div class="card">
-<h3 class="text-xl font-bold mb-4">Measurement Inputs</h3>
-
-<div class="grid sm:grid-cols-2 gap-4">
-<div>
-<label class="label" for="tgTemp">Temperature (°C)</label>
-<input id="tgTemp" class="field" type="number" value="22" step="any">
+<h3>Reference Dosimetry Inputs</h3>
+<div class="form-grid">
+<div><label class="label">Temperature (°C)</label><input id="tgTemp" class="field" type="number" value="22" step="any"></div>
+<div><label class="label">Pressure (kPa)</label><input id="tgPressure" class="field" type="number" value="101.33" step="any"></div>
+<div><label class="label">Raw Chamber Reading (nC)</label><input id="tgMraw" class="field" type="number" value="20" step="any"></div>
+<div><label class="label">Electrometer Correction (Pelec)</label><input id="tgPelec" class="field" type="number" value="1" step="any"></div>
+<div><label class="label">Polarity Correction (Ppol)</label><input id="tgPpol" class="field" type="number" value="1" step="any"></div>
+<div><label class="label">Ion Recombination (Pion)</label><input id="tgPion" class="field" type="number" value="1" step="any"></div>
+<div><label class="label">ND,w Calibration Coefficient (Gy/nC)</label><input id="tgNDw" class="field" type="number" value="0.05" step="any"></div>
+<div><label class="label">Beam Quality Correction (kQ)</label><input id="tgKq" class="field" type="number" value="1" step="any"></div>
 </div>
-<div>
-<label class="label" for="tgPressure">Pressure (kPa)</label>
-<input id="tgPressure" class="field" type="number" value="101.33" step="any">
-</div>
-<div>
-<label class="label" for="tgMraw">Raw Chamber Reading (nC)</label>
-<input id="tgMraw" class="field" type="number" value="20" step="any">
-</div>
-<div>
-<label class="label" for="tgPelec">Electrometer Correction (Pelec)</label>
-<input id="tgPelec" class="field" type="number" value="1" step="any">
-</div>
-<div>
-<label class="label" for="tgPpol">Polarity Correction (Ppol)</label>
-<input id="tgPpol" class="field" type="number" value="1" step="any">
-</div>
-<div>
-<label class="label" for="tgPion">Ion Recombination (Pion)</label>
-<input id="tgPion" class="field" type="number" value="1" step="any">
-</div>
-<div>
-<label class="label" for="tgNDw">ND,w Calibration Coefficient (Gy/nC)</label>
-<input id="tgNDw" class="field" type="number" value="0.05" step="any">
-</div>
-<div>
-<label class="label" for="tgKq">Beam Quality Correction (kQ)</label>
-<input id="tgKq" class="field" type="number" value="1" step="any">
-</div>
+<button class="btn" style="width:100%;margin-top:22px" onclick="calculateTG51()">Calculate Absorbed Dose</button>
+<p class="small">Illustrative defaults. Pion, Ppol and kQ must be determined independently. kQ = 1 is not a universal clinical value.</p>
 </div>
 
-<button type="button" class="btn w-full mt-6" onclick="calculateTG51()">Calculate Absorbed Dose</button>
-
-<p class="text-xs text-slate-500 mt-4 leading-relaxed">
-Example values are illustrative. Ppol, Pion and kQ are user-supplied; this worksheet does not derive them from measurements, beam quality or chamber type.
-</p>
+<div class="dark-panel">
+<div class="report-title">TG-51 Calculation Results</div>
+<p style="color:#cbd5e1">Absorbed Dose to Water</p>
+<div id="tgHeadline" class="report-big">—</div>
+<div style="background:var(--navy2);border-radius:13px;padding:15px 20px">
+<div class="metric"><span>PTP</span><strong id="tgPTP">—</strong></div>
+<div class="metric"><span>Corrected Reading M</span><strong id="tgM">—</strong></div>
+<div class="metric"><span>Dose (Gy)</span><strong id="tgDose">—</strong></div>
+<div class="metric"><span>Dose (cGy)</span><strong id="tgDoseCgy">—</strong></div>
 </div>
-
-<div class="bg-navy text-white rounded-2xl p-8">
-<div class="text-teal-400 text-xs font-bold uppercase tracking-widest mb-5">TG-51 Calculation Results</div>
-<p class="text-slate-400 text-sm">Absorbed Dose to Water</p>
-<div id="tgHeadline" class="text-4xl font-extrabold my-4">—</div>
-
-<div class="bg-slate-800 rounded-xl p-5 space-y-2">
-<div class="flex justify-between gap-3 border-b border-slate-700 pb-3">
-<span class="text-slate-300">PTP</span>
-<strong id="tgPTP">—</strong>
-</div>
-<div class="flex justify-between gap-3 border-b border-slate-700 py-2">
-<span class="text-slate-300">Corrected Reading M</span>
-<strong id="tgM">—</strong>
-</div>
-<div class="flex justify-between gap-3 border-b border-slate-700 py-2">
-<span class="text-slate-300">Dose (Gy)</span>
-<strong id="tgDose">—</strong>
-</div>
-<div class="flex justify-between gap-3 pt-2">
-<span class="text-slate-300">Dose (cGy)</span>
-<strong id="tgDoseCgy">—</strong>
-</div>
-</div>
-
-<p id="tgMessage" class="text-sm text-slate-300 mt-6"></p>
-
-<div class="border-t border-slate-700 mt-7 pt-6 text-sm text-slate-300 space-y-3">
-<p><strong>Temperature / Pressure:</strong></p>
+<p id="tgMessage" class="status" style="color:#cbd5e1"></p>
+<hr style="border:0;border-top:1px solid #40506a;margin:25px 0">
+<div class="formula">
+<strong>Temperature / Pressure</strong>
 <p>PTP = [(273.15 + T) / 295.15] × [101.33 / P]</p>
-<p><strong>Corrected Reading:</strong></p>
+<strong>Corrected Reading</strong>
 <p>M = Mraw × PTP × Pelec × Ppol × Pion</p>
-<p><strong>Absorbed Dose:</strong></p>
+<strong>Absorbed Dose</strong>
 <p>Dw,Q = M × ND,w × kQ</p>
 </div>
 </div>
+
 </div>
 
-<div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6 text-sm text-amber-950 leading-relaxed">
-<strong>Important limitations:</strong> This is a simplified, non-clinically-validated calculation worksheet. It assumes an appropriate vented ion chamber and compatible calibration units. It does not determine beam quality, kQ, Pion or Ppol, nor does it implement all measurement, chamber, protocol addendum or reference-condition requirements. Do not use its results to calibrate a clinical treatment beam without independent validation and the complete applicable dosimetry protocol.
+<div class="center" style="margin:60px 0 30px">
+<span class="tag">Phase 6 · New Tools</span>
+<h2 class="section-title" style="font-size:30px">Ion Recombination & Polarity Corrections</h2>
+<p class="subtitle">Separate correction-factor calculations with optional transfer to the TG-51 worksheet.</p>
 </div>
+
+<div class="grid2">
+
+<!-- PION -->
+<div class="card">
+<h3>Pion — Ion Recombination Correction</h3>
+<p class="small">Two-voltage method for applicable pulsed radiation conditions. Enter the magnitude of each bias voltage and the corresponding positive-magnitude chamber reading.</p>
+
+<div class="form-grid">
+<div>
+<label class="label">High Voltage |VH| (V)</label>
+<input class="field" id="ionVH" type="number" value="300" step="any">
+</div>
+<div>
+<label class="label">Low Voltage |VL| (V)</label>
+<input class="field" id="ionVL" type="number" value="150" step="any">
+</div>
+<div>
+<label class="label">Reading at VH (nC)</label>
+<input class="field" id="ionMH" type="number" value="20" step="any">
+</div>
+<div>
+<label class="label">Reading at VL (nC)</label>
+<input class="field" id="ionML" type="number" value="19.8" step="any">
+</div>
+</div>
+
+<button class="btn" style="width:100%;margin-top:20px" onclick="calculatePion()">Calculate Pion</button>
+
+<div class="result">
+<small>Calculated Pion</small>
+<strong id="ionResult">—</strong>
+<p id="ionDetails" style="color:#cbd5e1;font-size:13px;line-height:1.6"></p>
+</div>
+
+<button class="btn-outline" style="width:100%;margin-top:13px" id="ionTransfer" onclick="transferPion()" disabled>Use Pion in TG-51</button>
+<p id="ionStatus" class="status"></p>
+
+<div style="margin-top:20px;border-top:1px solid var(--line);padding-top:15px">
+<strong style="font-size:14px">Formula — applicable pulsed-beam approximation</strong>
+<p class="formula">
+Pion = (1 − VH/VL) / (MH/ML − VH/VL)
+</p>
+<p class="small">
+VH and VL are voltage magnitudes. The calculation assumes appropriate two-voltage measurements under stable conditions and a supported pulsed-radiation regime. It does not implement the continuous-beam or pulsed-scanned alternatives.
+</p>
+</div>
+</div>
+
+<!-- PPOL -->
+<div class="card">
+<h3>Ppol — Polarity Correction</h3>
+<p class="small">Enter readings with their measured signs. Choose the polarity used for the reference dosimetry measurement.</p>
+
+<div class="form-grid">
+<div>
+<label class="label">Positive Bias Reading M+ (nC)</label>
+<input class="field" id="polPlus" type="number" value="20.1" step="any">
+</div>
+<div>
+<label class="label">Negative Bias Reading M− (nC)</label>
+<input class="field" id="polMinus" type="number" value="-19.9" step="any">
+</div>
+</div>
+
+<label class="label">Reference Measurement Polarity</label>
+<select class="field" id="polReference">
+<option value="plus">Positive bias (+)</option>
+<option value="minus">Negative bias (−)</option>
+</select>
+
+<button class="btn" style="width:100%;margin-top:20px" onclick="calculatePpol()">Calculate Ppol</button>
+
+<div class="result">
+<small>Calculated Ppol</small>
+<strong id="polResult">—</strong>
+<p id="polDetails" style="color:#cbd5e1;font-size:13px;line-height:1.6"></p>
+</div>
+
+<button class="btn-outline" style="width:100%;margin-top:13px" id="polTransfer" onclick="transferPpol()" disabled>Use Ppol in TG-51</button>
+<p id="polStatus" class="status"></p>
+
+<div style="margin-top:20px;border-top:1px solid var(--line);padding-top:15px">
+<strong style="font-size:14px">Formula</strong>
+<p class="formula">
+Ppol = (|M+| + |M−|) / (2 × |Mref|)
+</p>
+<p class="small">
+Mref is the reading at the chosen reference polarity. Readings should be acquired under equivalent measurement conditions, with appropriate handling of electrometer polarity and leakage.
+</p>
+</div>
+</div>
+
+</div>
+
+<div class="notice">
+<strong>Clinical limitations:</strong> The Phase 6 calculators provide arithmetic assistance only. The two-voltage Pion approximation is not universally applicable. Verify chamber type, beam delivery mode, voltage ratio, collection efficiency, measurement conditions, electrometer conventions and the applicable TG-51 protocol or addendum. Results are not clinically validated and must not be used alone for treatment beam calibration.
+</div>
+
 </div>
 </section>
 
 <!-- CREDENTIALS -->
-<section id="credentials" class="bg-navy text-white py-20">
-<div class="max-w-7xl mx-auto px-5">
-<div class="text-center mb-12">
-<span class="text-teal-400 text-xs font-bold uppercase">Professional Experience</span>
-<h2 class="text-3xl md:text-4xl font-extrabold mt-4">Credentials & Technical Expertise</h2>
+<section id="credentials" class="section" style="background:var(--navy);color:white">
+<div class="container">
+<div class="center" style="margin-bottom:40px">
+<span class="tag">Professional Experience</span>
+<h2 class="section-title" style="color:white">Credentials & Technical Expertise</h2>
 </div>
-
-<div class="grid md:grid-cols-3 gap-6">
-
-<div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
-<h3 class="text-xl font-bold mb-4">Qualifications</h3>
-<div class="space-y-3 text-sm text-slate-300">
-<p>✓ ABR Therapeutic Medical Physics</p>
-<p>✓ Chief Medical Physicist Experience</p>
-<p>✓ Radiation Safety Officer Experience</p>
-<p>✓ Clinical Quality Assurance</p>
+<div class="grid3">
+<div class="dark-panel" style="background:#202c40;border:1px solid #334155">
+<h3>Qualifications</h3>
+<p>ABR Therapeutic Medical Physics</p>
+<p>Chief Medical Physicist Experience</p>
+<p>Radiation Safety Officer Experience</p>
+<p>Clinical Quality Assurance</p>
 </div>
+<div class="dark-panel" style="background:#202c40;border:1px solid #334155">
+<h3>Clinical Systems</h3>
+<p>Varian TrueBeam</p>
+<p>Eclipse / ARIA</p>
+<p>Elekta Unity MR-Linac Experience</p>
+<p>VMAT / SRS / SBRT</p>
+<p>HDR / LDR Brachytherapy Experience</p>
 </div>
-
-<div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
-<h3 class="text-xl font-bold mb-4">Clinical Systems</h3>
-<div class="space-y-3 text-sm text-slate-300">
-<p>✓ Varian TrueBeam</p>
-<p>✓ Eclipse / ARIA</p>
-<p>✓ Elekta Unity MR-Linac Experience</p>
-<p>✓ VMAT / SRS / SBRT</p>
-<p>✓ HDR / LDR Brachytherapy Experience</p>
-</div>
-</div>
-
-<div class="bg-slate-800 border border-slate-700 rounded-2xl p-7">
-<h3 class="text-xl font-bold mb-4">Physics QA Tools</h3>
-<div class="space-y-3 text-sm text-slate-300">
-<p>✓ Ionization Chambers & Electrometers</p>
-<p>✓ ArcCHECK / SRS MapCHECK</p>
-<p>✓ Delta4</p>
-<p>✓ Winston-Lutz / MPC / TG-51</p>
-</div>
+<div class="dark-panel" style="background:#202c40;border:1px solid #334155">
+<h3>Physics QA Tools</h3>
+<p>Ionization Chambers & Electrometers</p>
+<p>ArcCHECK / SRS MapCHECK</p>
+<p>Delta4</p>
+<p>Winston-Lutz / MPC / TG-51</p>
 </div>
 </div>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="bg-white py-20">
-<div class="max-w-3xl mx-auto px-5">
-<div class="text-center mb-10">
+<section id="contact" class="section">
+<div class="container" style="max-width:850px">
+<div class="center" style="margin-bottom:35px">
 <span class="tag">Contact</span>
-<h2 class="heading mt-4">Request a Clinical Consultation</h2>
-<p class="text-slate-600 mt-3">Tell us about your facility and medical physics support needs.</p>
-<p class="mt-3 text-sm">
-Email:
-<a class="text-teal font-bold" href="mailto:gmedphys@gmail.com">gmedphys@gmail.com</a>
-</p>
+<h2 class="section-title">Request a Clinical Consultation</h2>
+<p class="subtitle">Tell us about your facility and medical physics support needs.</p>
+<p>Email: <a href="mailto:gmedphys@gmail.com" style="color:var(--teal);font-weight:bold">gmedphys@gmail.com</a></p>
 </div>
 
-<form id="contactForm" action="https://formsubmit.co/ajax/gmedphys@gmail.com" method="POST" class="bg-slate-50 border rounded-2xl p-6 md:p-9 space-y-5">
-
+<form id="contactForm" action="https://formsubmit.co/ajax/gmedphys@gmail.com" method="POST" class="card" style="background:#f8fafc">
 <input type="hidden" name="_subject" value="New Medical Physics Consultation Request">
 <input type="hidden" name="_template" value="table">
-
 <div style="position:absolute;left:-9999px" aria-hidden="true">
-<label for="companyWebsite">Leave blank</label>
-<input id="companyWebsite" type="text" name="_honey" tabindex="-1" autocomplete="off">
+<input name="_honey" tabindex="-1" autocomplete="off">
 </div>
-
-<div class="grid md:grid-cols-2 gap-5">
+<div class="form-grid">
 <div>
 <label class="label" for="facility">Facility / Organization</label>
-<input id="facility" name="facility" class="field" required maxlength="150" placeholder="Hospital or Cancer Center">
+<input class="field" id="facility" name="facility" required maxlength="150">
 </div>
 <div>
 <label class="label" for="contactName">Your Name</label>
-<input id="contactName" name="name" class="field" required maxlength="100" placeholder="Full Name">
+<input class="field" id="contactName" name="name" required maxlength="100">
 </div>
-</div>
-
-<div class="grid md:grid-cols-2 gap-5">
 <div>
 <label class="label" for="contactEmail">Email</label>
-<input id="contactEmail" name="email" type="email" class="field" required maxlength="200" placeholder="name@hospital.org">
+<input class="field" id="contactEmail" name="email" type="email" required maxlength="200">
 </div>
 <div>
 <label class="label" for="contactService">Service Needed</label>
-<select id="contactService" name="service" class="field">
+<select class="field" id="contactService" name="service">
 <option>Linac QA / TG-51</option>
 <option>SRS / SBRT Physics</option>
 <option>Remote Chart Review</option>
@@ -651,31 +658,19 @@ Email:
 </select>
 </div>
 </div>
-
-<div>
 <label class="label" for="contactDetails">Project Details</label>
-<textarea id="contactDetails" name="message" class="field" rows="5" required maxlength="5000" placeholder="Equipment, project scope, facility location and expected timeline. Do not include patient information."></textarea>
-</div>
-
-<button id="contactSubmitButton" type="submit" class="btn w-full">Send Consultation Request</button>
-<p id="formStatus" role="status" aria-live="polite" class="text-sm text-slate-600"></p>
-<p class="text-xs text-slate-500">
-This form uses a third-party submission service. Do not submit patient-identifying information or protected health information (PHI).
-</p>
+<textarea class="field" id="contactDetails" name="message" rows="5" required maxlength="5000" placeholder="Describe the project. Do not include patient information."></textarea>
+<button class="btn" id="contactSubmitButton" type="submit" style="width:100%;margin-top:20px">Send Consultation Request</button>
+<p id="formStatus" role="status" aria-live="polite" class="status"></p>
+<p class="small">This form uses a third-party submission service. Do not submit patient-identifying information or protected health information (PHI).</p>
 </form>
 </div>
 </section>
 
-<footer class="bg-navy text-slate-400 border-t border-slate-700 py-10">
-<div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between gap-5">
-<div>
-<div class="text-white font-extrabold text-lg">Global Medical Physics LLC</div>
-<p class="text-sm mt-2">Independent Clinical Medical Physics Consulting</p>
-</div>
-<div class="text-sm md:text-right">
-<p>© 2026 Global Medical Physics LLC</p>
-<p class="mt-2">Clinical Physics · Quality Assurance · Radiation Safety</p>
-</div>
+<footer>
+<div class="container" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<div><strong style="color:white">Global Medical Physics LLC</strong><p>Independent Clinical Medical Physics Consulting</p></div>
+<div>© 2026 Global Medical Physics LLC</div>
 </div>
 </footer>
 
@@ -683,27 +678,37 @@ This form uses a third-party submission service. Do not submit patient-identifyi
 "use strict";
 
 const byId=id=>document.getElementById(id);
-const readNumber=id=>{
-const value=byId(id).value.trim();
-return value===""?NaN:Number(value);
-};
-const fmt=(value,digits=6)=>
-Number.isFinite(value)?Number(value.toPrecision(digits)).toString():"Invalid input";
 
-// MOBILE MENU
+function readNumber(id){
+const text=byId(id).value.trim();
+return text===""?NaN:Number(text);
+}
+
+function fmt(value,digits=8){
+return Number.isFinite(value)?
+Number(value.toPrecision(digits)).toString():
+"Invalid input";
+}
+
+function validPositive(...values){
+return values.every(v=>Number.isFinite(v)&&v>0);
+}
+
+// NAVIGATION
 byId("menuButton").addEventListener("click",()=>{
-const hidden=byId("mobileMenu").classList.toggle("hidden");
-byId("menuButton").setAttribute("aria-expanded",String(!hidden));
+const menu=byId("mobileMenu");
+const open=menu.classList.toggle("open");
+byId("menuButton").setAttribute("aria-expanded",String(open));
 });
 
-document.querySelectorAll("#mobileMenu a").forEach(link=>{
-link.addEventListener("click",()=>{
-byId("mobileMenu").classList.add("hidden");
+document.querySelectorAll("#mobileMenu a").forEach(a=>{
+a.addEventListener("click",()=>{
+byId("mobileMenu").classList.remove("open");
 byId("menuButton").setAttribute("aria-expanded","false");
 });
 });
 
-// TASK GROUP REFERENCES
+// TASK GROUPS
 const taskGroups=[
 ["AAPM TG-51","therapy","Reference Dosimetry","Reference dosimetry for high-energy photon and electron beams.","https://www.aapm.org/pubs/reports/RPT_51.pdf"],
 ["AAPM TG-142","therapy","Linac Quality Assurance","Quality assurance recommendations for medical linear accelerators.","https://www.aapm.org/pubs/reports/RPT_142.pdf"],
@@ -729,7 +734,6 @@ const filtered=taskGroups.filter(x=>
 
 if(!filtered.length){
 const p=document.createElement("p");
-p.className="text-slate-500 col-span-full text-center py-8";
 p.textContent="No matching references found.";
 grid.appendChild(p);
 return;
@@ -737,30 +741,29 @@ return;
 
 filtered.forEach(x=>{
 const card=document.createElement("article");
-card.className="card flex flex-col justify-between";
-const content=document.createElement("div");
+card.className="card tg-item";
+
+const inner=document.createElement("div");
 const tag=document.createElement("span");
 tag.className="tag";
 tag.textContent=x[0];
 
 const title=document.createElement("h3");
-title.className="font-bold text-lg mt-4 mb-2";
+title.style.marginTop="17px";
 title.textContent=x[2];
 
 const desc=document.createElement("p");
-desc.className="text-sm text-slate-600 leading-relaxed";
 desc.textContent=x[3];
 
-content.append(tag,title,desc);
+inner.append(tag,title,desc);
 
 const link=document.createElement("a");
 link.href=x[4];
 link.target="_blank";
 link.rel="noopener noreferrer";
-link.className="text-teal font-bold text-sm mt-6 inline-block";
 link.textContent="View Publication / Reference →";
 
-card.append(content,link);
+card.append(inner,link);
 grid.appendChild(card);
 });
 }
@@ -768,7 +771,7 @@ grid.appendChild(card);
 byId("tgSearch").addEventListener("input",renderTaskGroups);
 byId("tgCategory").addEventListener("change",renderTaskGroups);
 
-// SCOPE ESTIMATOR
+// SCOPE
 function calculateScope(){
 const items=[
 ["estCommission","Linac commissioning",7],
@@ -781,64 +784,45 @@ const items=[
 let total=0;
 const selected=[];
 
-for(const [id,name,factor] of items){
+for(const [id,name,days] of items){
 const q=readNumber(id);
-
 if(!Number.isInteger(q)||q<0||q>100){
-byId("scopeResult").textContent="Invalid";
-byId("scopeDetails").textContent="Enter valid nonnegative whole numbers.";
+byId("scopeResult").textContent="Invalid input";
+byId("scopeDetails").textContent="Enter nonnegative whole numbers.";
 return;
 }
-
-if(q>0){
-total+=q*factor;
-selected.push(q+" × "+name);
-}
+total+=q*days;
+if(q>0)selected.push(q+" × "+name);
 }
 
 byId("scopeResult").textContent=fmt(total);
 byId("scopeDetails").textContent=selected.join(" · ")||"No services selected.";
 }
 
-["estCommission","estAnnual","estCarm","estCT","estShield"].forEach(id=>
-byId(id).addEventListener("input",calculateScope)
-);
-
-// GENERAL CALCULATORS
+// GENERAL PHYSICS
 function calculateInverse(){
-const a=readNumber("invI");
-const d1=readNumber("invD1");
-const d2=readNumber("invD2");
-
+const a=readNumber("invI"),d1=readNumber("invD1"),d2=readNumber("invD2");
 byId("inverseResult").textContent=
-[a,d1,d2].every(Number.isFinite)&&a>=0&&d1>0&&d2>0?
+Number.isFinite(a)&&a>=0&&validPositive(d1,d2)?
 fmt(a*(d1/d2)**2):"Invalid input";
 }
 
 function calculateDecay(){
-const h=readNumber("isotope");
-const a=readNumber("decayInitial");
-const t=readNumber("decayDays");
-
+const h=readNumber("isotope"),a=readNumber("decayInitial"),t=readNumber("decayDays");
 byId("decayResult").textContent=
-[h,a,t].every(Number.isFinite)&&h>0&&a>=0&&t>=0?
+validPositive(h)&&Number.isFinite(a)&&a>=0&&Number.isFinite(t)&&t>=0?
 fmt(a*2**(-t/h)):"Invalid input";
 }
 
 function calculateHVL(){
-const i0=readNumber("hvlInitial");
-const i=readNumber("hvlMeasured");
-const x=readNumber("hvlThickness");
-
+const i0=readNumber("hvlInitial"),i=readNumber("hvlMeasured"),x=readNumber("hvlThickness");
 byId("hvlResult").textContent=
-[i0,i,x].every(Number.isFinite)&&i0>0&&i>0&&i<i0&&x>0?
+validPositive(i0,i,x)&&i<i0?
 fmt(Math.log(2)*x/Math.log(i0/i)):"Invalid input";
 }
 
 function calculateConversion(){
-const input=readNumber("conversionInput");
-
-const conversions={
+const factors={
 "gy-rad":[100,"rad"],
 "rad-gy":[0.01,"Gy"],
 "sv-rem":[100,"rem"],
@@ -848,50 +832,40 @@ const conversions={
 "mci-mbq":[37,"MBq"],
 "mbq-mci":[1/37,"mCi"]
 };
-
-const [factor,unit]=conversions[byId("conversionType").value];
-
+const v=readNumber("conversionInput");
+const [factor,unit]=factors[byId("conversionType").value];
 byId("conversionResult").textContent=
-Number.isFinite(input)?fmt(input*factor,8)+" "+unit:"Invalid input";
+Number.isFinite(v)?fmt(v*factor)+" "+unit:"Invalid input";
 }
 
-// LU-177 CALCULATORS
-const LU_HALF_LIFE_DAYS=6.647;
-const LU_HALF_LIFE_HOURS=LU_HALF_LIFE_DAYS*24;
+// LU-177
+const LU_HALF_LIFE=6.647;
 
 function calculateLuDecay(){
-const initial=readNumber("luInitial");
-const hours=readNumber("luElapsed");
-
-if(![initial,hours].every(Number.isFinite)||initial<0||hours<0){
+const a=readNumber("luInitial"),h=readNumber("luElapsed");
+if(!Number.isFinite(a)||a<0||!Number.isFinite(h)||h<0){
 byId("luRemaining").textContent="Invalid input";
 byId("luPercent").textContent="";
 return;
 }
-
-const fraction=2**(-hours/LU_HALF_LIFE_HOURS);
-
-byId("luRemaining").textContent=fmt(initial*fraction)+" GBq";
-byId("luPercent").textContent=fmt(fraction*100)+"% of initial activity remains";
+const fraction=2**(-h/(24*LU_HALF_LIFE));
+byId("luRemaining").textContent=fmt(a*fraction)+" GBq";
+byId("luPercent").textContent=fmt(100*fraction)+"% of initial activity remains";
 }
 
 function calculateLuTime(){
-const initial=readNumber("luStart");
-const target=readNumber("luTarget");
-
-if(![initial,target].every(Number.isFinite)||initial<=0||target<=0||target>initial){
+const a=readNumber("luStart"),target=readNumber("luTarget");
+if(!validPositive(a,target)||target>a){
 byId("luTimeResult").textContent="Invalid input";
-byId("luTimeDays").textContent="Target must be positive and no greater than starting activity.";
+byId("luTimeDays").textContent="Target must be positive and no greater than initial activity.";
 return;
 }
-
-const days=LU_HALF_LIFE_DAYS*Math.log2(initial/target);
-
+const days=LU_HALF_LIFE*Math.log2(a/target);
 byId("luTimeResult").textContent=fmt(days*24)+" hours";
 byId("luTimeDays").textContent=fmt(days)+" days";
 }
 
-// CHECKLIST DATA
+// CHECKLISTS
 const checklistData={
 luChecklist:[
 "Confirm applicable radioactive materials license and authorization for the intended therapy.",
@@ -903,7 +877,6 @@ luChecklist:[
 "Develop patient instructions, release assessment and documentation procedures.",
 "Approve institution-specific treatment workflow and QA procedures."
 ],
-
 srsChecklist:[
 "Review approved SRS/SBRT commissioning and baseline documentation.",
 "Review mechanical isocenter and radiation isocenter verification.",
@@ -916,7 +889,6 @@ srsChecklist:[
 "Review patient-specific plan QA and independent verification workflow.",
 "Review treatment time-out, documentation and escalation procedures."
 ],
-
 linacChecklist:[
 "Review reference output constancy measurements and trending.",
 "Review photon and electron beam quality and profile constancy as applicable.",
@@ -933,51 +905,35 @@ linacChecklist:[
 ]
 };
 
-const checklistProgress={
-luChecklist:"luProgress",
-srsChecklist:"srsProgress",
-linacChecklist:"linacProgress"
-};
-
 function renderChecklist(id){
 const container=byId(id);
 container.replaceChildren();
 
-checklistData[id].forEach((text,index)=>{
+checklistData[id].forEach(item=>{
 const label=document.createElement("label");
 label.className="checkrow";
-
-const input=document.createElement("input");
-input.type="checkbox";
-input.dataset.index=String(index);
-
-const span=document.createElement("span");
-span.className="text-sm text-slate-700 leading-relaxed";
-span.textContent=text;
-
-input.addEventListener("change",()=>updateChecklist(id));
-label.append(input,span);
+const checkbox=document.createElement("input");
+checkbox.type="checkbox";
+const text=document.createElement("span");
+text.textContent=item;
+checkbox.addEventListener("change",()=>updateChecklist(id));
+label.append(checkbox,text);
 container.appendChild(label);
 });
-
 updateChecklist(id);
 }
 
 function updateChecklist(id){
-const inputs=[...byId(id).querySelectorAll("input[type=checkbox]")];
-const checked=inputs.filter(x=>x.checked).length;
-
-byId(checklistProgress[id]).textContent=
-checked+" / "+inputs.length+" reviewed";
-
-const barId=
-id==="srsChecklist"?"srsBar":
-id==="linacChecklist"?"linacBar":null;
-
-if(barId){
-byId(barId).style.width=
-(inputs.length?100*checked/inputs.length:0)+"%";
-}
+const boxes=[...byId(id).querySelectorAll("input[type=checkbox]")];
+const reviewed=boxes.filter(x=>x.checked).length;
+const progressId={
+luChecklist:"luProgress",
+srsChecklist:"srsProgress",
+linacChecklist:"linacProgress"
+}[id];
+byId(progressId).textContent=reviewed+" / "+boxes.length+" reviewed";
+const barId=id==="srsChecklist"?"srsBar":id==="linacChecklist"?"linacBar":null;
+if(barId)byId(barId).style.width=(100*reviewed/boxes.length)+"%";
 }
 
 function resetChecklist(id){
@@ -986,41 +942,31 @@ updateChecklist(id);
 }
 
 function printChecklist(id,title){
-const entries=checklistData[id];
-const checks=[...byId(id).querySelectorAll("input[type=checkbox]")];
-
-const printable=entries.map((item,i)=>
-(checks[i]&&checks[i].checked?"[Reviewed] ":"[Not reviewed] ")+item
+const boxes=[...byId(id).querySelectorAll("input[type=checkbox]")];
+const lines=checklistData[id].map((text,i)=>
+(boxes[i].checked?"[Reviewed] ":"[Not reviewed] ")+text
 ).join("\n\n");
 
-const text=title+"\n\n"+printable+
-"\n\nGeneral planning aid only. Not an official QA record or evidence of passing results.";
-
-const popup=window.open("","_blank","width=800,height=700");
-
+const popup=window.open("","_blank","width=850,height=750");
 if(!popup){
-alert("Please allow pop-ups to print the checklist.");
+alert("Please allow pop-ups for printing.");
 return;
 }
-
-const doc=popup.document;
-doc.title=title;
-
-const heading=doc.createElement("h1");
+popup.document.title=title;
+const heading=popup.document.createElement("h1");
 heading.textContent=title;
-
-const pre=doc.createElement("pre");
+const pre=popup.document.createElement("pre");
 pre.style.whiteSpace="pre-wrap";
 pre.style.fontFamily="Arial,sans-serif";
 pre.style.lineHeight="1.7";
-pre.textContent=text;
-
-doc.body.append(heading,pre);
+pre.textContent=lines+
+"\n\nGeneral planning aid only. Not an official QA record or evidence of passing results.";
+popup.document.body.append(heading,pre);
 popup.focus();
 popup.print();
 }
 
-// TG-51 CALCULATOR
+// TG-51 MAIN
 function calculateTG51(){
 const ids=[
 "tgTemp","tgPressure","tgMraw","tgPelec",
@@ -1029,20 +975,15 @@ const ids=[
 
 const [t,p,raw,pelec,ppol,pion,ndw,kq]=ids.map(readNumber);
 
-const outputs=["tgPTP","tgM","tgDose","tgDoseCgy"];
-
-function fail(message){
-outputs.forEach(id=>byId(id).textContent="—");
+function error(message){
+["tgPTP","tgM","tgDose","tgDoseCgy"].forEach(id=>byId(id).textContent="—");
 byId("tgHeadline").textContent="Invalid input";
 byId("tgMessage").textContent=message;
 }
 
-if(
-![t,p,raw,pelec,ppol,pion,ndw,kq].every(Number.isFinite)||
-t<=-273.15||p<=0||raw<=0||pelec<=0||
-ppol<=0||pion<=0||ndw<=0||kq<=0
-){
-fail("Use finite positive values for pressure, reading, calibration and correction factors. Temperature must exceed absolute zero.");
+if(!Number.isFinite(t)||t<=-273.15||
+!validPositive(p,raw,pelec,ppol,pion,ndw,kq)){
+error("Enter valid positive readings, pressure and correction factors.");
 return;
 }
 
@@ -1050,18 +991,163 @@ const ptp=((273.15+t)/295.15)*(101.33/p);
 const m=raw*ptp*pelec*ppol*pion;
 const dose=m*ndw*kq;
 
-if(![ptp,m,dose].every(Number.isFinite)){
-fail("Calculated value is outside the supported numeric range.");
+if(!validPositive(ptp,m,dose)||!Number.isFinite(dose*100)){
+error("Calculation exceeds the supported numeric range.");
 return;
 }
 
-byId("tgPTP").textContent=fmt(ptp,8);
-byId("tgM").textContent=fmt(m,8)+" nC";
-byId("tgDose").textContent=fmt(dose,8)+" Gy";
-byId("tgDoseCgy").textContent=fmt(dose*100,8)+" cGy";
-byId("tgHeadline").textContent=fmt(dose,8)+" Gy";
+byId("tgPTP").textContent=fmt(ptp);
+byId("tgM").textContent=fmt(m)+" nC";
+byId("tgDose").textContent=fmt(dose)+" Gy";
+byId("tgDoseCgy").textContent=fmt(dose*100)+" cGy";
+byId("tgHeadline").textContent=fmt(dose)+" Gy";
 byId("tgMessage").textContent="Arithmetic only — not clinically validated.";
 }
+
+// PHASE 6: PION
+let currentPion=null;
+let currentPpol=null;
+
+function invalidatePion(){
+currentPion=null;
+byId("ionTransfer").disabled=true;
+byId("ionResult").textContent="—";
+byId("ionDetails").textContent="";
+byId("ionStatus").textContent="";
+}
+
+function calculatePion(){
+invalidatePion();
+
+const vh=readNumber("ionVH");
+const vl=readNumber("ionVL");
+const mh=readNumber("ionMH");
+const ml=readNumber("ionML");
+
+function error(message){
+byId("ionResult").textContent="Invalid input";
+byId("ionDetails").textContent=message;
+}
+
+if(!validPositive(vh,vl,mh,ml)){
+error("All voltages and reading magnitudes must be positive.");
+return;
+}
+
+const ratio=vh/vl;
+if(ratio<2){
+error("For this implementation, use a high-to-low voltage magnitude ratio of at least 2.");
+return;
+}
+
+const readingRatio=mh/ml;
+
+if(readingRatio<=1||readingRatio>=ratio){
+error("Reading ratio MH/ML must be greater than 1 and less than VH/VL for this simplified model.");
+return;
+}
+
+const pion=(1-ratio)/(readingRatio-ratio);
+
+if(!Number.isFinite(pion)||pion<1){
+error("The calculated correction is not physically consistent with this model.");
+return;
+}
+
+currentPion=pion;
+byId("ionResult").textContent=fmt(pion);
+byId("ionDetails").textContent=
+"Voltage ratio: "+fmt(ratio)+
+" | Reading ratio: "+fmt(readingRatio)+
+". Verify applicability and measurement conditions.";
+
+byId("ionTransfer").disabled=false;
+
+if(pion>1.05){
+byId("ionStatus").textContent=
+"Review required: unusually large correction for many conventional reference-dosimetry situations.";
+}else{
+byId("ionStatus").textContent=
+"Arithmetic completed. Independently verify before clinical use.";
+}
+}
+
+function transferPion(){
+if(currentPion===null)return;
+byId("tgPion").value=fmt(currentPion,12);
+calculateTG51();
+byId("ionStatus").textContent=
+"Pion transferred to the TG-51 worksheet. Verify before clinical use.";
+}
+
+["ionVH","ionVL","ionMH","ionML"].forEach(id=>{
+byId(id).addEventListener("input",invalidatePion);
+});
+
+// PHASE 6: PPOL
+function invalidatePpol(){
+currentPpol=null;
+byId("polTransfer").disabled=true;
+byId("polResult").textContent="—";
+byId("polDetails").textContent="";
+byId("polStatus").textContent="";
+}
+
+function calculatePpol(){
+invalidatePpol();
+
+const plus=readNumber("polPlus");
+const minus=readNumber("polMinus");
+const reference=byId("polReference").value;
+
+function error(message){
+byId("polResult").textContent="Invalid input";
+byId("polDetails").textContent=message;
+}
+
+if(!Number.isFinite(plus)||!Number.isFinite(minus)||
+plus===0||minus===0){
+error("Enter two finite, nonzero chamber readings.");
+return;
+}
+
+const ref=reference==="plus"?Math.abs(plus):Math.abs(minus);
+const ppol=(Math.abs(plus)+Math.abs(minus))/(2*ref);
+
+if(!validPositive(ppol)){
+error("Could not calculate the correction factor.");
+return;
+}
+
+currentPpol=ppol;
+byId("polResult").textContent=fmt(ppol);
+byId("polDetails").textContent=
+"Reference polarity: "+(reference==="plus"?"positive":"negative")+
+" | Reference reading magnitude: "+fmt(ref)+" nC.";
+
+byId("polTransfer").disabled=false;
+
+if(ppol<0.98||ppol>1.02){
+byId("polStatus").textContent=
+"Review required: check reading signs, reference polarity and measurement conditions.";
+}else{
+byId("polStatus").textContent=
+"Arithmetic completed. Independently verify before clinical use.";
+}
+}
+
+function transferPpol(){
+if(currentPpol===null)return;
+byId("tgPpol").value=fmt(currentPpol,12);
+calculateTG51();
+byId("polStatus").textContent=
+"Ppol transferred to the TG-51 worksheet. Verify before clinical use.";
+}
+
+["polPlus","polMinus"].forEach(id=>{
+byId(id).addEventListener("input",invalidatePpol);
+});
+byId("polReference").addEventListener("change",invalidatePpol);
 
 // CONTACT FORM
 const contactForm=byId("contactForm");
@@ -1076,7 +1162,6 @@ if(!contactForm.reportValidity())return;
 contactButton.disabled=true;
 contactButton.textContent="Sending...";
 contactStatus.textContent="Submitting your request...";
-contactStatus.className="text-sm text-slate-600";
 
 const controller=new AbortController();
 const timeout=setTimeout(()=>controller.abort(),20000);
@@ -1097,19 +1182,18 @@ if(!response.ok)throw new Error("HTTP "+response.status);
 const result=await response.json();
 
 if(result.success===false||result.success==="false"){
-throw new Error(result.message||"Submission rejected");
+throw new Error("Submission rejected");
 }
 
+contactStatus.style.color="#047857";
 contactStatus.textContent=
-"Your consultation request was accepted by the form service. Thank you for contacting Global Medical Physics LLC.";
-contactStatus.className="text-sm text-green-700 font-semibold";
+"Your consultation request was accepted by the form service. Thank you!";
 contactForm.reset();
 
 }catch(error){
-console.error("Contact submission:",error);
+contactStatus.style.color="#b91c1c";
 contactStatus.textContent=
-"Unable to confirm submission. Please email gmedphys@gmail.com directly. If you already submitted, check before resending.";
-contactStatus.className="text-sm text-red-700 font-semibold";
+"Unable to confirm submission. Please email gmedphys@gmail.com directly. Check before resending.";
 }finally{
 clearTimeout(timeout);
 contactButton.disabled=false;
@@ -1126,8 +1210,10 @@ calculateHVL();
 calculateConversion();
 calculateLuDecay();
 calculateLuTime();
-calculateTG51();
 Object.keys(checklistData).forEach(renderChecklist);
+calculateTG51();
+calculatePion();
+calculatePpol();
 
 </script>
 </body>
